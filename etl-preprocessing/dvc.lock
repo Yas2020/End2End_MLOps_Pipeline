@@ -1,0 +1,29 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python preprocess/preprocess_task.py
+    deps:
+    - path: data/raw/
+      hash: md5
+      md5: 43a97a2f7073e759a826bd933265833d.dir
+      size: 56485
+      nfiles: 2
+    - path: preprocess/preprocess_task.py
+      hash: md5
+      md5: 3533be2d1f5688b1900d47ffe1c109e7
+      size: 3457
+    - path: version_tag_meta.json
+      hash: md5
+      md5: 49e7c0a40ddae83964dd8a7a6d442bc6
+      size: 177
+    outs:
+    - path: artifacts/preprocess/
+      hash: md5
+      md5: ff10b42838df52d281316c9f033881ba.dir
+      size: 3295
+      nfiles: 2
+    - path: data/clean/
+      hash: md5
+      md5: e650a0af14b7e4fd0ef634da2c7a5022.dir
+      size: 70534
+      nfiles: 2
