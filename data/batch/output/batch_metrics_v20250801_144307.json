@@ -1,0 +1,7 @@
+{
+    "version_tag": "v20250801_144307",
+    "total_rows": 100,
+    "outliers": 2,
+    "predicted_fraud": 1,
+    "batch_processed_at": "2025-08-05T17:51:19.421485"
+}
