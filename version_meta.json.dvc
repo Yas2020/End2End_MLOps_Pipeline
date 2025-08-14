@@ -1,0 +1,5 @@
+outs:
+- md5: 6a58e362d80d99fdd47c1a1df6c73270
+  size: 480
+  hash: md5
+  path: version_meta.json
