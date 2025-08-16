@@ -3,79 +3,58 @@ stages:
   preprocess:
     cmd: python preprocessing/preprocess_task.py
     deps:
-    - path: preprocessing/preprocess_task.py
-      hash: md5
-      md5: 9fbcb4b8225987ec6194420f0c08b65f
-      size: 3425
-    - path: s3://mlflow-artifacts/data/raw
-      hash: md5
-      md5: 602ddb43893d85443cd66ec20dfe4e77.dir
-      size: 60358
-      nfiles: 2
-    - path: s3://mlflow-artifacts/metadata/version_meta.json
-      hash: md5
-      etag: 94af5b6a02e8b1cc89855814a776dbd4
-      size: 454
-  train_model:
-    cmd: python train/train_task.py
-    deps:
-    - path: artifacts/preprocess/
-      hash: md5
-      md5: 0d70abe220bac00c5d015080416ca429.dir
-      size: 3453
-      nfiles: 2
-    - path: train/train_task.py
-      hash: md5
-      md5: 61a303afef30f950ed04644a5e541fe7
-      size: 3030
-    - path: version_meta.json
-      hash: md5
-      md5: c98617f1cdb720f19e87b9a2da95174e
-      size: 384
-    outs:
-    - path: artifacts/models/
-      hash: md5
-      md5: 91d61761afa6bf81eb4de170f74d737b.dir
-      size: 3978
-      nfiles: 1
-    - path: artifacts/train/
-      hash: md5
-      md5: 2f8351c87a2bf027859d9edf6a1212d1.dir
-      size: 687
-      nfiles: 1
-  train:
-    cmd: python train/train_task.py
-    deps:
-    - path: artifacts/preprocess/
-      hash: md5
-      md5: 144dbdf487126342316c8930baeea2cd.dir
-      size: 3450
-      nfiles: 2
-    - path: train/
-      hash: md5
-      md5: 1e8c0dd04f2cd00c6e32963329230508.dir
-      size: 9731
-      nfiles: 4
-    - path: version_meta.json
-      hash: md5
-      md5: c722211daca8292dec944166ba8e63ec
-      size: 847
-    outs:
-    - path: artifacts/models/
-      hash: md5
-      md5: 3902a469cf93cba29f5fef2f7c334399.dir
-      size: 1784706
-      nfiles: 2
-    - path: artifacts/train/
-      hash: md5
-      md5: 68c64870a75ee7fea0c33e8b9809313f.dir
-      size: 691
-      nfiles: 1
-  etl:
-    cmd: python preprocessing/download_data.py
-    outs:
     - path: data/raw
       hash: md5
-      md5: cf75e81729f0447b1aa66aad6fd497e6.dir
-      size: 60246
+      md5: cad986e881633ec23cc1ac2ebbd77e4e.dir
+      size: 120492
+      nfiles: 4
+    - path: preprocessing/preprocess_task.py
+      hash: md5
+      md5: 4fa66d38a3045d446b162e9deae57b0c
+      size: 3855
+    - path: version_meta.json
+      hash: md5
+      md5: 641654a2449589c4eb672641d29122a0
+      size: 637
+    outs:
+    - path: artifacts/preprocess
+      hash: md5
+      md5: 0e22b816ee5cd7b4dc44258cf744b832.dir
+      size: 3367
+      nfiles: 2
+  train_outlier:
+    cmd: python train/train_outlier_detector_task.py
+    deps:
+    - path: artifacts/preprocess
+      hash: md5
+      md5: 0e22b816ee5cd7b4dc44258cf744b832.dir
+      size: 3367
+      nfiles: 2
+    - path: train/train_outlier_detector_task.py
+      hash: md5
+      md5: c890fad05138f5998f3bb66aaa32f5f3
+      size: 5042
+    outs:
+    - path: artifacts/models/outlier
+      hash: md5
+      md5: a15799cd723e1cf47eaad263c90f5f55.dir
+      size: 1781007
+      nfiles: 2
+  train_model:
+    cmd: python train/train_fraud_detector_task.py
+    deps:
+    - path: artifacts/preprocess
+      hash: md5
+      md5: 0e22b816ee5cd7b4dc44258cf744b832.dir
+      size: 3367
+      nfiles: 2
+    - path: train/train_fraud_detector_task.py
+      hash: md5
+      md5: 376a9c78fc1a8666efdce659aa84b446
+      size: 8927
+    outs:
+    - path: artifacts/models/fraud
+      hash: md5
+      md5: afdd6f6627a8ffebccc6d7d967b42e45.dir
+      size: 4615
       nfiles: 2
