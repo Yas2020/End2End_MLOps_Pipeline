@@ -1,0 +1,38 @@
+[2025-08-07T22:29:34.002+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-07T22:29:34.088+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.preprocess_dvc manual__2025-08-07T22:29:29.482579+00:00 [queued]>
+[2025-08-07T22:29:34.106+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.preprocess_dvc manual__2025-08-07T22:29:29.482579+00:00 [queued]>
+[2025-08-07T22:29:34.107+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-08-07T22:29:34.137+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): preprocess_dvc> on 2025-08-07 22:29:29.482579+00:00
+[2025-08-07T22:29:34.148+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=156) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-07T22:29:34.151+0000] {standard_task_runner.py:63} INFO - Started process 157 to run task
+[2025-08-07T22:29:34.150+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'preprocess_dvc', 'manual__2025-08-07T22:29:29.482579+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag_2.py', '--cfg-path', '/tmp/tmp6wnuqmu7']
+[2025-08-07T22:29:34.154+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask preprocess_dvc
+[2025-08-07T22:29:34.240+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.preprocess_dvc manual__2025-08-07T22:29:29.482579+00:00 [running]> on host b040694cec87
+[2025-08-07T22:29:34.440+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='preprocess_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-07T22:29:29.482579+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-07T22:29:29.482579+00:00'
+[2025-08-07T22:29:34.443+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-07T22:29:34.498+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-07T22:29:34.502+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/ml_pipeline && dvc repro preprocess']
+[2025-08-07T22:29:34.519+0000] {subprocess.py:86} INFO - Output:
+[2025-08-07T22:29:39.206+0000] {subprocess.py:93} INFO - Running stage 'preprocess':
+[2025-08-07T22:29:39.211+0000] {subprocess.py:93} INFO - > python preprocessing/preprocess_task.py
+[2025-08-07T22:29:45.038+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-07 22:29:45,037", "levelname": "INFO", "message": "\u2705 Saved pipeline: artifacts/preprocess/pipeline_v20250801_144307.pkl"}
+[2025-08-07T22:29:45.039+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-07 22:29:45,038", "levelname": "INFO", "message": "\ud83d\udcc4 Saved metadata: artifacts/preprocess/preprocess_metadata_v20250801_144307.json"}
+[2025-08-07T22:29:45.040+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-07 22:29:45,038", "levelname": "INFO", "message": "\ud83d\udce6 Updated version_meta.json"}
+[2025-08-07T22:29:45.640+0000] {subprocess.py:93} INFO - Updating lock file 'dvc.lock'
+[2025-08-07T22:29:45.668+0000] {subprocess.py:93} INFO - 
+[2025-08-07T22:29:45.670+0000] {subprocess.py:93} INFO - To track the changes with git, run:
+[2025-08-07T22:29:45.671+0000] {subprocess.py:93} INFO - 
+[2025-08-07T22:29:45.673+0000] {subprocess.py:93} INFO - 	git add dvc.lock
+[2025-08-07T22:29:45.674+0000] {subprocess.py:93} INFO - 
+[2025-08-07T22:29:45.676+0000] {subprocess.py:93} INFO - To enable auto staging, run:
+[2025-08-07T22:29:45.678+0000] {subprocess.py:93} INFO - 
+[2025-08-07T22:29:45.679+0000] {subprocess.py:93} INFO - 	dvc config core.autostage true
+[2025-08-07T22:29:45.683+0000] {subprocess.py:93} INFO - Use `dvc push` to send your updates to remote storage.
+[2025-08-07T22:29:46.206+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-07T22:29:46.211+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-07T22:29:46.270+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=preprocess_dvc, run_id=manual__2025-08-07T22:29:29.482579+00:00, execution_date=20250807T222929, start_date=20250807T222934, end_date=20250807T222946
+[2025-08-07T22:29:46.343+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-07T22:29:46.430+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-08-07T22:29:46.434+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,2 @@
+*.env
+infer_server/*.env

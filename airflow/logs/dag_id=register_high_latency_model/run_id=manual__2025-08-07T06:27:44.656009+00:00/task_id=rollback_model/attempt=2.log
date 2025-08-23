@@ -1,0 +1,147 @@
+[2025-08-07T06:37:11.738+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-07T06:37:11.771+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: register_high_latency_model.rollback_model manual__2025-08-07T06:27:44.656009+00:00 [queued]>
+[2025-08-07T06:37:11.781+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: register_high_latency_model.rollback_model manual__2025-08-07T06:27:44.656009+00:00 [queued]>
+[2025-08-07T06:37:11.782+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-08-07T06:37:11.804+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): rollback_model> on 2025-08-07 06:27:44.656009+00:00
+[2025-08-07T06:37:11.816+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=6657) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-07T06:37:11.820+0000] {standard_task_runner.py:63} INFO - Started process 6667 to run task
+[2025-08-07T06:37:11.820+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'register_high_latency_model', 'rollback_model', 'manual__2025-08-07T06:27:44.656009+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/test_model_rollback.py', '--cfg-path', '/tmp/tmp7k96i91f']
+[2025-08-07T06:37:11.826+0000] {standard_task_runner.py:91} INFO - Job 29: Subtask rollback_model
+[2025-08-07T06:37:12.258+0000] {task_command.py:426} INFO - Running <TaskInstance: register_high_latency_model.rollback_model manual__2025-08-07T06:27:44.656009+00:00 [running]> on host 875a2765ee06
+[2025-08-07T06:37:12.467+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='register_high_latency_model' AIRFLOW_CTX_TASK_ID='rollback_model' AIRFLOW_CTX_EXECUTION_DATE='2025-08-07T06:27:44.656009+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-07T06:27:44.656009+00:00'
+[2025-08-07T06:37:12.479+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-07T06:37:13.669+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2025-08-07T06:37:14.794+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:   0%|          | 0/5 [00:00<?, ?it/s]
+[2025-08-07T06:37:14.797+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  20%|##        | 1/5 [00:00<00:00, 2206.37it/s]
+[2025-08-07T06:37:14.799+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  40%|####      | 2/5 [00:00<00:00, 781.72it/s] 
+[2025-08-07T06:37:14.801+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  60%|######    | 3/5 [00:00<00:00, 744.24it/s]
+[2025-08-07T06:37:14.802+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  80%|########  | 4/5 [00:00<00:00, 757.88it/s]
+[2025-08-07T06:37:14.804+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 723.03it/s]
+[2025-08-07T06:37:14.805+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 575.07it/s]
+[2025-08-07T06:37:14.830+0000] {logging_mixin.py:188} INFO - Preprocessor extracted successfully
+[2025-08-07T06:37:14.832+0000] {logging_mixin.py:188} INFO - 📄 Starting MLflow run for FraudDetectionModel
+[2025-08-07T06:37:14.980+0000] {logging_mixin.py:188} WARNING - 2025/08/07 06:37:14 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-08-07T06:37:15.049+0000] {logging_mixin.py:188} WARNING - 2025/08/07 06:37:15 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+[2025-08-07T06:37:33.459+0000] {logging_mixin.py:188} WARNING - 2025/08/07 06:37:33 WARNING mlflow.utils.environment: Encountered an unexpected error while inferring pip requirements (model URI: /tmp/tmpkvrd4z30/model/model.pkl, flavor: sklearn). Fall back to return ['scikit-learn==1.7.1', 'cloudpickle==3.1.1']. Set logging level to DEBUG to see the full traceback.
+[2025-08-07T06:37:33.485+0000] {logging_mixin.py:188} WARNING - 2025/08/07 06:37:33 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+[2025-08-07T06:37:33.903+0000] {logging_mixin.py:188} INFO - ✅ Model logged
+[2025-08-07T06:37:33.960+0000] {logging_mixin.py:188} WARNING - Registered model 'FraudDetectionModel' already exists. Creating a new version of this model...
+[2025-08-07T06:41:41.230+0000] {logging_mixin.py:188} INFO - 🏃 View run resilient-skink-363 at: http://mlflow:5000/#/experiments/1/runs/6d6f954d5d25405faed70a7baa59969d
+[2025-08-07T06:41:41.232+0000] {logging_mixin.py:188} INFO - 🧪 View experiment at: http://mlflow:5000/#/experiments/1
+[2025-08-07T06:41:41.262+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-07T06:41:41.263+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+urllib3.exceptions.ResponseError: too many 500 error responses
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 948, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 948, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 948, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 4 more times]
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 938, in urlopen
+    retries = retries.increment(method, url, response=response, _pool=self)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='mlflow', port=5000): Max retries exceeded with url: /api/2.0/mlflow/model-versions/create (Caused by ResponseError('too many 500 error responses'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 230, in http_request
+    return _get_http_response_with_retries(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/utils/request_utils.py", line 237, in _get_http_response_with_retries
+    return session.request(method, url, allow_redirects=allow_redirects, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/adapters.py", line 510, in send
+    raise RetryError(e, request=request)
+requests.exceptions.RetryError: HTTPConnectionPool(host='mlflow', port=5000): Max retries exceeded with url: /api/2.0/mlflow/model-versions/create (Caused by ResponseError('too many 500 error responses'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/test_model_rollback.py", line 83, in register_high_latency_model_from_latest_version
+    result = mlflow.register_model(model_uri=logged_model_uri, name=MODEL_NAME)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/tracking/_model_registry/fluent.py", line 129, in register_model
+    return _register_model(
+           ^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/tracking/_model_registry/fluent.py", line 213, in _register_model
+    create_version_response = client._create_model_version(
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/tracking/client.py", line 4183, in _create_model_version
+    return self._get_registry_client().create_model_version(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/telemetry/track.py", line 22, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/tracking/_model_registry/client.py", line 258, in create_model_version
+    mv = self.store.create_model_version(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/store/model_registry/rest_store.py", line 275, in create_model_version
+    response_proto = self._call_endpoint(CreateModelVersion, req_body)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/store/model_registry/base_rest_store.py", line 42, in _call_endpoint
+    return call_endpoint(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 551, in call_endpoint
+    response = http_request(**call_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 253, in http_request
+    raise MlflowException(f"API request to {url} failed with exception {e}")
+mlflow.exceptions.MlflowException: API request to http://mlflow:5000/api/2.0/mlflow/model-versions/create failed with exception HTTPConnectionPool(host='mlflow', port=5000): Max retries exceeded with url: /api/2.0/mlflow/model-versions/create (Caused by ResponseError('too many 500 error responses'))
+[2025-08-07T06:41:41.287+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=register_high_latency_model, task_id=rollback_model, run_id=manual__2025-08-07T06:27:44.656009+00:00, execution_date=20250807T062744, start_date=20250807T063711, end_date=20250807T064141
+[2025-08-07T06:41:41.315+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 29 for task rollback_model (API request to http://mlflow:5000/api/2.0/mlflow/model-versions/create failed with exception HTTPConnectionPool(host='mlflow', port=5000): Max retries exceeded with url: /api/2.0/mlflow/model-versions/create (Caused by ResponseError('too many 500 error responses')); 6667)
+[2025-08-07T06:41:41.369+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-07T06:41:41.398+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-07T06:41:41.401+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

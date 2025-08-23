@@ -1,0 +1,69 @@
+[2025-08-11T02:26:50.205+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-11T02:26:50.245+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.etl_task manual__2025-08-11T02:26:38.541150+00:00 [queued]>
+[2025-08-11T02:26:50.258+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.etl_task manual__2025-08-11T02:26:38.541150+00:00 [queued]>
+[2025-08-11T02:26:50.259+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-11T02:26:50.282+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): etl_task> on 2025-08-11 02:26:38.541150+00:00
+[2025-08-11T02:26:50.293+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=120) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-11T02:26:50.296+0000] {standard_task_runner.py:63} INFO - Started process 129 to run task
+[2025-08-11T02:26:50.296+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl', 'etl_task', 'manual__2025-08-11T02:26:38.541150+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline.py', '--cfg-path', '/tmp/tmp23ns41la']
+[2025-08-11T02:26:50.301+0000] {standard_task_runner.py:91} INFO - Job 23: Subtask etl_task
+[2025-08-11T02:26:50.378+0000] {task_command.py:426} INFO - Running <TaskInstance: etl.etl_task manual__2025-08-11T02:26:38.541150+00:00 [running]> on host 4ada121dfef0
+[2025-08-11T02:26:50.514+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='etl_task' AIRFLOW_CTX_EXECUTION_DATE='2025-08-11T02:26:38.541150+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-11T02:26:38.541150+00:00'
+[2025-08-11T02:26:50.516+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-11T02:26:50.683+0000] {log.py:232} WARNING - {"asctime": "2025-08-11 02:26:50,602", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Simulated data generated."}
+[2025-08-11T02:26:50.602+0000] {etl_task.py:114} INFO - Simulated data generated.
+[2025-08-11T02:26:50.928+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-11T02:26:50.929+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 115, in main
+    csv_path, meta_path = save_data_with_version(data, version)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 85, in save_data_with_version
+    raw_data_path = save_pipeline_to_minio(data, version_tag)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 42, in save_pipeline_to_minio
+    s3.upload_fileobj(buffer, S3_BUCKET, s3_key)
+  File "/home/airflow/.local/lib/python3.12/site-packages/boto3/s3/inject.py", line 642, in upload_fileobj
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/s3transfer/futures.py", line 103, in result
+    return self._coordinator.result()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/s3transfer/futures.py", line 266, in result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/s3transfer/tasks.py", line 139, in __call__
+    return self._execute_main(kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/s3transfer/tasks.py", line 162, in _execute_main
+    return_value = self._main(**kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/s3transfer/upload.py", line 764, in _main
+    client.put_object(Bucket=bucket, Key=key, Body=body, **extra_args)
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/client.py", line 553, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/botocore/client.py", line 1009, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.NoSuchBucket: An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+[2025-08-11T02:26:50.948+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=etl, task_id=etl_task, run_id=manual__2025-08-11T02:26:38.541150+00:00, execution_date=20250811T022638, start_date=20250811T022650, end_date=20250811T022650
+[2025-08-11T02:26:50.970+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 23 for task etl_task (An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist; 129)
+[2025-08-11T02:26:51.012+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-11T02:26:51.036+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-11T02:26:51.038+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

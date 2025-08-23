@@ -1,0 +1,63 @@
+[2025-08-07T22:32:07.284+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-07T22:32:07.325+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: register_high_latency_model.rollback_model manual__2025-08-07T22:31:59.317749+00:00 [queued]>
+[2025-08-07T22:32:07.335+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: register_high_latency_model.rollback_model manual__2025-08-07T22:31:59.317749+00:00 [queued]>
+[2025-08-07T22:32:07.336+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-08-07T22:32:07.353+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): rollback_model> on 2025-08-07 22:31:59.317749+00:00
+[2025-08-07T22:32:07.365+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=300) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-07T22:32:07.367+0000] {standard_task_runner.py:63} INFO - Started process 317 to run task
+[2025-08-07T22:32:07.367+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'register_high_latency_model', 'rollback_model', 'manual__2025-08-07T22:31:59.317749+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/test_model_rollback.py', '--cfg-path', '/tmp/tmpv9wjom0c']
+[2025-08-07T22:32:07.371+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask rollback_model
+[2025-08-07T22:32:07.438+0000] {task_command.py:426} INFO - Running <TaskInstance: register_high_latency_model.rollback_model manual__2025-08-07T22:31:59.317749+00:00 [running]> on host b040694cec87
+[2025-08-07T22:32:07.943+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='register_high_latency_model' AIRFLOW_CTX_TASK_ID='rollback_model' AIRFLOW_CTX_EXECUTION_DATE='2025-08-07T22:31:59.317749+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-07T22:31:59.317749+00:00'
+[2025-08-07T22:32:07.945+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-07T22:32:08.412+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2025-08-07T22:32:09.280+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:   0%|          | 0/5 [00:00<?, ?it/s]
+[2025-08-07T22:32:09.281+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  20%|##        | 1/5 [00:00<00:00, 5592.41it/s]
+[2025-08-07T22:32:09.283+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  40%|####      | 2/5 [00:00<00:00, 1222.12it/s]
+[2025-08-07T22:32:09.284+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  60%|######    | 3/5 [00:00<00:00, 1042.49it/s]
+[2025-08-07T22:32:09.285+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  80%|########  | 4/5 [00:00<00:00, 1000.01it/s]
+[2025-08-07T22:32:09.286+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 959.88it/s] 
+[2025-08-07T22:32:09.287+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 781.82it/s]
+[2025-08-07T22:32:09.308+0000] {logging_mixin.py:188} INFO - Preprocessor extracted successfully
+[2025-08-07T22:32:09.309+0000] {logging_mixin.py:188} INFO - 📄 Starting MLflow run for FraudDetectionModel
+[2025-08-07T22:32:09.440+0000] {logging_mixin.py:188} WARNING - 2025/08/07 22:32:09 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-08-07T22:32:09.496+0000] {logging_mixin.py:188} WARNING - 2025/08/07 22:32:09 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+[2025-08-07T22:32:17.470+0000] {logging_mixin.py:188} WARNING - 2025/08/07 22:32:17 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+[2025-08-07T22:32:17.710+0000] {logging_mixin.py:188} WARNING - Registered model 'FraudDetectionModel' already exists. Creating a new version of this model...
+[2025-08-07T22:32:17.874+0000] {logging_mixin.py:188} WARNING - 2025/08/07 22:32:17 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: FraudDetectionModel, version 2
+[2025-08-07T22:32:17.875+0000] {logging_mixin.py:188} WARNING - Created version '2' of model 'FraudDetectionModel'.
+[2025-08-07T22:32:17.927+0000] {logging_mixin.py:188} INFO - ✅ Model logged and registered!
+[2025-08-07T22:32:17.961+0000] {logging_mixin.py:188} INFO - 🏃 View run wise-cow-225 at: http://mlflow:5000/#/experiments/1/runs/1a8e3e867aad4bc2a9e2309906da3442
+[2025-08-07T22:32:17.962+0000] {logging_mixin.py:188} INFO - 🧪 View experiment at: http://mlflow:5000/#/experiments/1
+[2025-08-07T22:32:17.991+0000] {warnings.py:110} WARNING - /opt/***/dags/test_model_rollback.py:69: FutureWarning: ``mlflow.tracking.client.MlflowClient.get_latest_versions`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/latest/model-registry.html#migrating-from-stages
+  latest_version = client.get_latest_versions(MODEL_NAME, stages=["None"])[-1]
+
+[2025-08-07T22:32:18.026+0000] {warnings.py:110} WARNING - /opt/***/dags/test_model_rollback.py:70: FutureWarning: ``mlflow.tracking.client.MlflowClient.transition_model_version_stage`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/latest/model-registry.html#migrating-from-stages
+  client.transition_model_version_stage(
+
+[2025-08-07T22:32:18.073+0000] {logging_mixin.py:188} INFO - 🚀 Model version 2 transitioned to 'Production'
+[2025-08-07T22:32:18.074+0000] {logging_mixin.py:188} INFO - ✅ Model registration and promotion complete.
+[2025-08-07T22:32:18.074+0000] {logging_mixin.py:188} INFO - ✅ High latency model registered successfully.
+[2025-08-07T22:32:18.075+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-08-07T22:32:18.076+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-07T22:32:18.089+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=register_high_latency_model, task_id=rollback_model, run_id=manual__2025-08-07T22:31:59.317749+00:00, execution_date=20250807T223159, start_date=20250807T223207, end_date=20250807T223218
+[2025-08-07T22:32:18.141+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-07T22:32:18.451+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-07T22:32:18.454+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

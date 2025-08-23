@@ -1,0 +1,76 @@
+[2025-08-07T06:45:31.432+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-07T06:45:31.476+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: register_high_latency_model.rollback_model manual__2025-08-07T06:35:59.717976+00:00 [queued]>
+[2025-08-07T06:45:31.494+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: register_high_latency_model.rollback_model manual__2025-08-07T06:35:59.717976+00:00 [queued]>
+[2025-08-07T06:45:31.495+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-08-07T06:45:31.530+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): rollback_model> on 2025-08-07 06:35:59.717976+00:00
+[2025-08-07T06:45:31.546+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=6812) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-07T06:45:31.549+0000] {standard_task_runner.py:63} INFO - Started process 6822 to run task
+[2025-08-07T06:45:31.549+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'register_high_latency_model', 'rollback_model', 'manual__2025-08-07T06:35:59.717976+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/test_model_rollback.py', '--cfg-path', '/tmp/tmpi8_scjg8']
+[2025-08-07T06:45:31.554+0000] {standard_task_runner.py:91} INFO - Job 30: Subtask rollback_model
+[2025-08-07T06:45:32.046+0000] {task_command.py:426} INFO - Running <TaskInstance: register_high_latency_model.rollback_model manual__2025-08-07T06:35:59.717976+00:00 [running]> on host 875a2765ee06
+[2025-08-07T06:45:32.228+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='register_high_latency_model' AIRFLOW_CTX_TASK_ID='rollback_model' AIRFLOW_CTX_EXECUTION_DATE='2025-08-07T06:35:59.717976+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-07T06:35:59.717976+00:00'
+[2025-08-07T06:45:32.230+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-07T06:45:32.949+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2025-08-07T06:45:33.776+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:   0%|          | 0/5 [00:00<?, ?it/s]
+[2025-08-07T06:45:33.778+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  20%|##        | 1/5 [00:00<00:00, 3521.67it/s]
+[2025-08-07T06:45:33.779+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  40%|####      | 2/5 [00:00<00:00, 1031.56it/s]
+[2025-08-07T06:45:33.781+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  60%|######    | 3/5 [00:00<00:00, 855.86it/s] 
+[2025-08-07T06:45:33.783+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  80%|########  | 4/5 [00:00<00:00, 794.60it/s]
+[2025-08-07T06:45:33.784+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 777.36it/s]
+[2025-08-07T06:45:33.785+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 648.21it/s]
+[2025-08-07T06:45:33.801+0000] {logging_mixin.py:188} INFO - Preprocessor extracted successfully
+[2025-08-07T06:45:33.802+0000] {logging_mixin.py:188} INFO - 📄 Starting MLflow run for FraudDetectionModel
+[2025-08-07T06:45:33.940+0000] {logging_mixin.py:188} WARNING - 2025/08/07 06:45:33 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+The git executable must be specified in one of the following ways:
+    - be included in your $PATH
+    - be set via $GIT_PYTHON_GIT_EXECUTABLE
+    - explicitly set via git.refresh(<full-path-to-git-executable>)
+
+All git commands will error until this is rectified.
+
+This initial message can be silenced or aggravated in the future by setting the
+$GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+    - quiet|q|silence|s|silent|none|n|0: for no message or exception
+    - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+    - error|e|exception|raise|r|2: for a raised exception
+
+Example:
+    export GIT_PYTHON_REFRESH=quiet
+[2025-08-07T06:45:33.995+0000] {logging_mixin.py:188} WARNING - 2025/08/07 06:45:33 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+[2025-08-07T06:45:45.019+0000] {logging_mixin.py:188} WARNING - 2025/08/07 06:45:45 WARNING mlflow.utils.environment: Encountered an unexpected error while inferring pip requirements (model URI: /tmp/tmp7rqiny4b/model/model.pkl, flavor: sklearn). Fall back to return ['scikit-learn==1.7.1', 'cloudpickle==3.1.1']. Set logging level to DEBUG to see the full traceback.
+[2025-08-07T06:45:45.047+0000] {logging_mixin.py:188} WARNING - 2025/08/07 06:45:45 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.
+[2025-08-07T06:45:45.333+0000] {logging_mixin.py:188} WARNING - Registered model 'FraudDetectionModel' already exists. Creating a new version of this model...
+[2025-08-07T06:45:45.659+0000] {logging_mixin.py:188} WARNING - 2025/08/07 06:45:45 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: FraudDetectionModel, version 2
+[2025-08-07T06:45:45.662+0000] {logging_mixin.py:188} WARNING - Created version '2' of model 'FraudDetectionModel'.
+[2025-08-07T06:45:45.776+0000] {logging_mixin.py:188} INFO - ✅ Model logged and registered!
+[2025-08-07T06:45:45.851+0000] {logging_mixin.py:188} INFO - 🏃 View run carefree-mink-192 at: http://mlflow:5000/#/experiments/1/runs/8fef5b1ff529436cbbfb38ced7eab408
+[2025-08-07T06:45:45.853+0000] {logging_mixin.py:188} INFO - 🧪 View experiment at: http://mlflow:5000/#/experiments/1
+[2025-08-07T06:45:45.901+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-07T06:45:45.903+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/test_model_rollback.py", line 86, in register_high_latency_model_from_latest_version
+    latest_version = client.get_latest_versions(MODEL_NAME, stages=["None"])
+                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'MlflowClient' object has no attribute 'get_latest'
+[2025-08-07T06:45:45.949+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=register_high_latency_model, task_id=rollback_model, run_id=manual__2025-08-07T06:35:59.717976+00:00, execution_date=20250807T063559, start_date=20250807T064531, end_date=20250807T064545
+[2025-08-07T06:45:45.992+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 30 for task rollback_model ('MlflowClient' object has no attribute 'get_latest'; 6822)
+[2025-08-07T06:45:46.051+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-07T06:45:46.092+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-07T06:45:46.097+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

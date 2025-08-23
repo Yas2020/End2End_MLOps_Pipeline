@@ -1,60 +1,70 @@
 schema: '2.0'
 stages:
   preprocess:
-    cmd: python preprocessing/preprocess_task.py
+    cmd: python data/preprocessing/preprocess_task.py
     deps:
-    - path: data/raw
-      hash: md5
-      md5: cad986e881633ec23cc1ac2ebbd77e4e.dir
-      size: 120492
-      nfiles: 4
-    - path: preprocessing/preprocess_task.py
+    - path: data/preprocessing/preprocess_task.py
       hash: md5
       md5: 4fa66d38a3045d446b162e9deae57b0c
       size: 3855
-    - path: version_meta.json
+    - path: data/raw
       hash: md5
-      md5: 641654a2449589c4eb672641d29122a0
-      size: 637
+      md5: eb98dfb34b218e68ba8dd9c1ec5fc20d.dir
+      size: 60246
+      nfiles: 2
     outs:
     - path: artifacts/preprocess
       hash: md5
-      md5: 0e22b816ee5cd7b4dc44258cf744b832.dir
+      md5: 47f5e0903152e8e02fe26465c3cf8e93.dir
       size: 3367
       nfiles: 2
   train_outlier:
-    cmd: python train/train_outlier_detector_task.py
+    cmd: python models/train_outlier_detector_task.py
     deps:
     - path: artifacts/preprocess
       hash: md5
-      md5: 0e22b816ee5cd7b4dc44258cf744b832.dir
+      md5: 80e3662eb142ab7858f8cc46c7def466.dir
       size: 3367
       nfiles: 2
-    - path: train/train_outlier_detector_task.py
+    - path: models/train_outlier_detector_task.py
       hash: md5
-      md5: c890fad05138f5998f3bb66aaa32f5f3
-      size: 5042
+      md5: a0f255e434d8a536dc9ac41895fc91ad
+      size: 5875
     outs:
     - path: artifacts/models/outlier
       hash: md5
-      md5: a15799cd723e1cf47eaad263c90f5f55.dir
-      size: 1781007
+      md5: e64d3a2cf55a976ed5b2ea3ce10ce46d.dir
+      size: 1941152
       nfiles: 2
   train_model:
-    cmd: python train/train_fraud_detector_task.py
+    cmd: python models/train_fraud_detector_task.py
     deps:
     - path: artifacts/preprocess
       hash: md5
-      md5: 0e22b816ee5cd7b4dc44258cf744b832.dir
+      md5: 47f5e0903152e8e02fe26465c3cf8e93.dir
       size: 3367
       nfiles: 2
-    - path: train/train_fraud_detector_task.py
+    - path: models/train_fraud_detector_task.py
       hash: md5
-      md5: 376a9c78fc1a8666efdce659aa84b446
-      size: 8927
+      md5: 701e682127623450f3873819eae6dcf4
+      size: 9883
     outs:
     - path: artifacts/models/fraud
       hash: md5
-      md5: afdd6f6627a8ffebccc6d7d967b42e45.dir
-      size: 4615
+      md5: 2218e5e4765485b19208fd64d61128e5.dir
+      size: 4454
+      nfiles: 2
+  ingest:
+    cmd: python data/ingest/etl_task.py && python data/ingest/download_data.py
+    deps:
+    - path: data/ingest
+      hash: md5
+      md5: 29c50643c88125e27462ecdcdf1fd376.dir
+      size: 9893
+      nfiles: 3
+    outs:
+    - path: data/raw
+      hash: md5
+      md5: eb98dfb34b218e68ba8dd9c1ec5fc20d.dir
+      size: 60246
       nfiles: 2

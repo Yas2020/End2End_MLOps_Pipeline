@@ -1,0 +1,39 @@
+[2025-08-01T21:13:39.426+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-01T21:13:39.519+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.preprocess_dvc manual__2025-08-01T21:13:36.357598+00:00 [queued]>
+[2025-08-01T21:13:39.556+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.preprocess_dvc manual__2025-08-01T21:13:36.357598+00:00 [queued]>
+[2025-08-01T21:13:39.557+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-08-01T21:13:39.635+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): preprocess_dvc> on 2025-08-01 21:13:36.357598+00:00
+[2025-08-01T21:13:39.652+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=99) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-01T21:13:39.655+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'preprocess_dvc', 'manual__2025-08-01T21:13:36.357598+00:00', '--job-id', '73', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag_2.py', '--cfg-path', '/tmp/tmpbgmbutx4']
+[2025-08-01T21:13:39.657+0000] {standard_task_runner.py:63} INFO - Started process 100 to run task
+[2025-08-01T21:13:39.658+0000] {standard_task_runner.py:91} INFO - Job 73: Subtask preprocess_dvc
+[2025-08-01T21:13:39.822+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.preprocess_dvc manual__2025-08-01T21:13:36.357598+00:00 [running]> on host 2728e433b325
+[2025-08-01T21:13:40.009+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='preprocess_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-01T21:13:36.357598+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-01T21:13:36.357598+00:00'
+[2025-08-01T21:13:40.011+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-01T21:13:40.046+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-01T21:13:40.050+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/ml_pipeline && dvc repro preprocess']
+[2025-08-01T21:13:40.074+0000] {subprocess.py:86} INFO - Output:
+[2025-08-01T21:13:42.237+0000] {subprocess.py:93} INFO - ERROR: you are not inside of a DVC repository (checked up to mount point '/opt/***/ml_pipeline')
+[2025-08-01T21:13:42.448+0000] {subprocess.py:97} INFO - Command exited with return code 253
+[2025-08-01T21:13:42.450+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-01T21:13:42.465+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 253.
+[2025-08-01T21:13:42.473+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=ml_pipeline_dvc, task_id=preprocess_dvc, run_id=manual__2025-08-01T21:13:36.357598+00:00, execution_date=20250801T211336, start_date=20250801T211339, end_date=20250801T211342
+[2025-08-01T21:13:42.492+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 73 for task preprocess_dvc (Bash command failed. The command returned a non-zero exit code 253.; 100)
+[2025-08-01T21:13:42.515+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-01T21:13:42.547+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-01T21:13:42.549+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

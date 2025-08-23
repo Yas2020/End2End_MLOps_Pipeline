@@ -1,0 +1,34 @@
+stages:
+  ingest:
+    cmd: python data/ingest/etl_task.py && python data/ingest/download_data.py 
+    deps:
+      - data/ingest     
+    outs:
+      - data/raw
+      
+  preprocess:
+    cmd: python data/preprocessing/preprocess_task.py
+    deps:
+      - data/raw
+      - data/preprocessing/preprocess_task.py
+    outs:
+      - artifacts/preprocess
+
+  train_outlier:
+    cmd: python models/train_outlier_detector_task.py
+    deps:
+      - models/train_outlier_detector_task.py
+      - artifacts/preprocess
+    outs:
+      - artifacts/models/outlier
+
+  train_model:
+    cmd: python models/train_fraud_detector_task.py
+    deps:
+      - models/train_fraud_detector_task.py
+      - artifacts/preprocess
+    outs:
+      - artifacts/models/fraud
+    
+metrics:
+  - version_meta.json

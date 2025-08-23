@@ -1,0 +1,249 @@
+[2025-08-10T23:35:17.310+0000] {processor.py:161} INFO - Started process (PID=81) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:35:17.312+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:35:17.315+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:35:17.314+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:35:19.931+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:35:20.074+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:35:20,073", "levelname": "INFO", "name": "airflow.providers.fab.auth_manager.security_manager.override", "message": "Created Permission View: can delete on DAG:ml_pipeline_dag"}
+[2025-08-10T23:35:20.112+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:35:20,112", "levelname": "INFO", "name": "airflow.providers.fab.auth_manager.security_manager.override", "message": "Created Permission View: can edit on DAG:ml_pipeline_dag"}
+[2025-08-10T23:35:20.128+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:35:20,128", "levelname": "INFO", "name": "airflow.providers.fab.auth_manager.security_manager.override", "message": "Created Permission View: can read on DAG:ml_pipeline_dag"}
+[2025-08-10T23:35:20.132+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:35:20,131", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:35:20.157+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:35:20,156", "levelname": "INFO", "name": "airflow.models.dag", "message": "Creating ORM DAG for ml_pipeline_dag"}
+[2025-08-10T23:35:20.159+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:35:20,158", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:35:20.188+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 2.888 seconds
+[2025-08-10T23:35:50.375+0000] {processor.py:161} INFO - Started process (PID=103) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:35:50.376+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:35:50.379+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:35:50.378+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:35:54.773+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:35:54.929+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:35:54,928", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:35:54.985+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:35:54,985", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:35:55.041+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 4.674 seconds
+[2025-08-10T23:36:25.243+0000] {processor.py:161} INFO - Started process (PID=139) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:36:25.245+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:36:25.248+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:36:25.248+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:36:26.799+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:36:26.827+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:36:26,827", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:36:26.842+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:36:26,841", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:36:26.863+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.630 seconds
+[2025-08-10T23:36:57.817+0000] {processor.py:161} INFO - Started process (PID=171) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:36:57.819+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:36:57.822+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:36:57.822+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:36:59.139+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:36:59.165+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:36:59,164", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:36:59.179+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:36:59,179", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:36:59.198+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.390 seconds
+[2025-08-10T23:37:29.492+0000] {processor.py:161} INFO - Started process (PID=203) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:37:29.493+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:37:29.496+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:37:29.495+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:37:30.831+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:37:30.858+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:37:30,857", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:37:30.871+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:37:30,870", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:37:30.896+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.412 seconds
+[2025-08-10T23:38:01.101+0000] {processor.py:161} INFO - Started process (PID=236) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:38:01.103+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:38:01.105+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:38:01.105+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:38:02.683+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:38:02.714+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:38:02,714", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:38:02.728+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:38:02,728", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:38:02.749+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.657 seconds
+[2025-08-10T23:38:33.072+0000] {processor.py:161} INFO - Started process (PID=268) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:38:33.073+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:38:33.076+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:38:33.075+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:38:34.605+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:38:34.633+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:38:34,633", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:38:34.647+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:38:34,647", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:38:34.675+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.613 seconds
+[2025-08-10T23:39:05.332+0000] {processor.py:161} INFO - Started process (PID=300) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:39:05.334+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:39:05.337+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:39:05.336+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:39:06.709+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:39:06.735+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:39:06,735", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:39:06.749+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:39:06,749", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:39:06.770+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.446 seconds
+[2025-08-10T23:39:37.160+0000] {processor.py:161} INFO - Started process (PID=332) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:39:37.161+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:39:37.165+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:39:37.164+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:39:38.540+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:39:38.566+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:39:38,566", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:39:38.580+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:39:38,580", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:39:38.599+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.448 seconds
+[2025-08-10T23:40:09.044+0000] {processor.py:161} INFO - Started process (PID=365) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:40:09.045+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:40:09.048+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:40:09.047+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:40:10.495+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:40:10.526+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:40:10,525", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:40:10.538+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:40:10,538", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:40:10.566+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.531 seconds
+[2025-08-10T23:40:40.679+0000] {processor.py:161} INFO - Started process (PID=398) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:40:40.681+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:40:40.684+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:40:40.683+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:40:42.396+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:40:42.423+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:40:42,423", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:40:42.437+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:40:42,437", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:40:42.460+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.804 seconds
+[2025-08-10T23:41:12.848+0000] {processor.py:161} INFO - Started process (PID=439) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:41:12.850+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:41:12.853+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:41:12.853+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:41:14.384+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:41:14.413+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:41:14,412", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:41:14.427+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:41:14,427", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:41:14.453+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.614 seconds
+[2025-08-10T23:41:45.275+0000] {processor.py:161} INFO - Started process (PID=477) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:41:45.276+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:41:45.279+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:41:45.279+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:41:46.933+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:41:46.958+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:41:46,958", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:41:46.972+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:41:46,972", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:41:46.999+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.739 seconds
+[2025-08-10T23:42:17.439+0000] {processor.py:161} INFO - Started process (PID=512) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:42:17.443+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:42:17.448+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:42:17.447+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:42:21.798+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:42:21.827+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:42:21,827", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:42:21.842+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:42:21,842", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:42:21.863+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 4.441 seconds
+[2025-08-10T23:42:52.238+0000] {processor.py:161} INFO - Started process (PID=547) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:42:52.239+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:42:52.243+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:42:52.242+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:42:53.991+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:42:54.021+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:42:54,021", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:42:54.035+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:42:54,035", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:42:54.057+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.829 seconds
+[2025-08-10T23:43:24.628+0000] {processor.py:161} INFO - Started process (PID=585) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:43:24.630+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:43:24.638+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:24.637+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:43:27.782+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:43:27.812+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:43:27,811", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:43:27.826+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:43:27,826", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:43:27.848+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 3.237 seconds
+[2025-08-10T23:43:58.147+0000] {processor.py:161} INFO - Started process (PID=627) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:43:58.149+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:43:58.152+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:58.151+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:43:59.663+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:43:59.692+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:43:59,692", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:43:59.706+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:43:59,706", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:43:59.731+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.592 seconds
+[2025-08-10T23:44:30.583+0000] {processor.py:161} INFO - Started process (PID=661) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:44:30.585+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:44:30.593+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:44:30.592+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:44:32.635+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:44:32.661+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:44:32,660", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:44:32.675+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:44:32,675", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:44:32.693+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 2.132 seconds
+[2025-08-10T23:45:02.819+0000] {processor.py:161} INFO - Started process (PID=694) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:45:02.821+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:45:02.824+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:45:02.823+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:45:04.659+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:45:04.688+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:45:04,688", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:45:04.701+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:45:04,701", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:45:04.722+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.911 seconds
+[2025-08-10T23:45:35.255+0000] {processor.py:161} INFO - Started process (PID=727) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:45:35.257+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:45:35.259+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:45:35.259+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:45:36.799+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:45:36.830+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:45:36,829", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:45:36.843+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:45:36,843", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:45:36.862+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.616 seconds
+[2025-08-10T23:46:07.488+0000] {processor.py:161} INFO - Started process (PID=763) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:46:07.489+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:46:07.493+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:46:07.492+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:46:09.156+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:46:09.185+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:46:09,184", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:46:09.199+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:46:09,199", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:46:09.222+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.743 seconds
+[2025-08-10T23:46:39.604+0000] {processor.py:161} INFO - Started process (PID=798) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:46:39.605+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:46:39.608+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:46:39.608+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:46:41.121+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:46:41.154+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:46:41,153", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:46:41.171+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:46:41,171", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:46:41.195+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.600 seconds
+[2025-08-10T23:47:11.467+0000] {processor.py:161} INFO - Started process (PID=833) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:47:11.469+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:47:11.473+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:47:11.472+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:47:12.947+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:47:12.975+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:47:12,975", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:47:12.989+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:47:12,989", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:47:13.015+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.557 seconds
+[2025-08-10T23:53:14.901+0000] {processor.py:161} INFO - Started process (PID=86) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:53:14.902+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:53:14.905+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:53:14.905+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:53:16.786+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:53:16.903+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:53:16,903", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:53:16.915+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:53:16,915", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:53:16.934+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 2.042 seconds
+[2025-08-10T23:53:48.223+0000] {processor.py:161} INFO - Started process (PID=121) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:53:48.225+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:53:48.229+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:53:48.228+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:53:50.079+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:53:50.115+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:53:50,114", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:53:50.141+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:53:50,141", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:53:50.169+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.957 seconds
+[2025-08-10T23:54:20.436+0000] {processor.py:161} INFO - Started process (PID=147) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:54:20.438+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:54:20.442+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:54:20.441+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:54:22.643+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:54:22.686+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:54:22,685", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:54:22.707+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:54:22,707", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:54:22.747+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 2.321 seconds
+[2025-08-10T23:54:53.171+0000] {processor.py:161} INFO - Started process (PID=179) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:54:53.173+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:54:53.175+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:54:53.175+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:54:54.681+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:54:54.728+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:54:54,727", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:54:54.749+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:54:54,748", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:54:54.777+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.614 seconds
+[2025-08-10T23:55:25.170+0000] {processor.py:161} INFO - Started process (PID=212) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:55:25.172+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:55:25.175+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:55:25.174+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:55:26.605+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:55:26.633+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:55:26,632", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:55:26.647+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:55:26,647", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:55:26.668+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.507 seconds
+[2025-08-10T23:55:56.792+0000] {processor.py:161} INFO - Started process (PID=246) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:55:56.794+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:55:56.797+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:55:56.796+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:55:58.361+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:55:58.397+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:55:58,396", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:55:58.415+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:55:58,415", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:55:58.439+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.655 seconds
+[2025-08-10T23:56:28.789+0000] {processor.py:161} INFO - Started process (PID=280) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:56:28.791+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:56:28.794+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:56:28.794+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:56:30.410+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:56:30.455+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:56:30,454", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:56:30.471+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:56:30,471", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:56:30.499+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.796 seconds
+[2025-08-10T23:57:00.926+0000] {processor.py:161} INFO - Started process (PID=314) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:57:00.928+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:57:00.930+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:57:00.930+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:57:02.599+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:57:02.626+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:57:02,625", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:57:02.641+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:57:02,640", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:57:02.662+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.744 seconds
+[2025-08-10T23:57:32.803+0000] {processor.py:161} INFO - Started process (PID=347) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:57:32.805+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:57:32.808+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:57:32.807+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:57:34.520+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:57:34.551+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:57:34,550", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:57:34.567+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:57:34,566", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:57:34.589+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.794 seconds
+[2025-08-10T23:58:04.971+0000] {processor.py:161} INFO - Started process (PID=382) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:58:04.972+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:58:04.975+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:58:04.975+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:58:06.441+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:58:06.469+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:58:06,469", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:58:06.482+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:58:06,482", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:58:06.501+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 1.539 seconds
+[2025-08-10T23:58:37.500+0000] {processor.py:161} INFO - Started process (PID=415) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:58:37.505+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:58:37.512+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:58:37.509+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:58:40.296+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:58:40.412+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:58:40,409", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:58:40.427+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:58:40,427", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:58:40.451+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 2.972 seconds
+[2025-08-10T23:59:46.560+0000] {processor.py:161} INFO - Started process (PID=455) to work on /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:59:46.562+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ml_pipeline_dag_1.py for tasks to queue
+[2025-08-10T23:59:46.567+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:59:46.567+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:59:50.365+0000] {processor.py:840} INFO - DAG(s) 'ml_pipeline_dag' retrieved from /opt/airflow/dags/ml_pipeline_dag_1.py
+[2025-08-10T23:59:50.426+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:59:50,425", "levelname": "INFO", "name": "airflow.models.dag", "message": "Sync 1 DAGs"}
+[2025-08-10T23:59:50.463+0000] {logging_mixin.py:188} INFO - {"asctime": "2025-08-10 23:59:50,462", "levelname": "INFO", "name": "airflow.models.dag", "message": "Setting next_dagrun for ml_pipeline_dag to None, run_after=None"}
+[2025-08-10T23:59:50.508+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ml_pipeline_dag_1.py took 3.963 seconds

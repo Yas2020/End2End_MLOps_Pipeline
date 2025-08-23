@@ -1,0 +1,31 @@
+[2025-08-17T18:55:41.138+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-17T18:55:41.308+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_fraud_detector_dvc manual__2025-08-17T18:54:13.093730+00:00 [queued]>
+[2025-08-17T18:55:41.345+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_fraud_detector_dvc manual__2025-08-17T18:54:13.093730+00:00 [queued]>
+[2025-08-17T18:55:41.349+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-17T18:55:41.432+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): train_fraud_detector_dvc> on 2025-08-17 18:54:13.093730+00:00
+[2025-08-17T18:55:41.452+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=4004) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-17T18:55:41.455+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'train_fraud_detector_dvc', 'manual__2025-08-17T18:54:13.093730+00:00', '--job-id', '331', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline_dag.py', '--cfg-path', '/tmp/tmp43s7iiyc']
+[2025-08-17T18:55:41.458+0000] {standard_task_runner.py:63} INFO - Started process 4005 to run task
+[2025-08-17T18:55:41.460+0000] {standard_task_runner.py:91} INFO - Job 331: Subtask train_fraud_detector_dvc
+[2025-08-17T18:55:41.618+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.train_fraud_detector_dvc manual__2025-08-17T18:54:13.093730+00:00 [running]> on host bea494a05fb4
+[2025-08-17T18:55:41.971+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='train_fraud_detector_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-17T18:54:13.093730+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-17T18:54:13.093730+00:00'
+[2025-08-17T18:55:41.974+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-17T18:55:42.028+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-17T18:55:42.031+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            cd /opt/***/ml_pipeline\n            dvc pull\n            dvc repro train_model\n            dvc push\n        ']
+[2025-08-17T18:55:42.064+0000] {subprocess.py:86} INFO - Output:
+[2025-08-17T18:55:50.935+0000] {subprocess.py:93} INFO - M       artifacts/models/fraud/
+[2025-08-17T18:55:50.944+0000] {subprocess.py:93} INFO - 1 file modified
+[2025-08-17T18:56:06.312+0000] {subprocess.py:93} INFO - Stage 'ingest' didn't change, skipping
+[2025-08-17T18:56:06.331+0000] {subprocess.py:93} INFO - ERROR: failed to reproduce 'preprocess': '/opt/***/ml_pipeline/artifacts/preprocess' is busy, it is being blocked by:
+[2025-08-17T18:56:06.332+0000] {subprocess.py:93} INFO -   (PID 3939): /home/***/.local/bin/dvc repro train_model
+[2025-08-17T18:56:06.335+0000] {subprocess.py:93} INFO - 
+[2025-08-17T18:56:06.337+0000] {subprocess.py:93} INFO - If there are no processes with such PIDs, you can manually remove '/opt/***/ml_pipeline/.dvc/tmp/rwlock' and try again.
+[2025-08-17T18:56:15.593+0000] {subprocess.py:93} INFO - Everything is up to date.
+[2025-08-17T18:56:16.381+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-17T18:56:16.386+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-17T18:56:16.489+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=train_fraud_detector_dvc, run_id=manual__2025-08-17T18:54:13.093730+00:00, execution_date=20250817T185413, start_date=20250817T185541, end_date=20250817T185616
+[2025-08-17T18:56:16.562+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-17T18:56:16.683+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-17T18:56:16.690+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

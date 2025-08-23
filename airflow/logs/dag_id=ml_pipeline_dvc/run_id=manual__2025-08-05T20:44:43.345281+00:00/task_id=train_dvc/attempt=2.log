@@ -1,0 +1,117 @@
+[2025-08-05T20:52:19.197+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-05T20:52:19.254+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_dvc manual__2025-08-05T20:44:43.345281+00:00 [queued]>
+[2025-08-05T20:52:19.268+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_dvc manual__2025-08-05T20:44:43.345281+00:00 [queued]>
+[2025-08-05T20:52:19.269+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-08-05T20:52:19.293+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): train_dvc> on 2025-08-05 20:44:43.345281+00:00
+[2025-08-05T20:52:19.301+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=3531) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-05T20:52:19.304+0000] {standard_task_runner.py:63} INFO - Started process 3540 to run task
+[2025-08-05T20:52:19.304+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'train_dvc', 'manual__2025-08-05T20:44:43.345281+00:00', '--job-id', '51', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag_2.py', '--cfg-path', '/tmp/tmpyt4aa_si']
+[2025-08-05T20:52:19.306+0000] {standard_task_runner.py:91} INFO - Job 51: Subtask train_dvc
+[2025-08-05T20:52:19.373+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.train_dvc manual__2025-08-05T20:44:43.345281+00:00 [running]> on host cb274dbeb17b
+[2025-08-05T20:52:19.507+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='train_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-05T20:44:43.345281+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-05T20:44:43.345281+00:00'
+[2025-08-05T20:52:19.508+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-05T20:52:19.533+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-05T20:52:19.534+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/ml_pipeline && dvc repro train']
+[2025-08-05T20:52:19.547+0000] {subprocess.py:86} INFO - Output:
+[2025-08-05T20:52:21.492+0000] {subprocess.py:93} INFO - Running stage 'preprocess':
+[2025-08-05T20:52:21.494+0000] {subprocess.py:93} INFO - > python preprocessing/preprocess_task.py
+[2025-08-05T20:52:23.400+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-05 20:52:23,399", "levelname": "INFO", "message": "\u2705 Saved pipeline: artifacts/preprocess/pipeline_v20250801_144307.pkl"}
+[2025-08-05T20:52:23.400+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-05 20:52:23,400", "levelname": "INFO", "message": "\ud83d\udcc4 Saved metadata: artifacts/preprocess/preprocess_metadata_v20250801_144307.json"}
+[2025-08-05T20:52:23.401+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-05 20:52:23,400", "levelname": "INFO", "message": "\ud83d\udce6 Updated version_meta.json"}
+[2025-08-05T20:52:23.765+0000] {subprocess.py:93} INFO - Updating lock file 'dvc.lock'
+[2025-08-05T20:52:23.777+0000] {subprocess.py:93} INFO - 
+[2025-08-05T20:52:23.874+0000] {subprocess.py:93} INFO - Running stage 'train':
+[2025-08-05T20:52:23.875+0000] {subprocess.py:93} INFO - > python train/train_task.py
+[2025-08-05T20:52:27.460+0000] {subprocess.py:93} INFO - INFO:__main__:Outlier detector saved to artifacts/models/outlier_detector_v20250801_144307.pkl
+[2025-08-05T20:52:27.474+0000] {subprocess.py:93} INFO - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:1201: UndefinedMetricWarning: No positive samples in y_true, true positive value should be meaningless
+[2025-08-05T20:52:27.475+0000] {subprocess.py:93} INFO -   warnings.warn(
+[2025-08-05T20:52:27.506+0000] {subprocess.py:93} INFO - INFO:__main__:📄 Training metadata saved to artifacts/train/train_metadata_v20250801_144307.json
+[2025-08-05T20:52:27.509+0000] {subprocess.py:93} INFO - INFO:__main__:📦 Updated version_meta.json
+[2025-08-05T20:52:27.636+0000] {subprocess.py:93} INFO - INFO:__main__:📄 Registering the model FraudDetectionModel
+[2025-08-05T20:52:27.732+0000] {subprocess.py:93} INFO - 2025/08/05 20:52:27 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+[2025-08-05T20:52:27.736+0000] {subprocess.py:93} INFO - The git executable must be specified in one of the following ways:
+[2025-08-05T20:52:27.738+0000] {subprocess.py:93} INFO -     - be included in your $PATH
+[2025-08-05T20:52:27.738+0000] {subprocess.py:93} INFO -     - be set via $GIT_PYTHON_GIT_EXECUTABLE
+[2025-08-05T20:52:27.739+0000] {subprocess.py:93} INFO -     - explicitly set via git.refresh(<full-path-to-git-executable>)
+[2025-08-05T20:52:27.740+0000] {subprocess.py:93} INFO - 
+[2025-08-05T20:52:27.740+0000] {subprocess.py:93} INFO - All git commands will error until this is rectified.
+[2025-08-05T20:52:27.741+0000] {subprocess.py:93} INFO - 
+[2025-08-05T20:52:27.741+0000] {subprocess.py:93} INFO - This initial message can be silenced or aggravated in the future by setting the
+[2025-08-05T20:52:27.742+0000] {subprocess.py:93} INFO - $GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+[2025-08-05T20:52:27.743+0000] {subprocess.py:93} INFO -     - quiet|q|silence|s|silent|none|n|0: for no message or exception
+[2025-08-05T20:52:27.743+0000] {subprocess.py:93} INFO -     - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+[2025-08-05T20:52:27.744+0000] {subprocess.py:93} INFO -     - error|e|exception|raise|r|2: for a raised exception
+[2025-08-05T20:52:27.745+0000] {subprocess.py:93} INFO - 
+[2025-08-05T20:52:27.745+0000] {subprocess.py:93} INFO - Example:
+[2025-08-05T20:52:27.746+0000] {subprocess.py:93} INFO -     export GIT_PYTHON_REFRESH=quiet
+[2025-08-05T20:52:27.746+0000] {subprocess.py:93} INFO - 
+[2025-08-05T20:52:27.768+0000] {subprocess.py:93} INFO - 2025/08/05 20:52:27 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+[2025-08-05T20:52:27.828+0000] {subprocess.py:93} INFO - Run ID: ee6f861697cb47c9af4b5d86c80992d0
+[2025-08-05T20:52:27.829+0000] {subprocess.py:93} INFO - 🏃 View run suave-grouse-200 at: http://mlflow:5000/#/experiments/2/runs/ee6f861697cb47c9af4b5d86c80992d0
+[2025-08-05T20:52:27.829+0000] {subprocess.py:93} INFO - 🧪 View experiment at: http://mlflow:5000/#/experiments/2
+[2025-08-05T20:52:27.830+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-08-05T20:52:27.830+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/train/train_task.py", line 221, in <module>
+[2025-08-05T20:52:27.831+0000] {subprocess.py:93} INFO -     main()
+[2025-08-05T20:52:27.831+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/train/train_task.py", line 215, in main
+[2025-08-05T20:52:27.832+0000] {subprocess.py:93} INFO -     register_model_with_mlflow(model, metrics)
+[2025-08-05T20:52:27.832+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/train/train_task.py", line 141, in register_model_with_mlflow
+[2025-08-05T20:52:27.833+0000] {subprocess.py:93} INFO -     mlflow.sklearn.log_model(model, artifact_path="model")
+[2025-08-05T20:52:27.834+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/sklearn/__init__.py", line 426, in log_model
+[2025-08-05T20:52:27.834+0000] {subprocess.py:93} INFO -     return Model.log(
+[2025-08-05T20:52:27.835+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^
+[2025-08-05T20:52:27.836+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/models/model.py", line 1166, in log
+[2025-08-05T20:52:27.838+0000] {subprocess.py:93} INFO -     model = _create_logged_model(
+[2025-08-05T20:52:27.839+0000] {subprocess.py:93} INFO -             ^^^^^^^^^^^^^^^^^^^^^
+[2025-08-05T20:52:27.839+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/tracking/fluent.py", line 2282, in _create_logged_model
+[2025-08-05T20:52:27.842+0000] {subprocess.py:93} INFO -     return MlflowClient()._create_logged_model(
+[2025-08-05T20:52:27.843+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-05T20:52:27.844+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/tracking/client.py", line 5379, in _create_logged_model
+[2025-08-05T20:52:27.845+0000] {subprocess.py:93} INFO -     return self._tracking_client.create_logged_model(
+[2025-08-05T20:52:27.845+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-05T20:52:27.846+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/telemetry/track.py", line 22, in wrapper
+[2025-08-05T20:52:27.847+0000] {subprocess.py:93} INFO -     return func(*args, **kwargs)
+[2025-08-05T20:52:27.848+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^
+[2025-08-05T20:52:27.849+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/tracking/_tracking_service/client.py", line 841, in create_logged_model
+[2025-08-05T20:52:27.850+0000] {subprocess.py:93} INFO -     return self.store.create_logged_model(
+[2025-08-05T20:52:27.850+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-05T20:52:27.851+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 823, in create_logged_model
+[2025-08-05T20:52:27.852+0000] {subprocess.py:93} INFO -     response_proto = self._call_endpoint(CreateLoggedModel, req_body)
+[2025-08-05T20:52:27.853+0000] {subprocess.py:93} INFO -                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-05T20:52:27.853+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/store/tracking/rest_store.py", line 133, in _call_endpoint
+[2025-08-05T20:52:27.854+0000] {subprocess.py:93} INFO -     return call_endpoint(
+[2025-08-05T20:52:27.855+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^
+[2025-08-05T20:52:27.856+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 553, in call_endpoint
+[2025-08-05T20:52:27.857+0000] {subprocess.py:93} INFO -     response = verify_rest_response(response, endpoint)
+[2025-08-05T20:52:27.858+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-05T20:52:27.858+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 314, in verify_rest_response
+[2025-08-05T20:52:27.859+0000] {subprocess.py:93} INFO -     raise MlflowException(
+[2025-08-05T20:52:27.859+0000] {subprocess.py:93} INFO - mlflow.exceptions.MlflowException: API request to endpoint /api/2.0/mlflow/logged-models failed with error code 404 != 200. Response body: '<!doctype html>
+[2025-08-05T20:52:27.860+0000] {subprocess.py:93} INFO - <html lang=en>
+[2025-08-05T20:52:27.861+0000] {subprocess.py:93} INFO - <title>404 Not Found</title>
+[2025-08-05T20:52:27.861+0000] {subprocess.py:93} INFO - <h1>Not Found</h1>
+[2025-08-05T20:52:27.862+0000] {subprocess.py:93} INFO - <p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+[2025-08-05T20:52:27.862+0000] {subprocess.py:93} INFO - '
+[2025-08-05T20:52:28.197+0000] {subprocess.py:93} INFO - ERROR: failed to reproduce 'train': failed to run: python train/train_task.py, exited with 1
+[2025-08-05T20:52:28.461+0000] {subprocess.py:97} INFO - Command exited with return code 255
+[2025-08-05T20:52:28.462+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-05T20:52:28.477+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 255.
+[2025-08-05T20:52:28.483+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=ml_pipeline_dvc, task_id=train_dvc, run_id=manual__2025-08-05T20:44:43.345281+00:00, execution_date=20250805T204443, start_date=20250805T205219, end_date=20250805T205228
+[2025-08-05T20:52:28.503+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 51 for task train_dvc (Bash command failed. The command returned a non-zero exit code 255.; 3540)
+[2025-08-05T20:52:28.539+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-05T20:52:28.558+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-05T20:52:28.561+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

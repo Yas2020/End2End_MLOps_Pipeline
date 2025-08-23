@@ -1,0 +1,25 @@
+[2025-08-12T00:32:34.863+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-12T00:32:34.946+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.check_env manual__2025-08-12T00:32:30.785259+00:00 [queued]>
+[2025-08-12T00:32:34.991+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.check_env manual__2025-08-12T00:32:30.785259+00:00 [queued]>
+[2025-08-12T00:32:34.993+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-08-12T00:32:35.041+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): check_env> on 2025-08-12 00:32:30.785259+00:00
+[2025-08-12T00:32:35.061+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=72) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-12T00:32:35.075+0000] {standard_task_runner.py:63} INFO - Started process 73 to run task
+[2025-08-12T00:32:35.073+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'check_env', 'manual__2025-08-12T00:32:30.785259+00:00', '--job-id', '91', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline_dag.py', '--cfg-path', '/tmp/tmpqpwnuus9']
+[2025-08-12T00:32:35.077+0000] {standard_task_runner.py:91} INFO - Job 91: Subtask check_env
+[2025-08-12T00:32:35.240+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.check_env manual__2025-08-12T00:32:30.785259+00:00 [running]> on host 4109ea5c6bba
+[2025-08-12T00:32:35.576+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='check_env' AIRFLOW_CTX_EXECUTION_DATE='2025-08-12T00:32:30.785259+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-12T00:32:30.785259+00:00'
+[2025-08-12T00:32:35.578+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-12T00:32:35.724+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-12T00:32:35.731+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'env | grep AWS']
+[2025-08-12T00:32:35.752+0000] {subprocess.py:86} INFO - Output:
+[2025-08-12T00:32:35.770+0000] {subprocess.py:93} INFO - AWS_SECRET_ACCESS_KEY=minioadmin
+[2025-08-12T00:32:35.772+0000] {subprocess.py:93} INFO - AWS_ACCESS_KEY_ID=minioadmin
+[2025-08-12T00:32:35.773+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-12T00:32:35.775+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-12T00:32:35.841+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=check_env, run_id=manual__2025-08-12T00:32:30.785259+00:00, execution_date=20250812T003230, start_date=20250812T003234, end_date=20250812T003235
+[2025-08-12T00:32:35.884+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-12T00:32:35.937+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-12T00:32:35.941+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

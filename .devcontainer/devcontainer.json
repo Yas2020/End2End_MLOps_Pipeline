@@ -1,0 +1,55 @@
+{
+  "name": "MLOps-dev",
+  "dockerFile": "Dockerfile",
+  "context": "..",
+  "remoteUser": "Yas",
+  "workspaceFolder": "/project",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/project,type=bind,consistency=delegated",
+  "runArgs": ["--privileged", "-h", "Yas", "--env-file", ".env"],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "VisualStudioExptTeam.vscodeintellicode",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "bierner.github-markdown-preview",
+        "hnw.vscode-auto-open-markdown-preview",
+        "donjayamanne.githistory",
+        "GitHub.vscode-pull-request-github",
+        "njpwerner.autodocstring",
+        "streetsidesoftware.code-spell-checker",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "moby": true,
+      "azureDnsAutoDetection": true,
+      "installDockerBuildx": true,
+      "installDockerComposeSwitch": true,
+      "version": "latest",
+      "dockerDashComposeVersion": "none"
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "ppa": true,
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+      "plugins": "ssh-agent npm",
+      "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
+      "username": "vscode"
+    }
+  },
+  "forwardPorts": [8000, 8080, 9090, 9000, 3000, 5000, 16686, 9411],
+  "postCreateCommand": "sudo dockerd & sleep 5 && export PATH='~/.local/bin:$PATH'"
+}
+
+
+
+

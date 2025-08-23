@@ -1,0 +1,147 @@
+[2025-08-12T20:25:30.578+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-12T20:25:30.818+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.setup_dvc_remote manual__2025-08-12T20:13:15.479198+00:00 [queued]>
+[2025-08-12T20:25:30.851+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.setup_dvc_remote manual__2025-08-12T20:13:15.479198+00:00 [queued]>
+[2025-08-12T20:25:30.853+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-08-12T20:25:30.898+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): setup_dvc_remote> on 2025-08-12 20:13:15.479198+00:00
+[2025-08-12T20:25:31.040+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=64) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-12T20:25:31.085+0000] {standard_task_runner.py:63} INFO - Started process 65 to run task
+[2025-08-12T20:25:31.225+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'setup_dvc_remote', 'manual__2025-08-12T20:13:15.479198+00:00', '--job-id', '163', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline_dag.py', '--cfg-path', '/tmp/tmpoe16r443']
+[2025-08-12T20:25:31.245+0000] {standard_task_runner.py:91} INFO - Job 163: Subtask setup_dvc_remote
+[2025-08-12T20:25:31.926+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.setup_dvc_remote manual__2025-08-12T20:13:15.479198+00:00 [running]> on host fac193a1167f
+[2025-08-12T20:25:32.370+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='setup_dvc_remote' AIRFLOW_CTX_EXECUTION_DATE='2025-08-12T20:13:15.479198+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-12T20:13:15.479198+00:00'
+[2025-08-12T20:25:32.396+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-12T20:25:32.492+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-12T20:25:32.497+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/ml_pipeline\n        aws --endpoint-url http://minio:9000 s3 ls s3://mlflow-artifacts\n        dvc remote remove minio || true\n        dvc remote add -d minio s3://mlflow-artifacts\n        dvc remote modify minio endpointurl http://minio:9000\n        dvc remote modify minio access_key_id minioadmin\n        dvc remote modify minio secret_access_key minioadmin\n        dvc remote modify minio use_ssl false\n        export AWS_ACCESS_KEY_ID=minioadmin\n        export AWS_SECRET_ACCESS_KEY=minioadmin\n        export AWS_ENDPOINT_URL=http://minio:9000\n        dvc push --verbose\n        echo "=== DVC CONFIG AFTER SETUP ==="\n        cat .dvc/config\n        dvc repro preprocess -v\n        ']
+[2025-08-12T20:25:32.557+0000] {subprocess.py:86} INFO - Output:
+[2025-08-12T20:25:36.931+0000] {subprocess.py:93} INFO -                            PRE data/
+[2025-08-12T20:25:36.933+0000] {subprocess.py:93} INFO -                            PRE metadata/
+[2025-08-12T20:25:36.935+0000] {subprocess.py:93} INFO -                            PRE preprocess/
+[2025-08-12T20:25:39.941+0000] {subprocess.py:93} INFO - ERROR: configuration error - config file error: expected 'url' for dictionary value @ data['remote']['minio']
+[2025-08-12T20:25:44.589+0000] {subprocess.py:93} INFO - Setting 'minio' as a default remote.
+[2025-08-12T20:26:01.265+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:01,264 DEBUG: v3.61.0 (pip), CPython 3.12.3 on Linux-6.6.31-linuxkit-x86_64-with-glibc2.36
+[2025-08-12T20:26:01.267+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:01,264 DEBUG: command: /home/***/.local/bin/dvc push --verbose
+[2025-08-12T20:26:02.845+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:02,844 DEBUG: Lockfile 'dvc.lock' needs to be updated.
+[2025-08-12T20:26:04.088+0000] {subprocess.py:93} INFO - Everything is up to date.
+[2025-08-12T20:26:04.093+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:04,093 DEBUG: Analytics is enabled.
+[2025-08-12T20:26:04.153+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:04,153 DEBUG: Trying to spawn ['daemon', 'analytics', '/tmp/tmpb1i16dsl', '-v']
+[2025-08-12T20:26:04.161+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:04,160 DEBUG: Spawned ['daemon', 'analytics', '/tmp/tmpb1i16dsl', '-v'] with pid 326
+[2025-08-12T20:26:04.356+0000] {subprocess.py:93} INFO - === DVC CONFIG AFTER SETUP ===
+[2025-08-12T20:26:04.360+0000] {subprocess.py:93} INFO - [core]
+[2025-08-12T20:26:04.361+0000] {subprocess.py:93} INFO -     remote = minio
+[2025-08-12T20:26:04.361+0000] {subprocess.py:93} INFO - ['remote "minio"']
+[2025-08-12T20:26:04.362+0000] {subprocess.py:93} INFO -     url = s3://mlflow-artifacts
+[2025-08-12T20:26:04.362+0000] {subprocess.py:93} INFO -     endpointurl = http://minio:9000
+[2025-08-12T20:26:04.363+0000] {subprocess.py:93} INFO -     access_key_id = minioadmin
+[2025-08-12T20:26:04.364+0000] {subprocess.py:93} INFO -     secret_access_key = minioadmin
+[2025-08-12T20:26:04.364+0000] {subprocess.py:93} INFO -     use_ssl = false
+[2025-08-12T20:26:05.088+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:05,088 DEBUG: v3.61.0 (pip), CPython 3.12.3 on Linux-6.6.31-linuxkit-x86_64-with-glibc2.36
+[2025-08-12T20:26:05.089+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:05,088 DEBUG: command: /home/***/.local/bin/dvc repro preprocess -v
+[2025-08-12T20:26:06.392+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:06,392 DEBUG: Assuming 'preprocess' to be a stage inside 'dvc.yaml'
+[2025-08-12T20:26:06.529+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:06,529 DEBUG: Lockfile 'dvc.lock' needs to be updated.
+[2025-08-12T20:26:08.615+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:08,615 DEBUG: Dependency 's3://mlflow-artifacts/metadata/version_meta.json' of stage: 'preprocess' changed because it is 'modified'.
+[2025-08-12T20:26:08.623+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:08,622 DEBUG: stage: 'preprocess' changed.
+[2025-08-12T20:26:08.665+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:08,664 DEBUG: Dependency 's3://mlflow-artifacts/metadata/version_meta.json' of stage: 'preprocess' changed because it is 'modified'.
+[2025-08-12T20:26:08.683+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:08,682 DEBUG: stage: 'preprocess' changed.
+[2025-08-12T20:26:08.740+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:08,739 DEBUG: Removing output 's3://mlflow-artifacts/preprocess/v20250812_055140/pipeline.pkl' of stage: 'preprocess'.
+[2025-08-12T20:26:09.066+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:09,066 DEBUG: Removing output 's3://mlflow-artifacts/preprocess/v20250812_055140/preprocess_metadata.json' of stage: 'preprocess'.
+[2025-08-12T20:26:09.558+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:09,557 DEBUG: built tree 'object 602ddb43893d85443cd66ec20dfe4e77.dir'
+[2025-08-12T20:26:09.561+0000] {subprocess.py:93} INFO - Running stage 'preprocess':
+[2025-08-12T20:26:09.562+0000] {subprocess.py:93} INFO - > python preprocessing/preprocess_task.py
+[2025-08-12T20:26:15.039+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-12 20:26:14,975", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "version_meta.json loaded!"}
+[2025-08-12T20:26:15.103+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-12 20:26:15,102", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "preprocessor trained!"}
+[2025-08-12T20:26:15.123+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-12 20:26:15,122", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "preprocessor saved to s3://mlflow-artifacts/preprocess/v20250812_055140/pipeline.pkl!"}
+[2025-08-12T20:26:15.173+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-12 20:26:15,173", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "\u2705 Saved pipeline at: s3://mlflow-artifacts/s3://mlflow-artifacts/preprocess/v20250812_055140/pipeline.pkl"}
+[2025-08-12T20:26:15.176+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-12 20:26:15,173", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "\ud83d\udcc4 Saved metadata: s3://mlflow-artifacts/s3://mlflow-artifacts/preprocess/v20250812_055140/preprocess_metadata.json"}
+[2025-08-12T20:26:15.177+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-12 20:26:15,173", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "\ud83d\udce6 Updated version_meta.json"}
+[2025-08-12T20:26:15.648+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:15,647 DEBUG: built tree 'object 602ddb43893d85443cd66ec20dfe4e77.dir'
+[2025-08-12T20:26:15.702+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:15,696 ERROR: failed to reproduce 'preprocess': Saving cached external output s3://mlflow-artifacts/preprocess/v20250812_055140/pipeline.pkl is not supported since DVC 3.0. See <https://dvc.org/doc/user-guide/upgrade> for more info.
+[2025-08-12T20:26:15.703+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-08-12T20:26:15.704+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/repo/reproduce.py", line 187, in _reproduce
+[2025-08-12T20:26:15.704+0000] {subprocess.py:93} INFO -     ret = repro_fn(stage, upstream=upstream, force=force_stage, **kwargs)
+[2025-08-12T20:26:15.705+0000] {subprocess.py:93} INFO -           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-12T20:26:15.706+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/repo/reproduce.py", line 117, in _reproduce_stage
+[2025-08-12T20:26:15.707+0000] {subprocess.py:93} INFO -     ret = stage.reproduce(**kwargs)
+[2025-08-12T20:26:15.708+0000] {subprocess.py:93} INFO -           ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-12T20:26:15.709+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/funcy/decorators.py", line 47, in wrapper
+[2025-08-12T20:26:15.710+0000] {subprocess.py:93} INFO -     return deco(call, *dargs, **dkwargs)
+[2025-08-12T20:26:15.710+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-12T20:26:15.711+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/stage/decorators.py", line 44, in rwlocked
+[2025-08-12T20:26:15.712+0000] {subprocess.py:93} INFO -     return call()
+[2025-08-12T20:26:15.713+0000] {subprocess.py:93} INFO -            ^^^^^^
+[2025-08-12T20:26:15.714+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/funcy/decorators.py", line 68, in __call__
+[2025-08-12T20:26:15.714+0000] {subprocess.py:93} INFO -     return self._func(*self._args, **self._kwargs)
+[2025-08-12T20:26:15.715+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-12T20:26:15.715+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/stage/__init__.py", line 448, in reproduce
+[2025-08-12T20:26:15.716+0000] {subprocess.py:93} INFO -     self.run(**kwargs)
+[2025-08-12T20:26:15.716+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/funcy/decorators.py", line 47, in wrapper
+[2025-08-12T20:26:15.717+0000] {subprocess.py:93} INFO -     return deco(call, *dargs, **dkwargs)
+[2025-08-12T20:26:15.718+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-12T20:26:15.718+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/stage/decorators.py", line 44, in rwlocked
+[2025-08-12T20:26:15.719+0000] {subprocess.py:93} INFO -     return call()
+[2025-08-12T20:26:15.719+0000] {subprocess.py:93} INFO -            ^^^^^^
+[2025-08-12T20:26:15.720+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/funcy/decorators.py", line 68, in __call__
+[2025-08-12T20:26:15.721+0000] {subprocess.py:93} INFO -     return self._func(*self._args, **self._kwargs)
+[2025-08-12T20:26:15.721+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-12T20:26:15.722+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/stage/__init__.py", line 629, in run
+[2025-08-12T20:26:15.722+0000] {subprocess.py:93} INFO -     self.save(
+[2025-08-12T20:26:15.722+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/stage/__init__.py", line 495, in save
+[2025-08-12T20:26:15.723+0000] {subprocess.py:93} INFO -     self.save_outs(allow_missing=allow_missing)
+[2025-08-12T20:26:15.724+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/stage/__init__.py", line 533, in save_outs
+[2025-08-12T20:26:15.724+0000] {subprocess.py:93} INFO -     out.save()
+[2025-08-12T20:26:15.725+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/output.py", line 677, in save
+[2025-08-12T20:26:15.725+0000] {subprocess.py:93} INFO -     raise DvcException(
+[2025-08-12T20:26:15.726+0000] {subprocess.py:93} INFO - dvc.exceptions.DvcException: Saving cached external output s3://mlflow-artifacts/preprocess/v20250812_055140/pipeline.pkl is not supported since DVC 3.0. See <https://dvc.org/doc/user-guide/upgrade> for more info.
+[2025-08-12T20:26:15.726+0000] {subprocess.py:93} INFO - 
+[2025-08-12T20:26:15.727+0000] {subprocess.py:93} INFO - The above exception was the direct cause of the following exception:
+[2025-08-12T20:26:15.727+0000] {subprocess.py:93} INFO - 
+[2025-08-12T20:26:15.728+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-08-12T20:26:15.729+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/cli/__init__.py", line 211, in main
+[2025-08-12T20:26:15.730+0000] {subprocess.py:93} INFO -     ret = cmd.do_run()
+[2025-08-12T20:26:15.730+0000] {subprocess.py:93} INFO -           ^^^^^^^^^^^^
+[2025-08-12T20:26:15.731+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/cli/command.py", line 30, in do_run
+[2025-08-12T20:26:15.733+0000] {subprocess.py:93} INFO -     return self.run()
+[2025-08-12T20:26:15.733+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^
+[2025-08-12T20:26:15.734+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/commands/repro.py", line 11, in run
+[2025-08-12T20:26:15.735+0000] {subprocess.py:93} INFO -     stages = self.repo.reproduce(**self._common_kwargs, **self._repro_kwargs)
+[2025-08-12T20:26:15.736+0000] {subprocess.py:93} INFO -              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-12T20:26:15.736+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/repo/__init__.py", line 58, in wrapper
+[2025-08-12T20:26:15.737+0000] {subprocess.py:93} INFO -     return f(repo, *args, **kwargs)
+[2025-08-12T20:26:15.737+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-12T20:26:15.738+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/repo/scm_context.py", line 143, in run
+[2025-08-12T20:26:15.738+0000] {subprocess.py:93} INFO -     return method(repo, *args, **kw)
+[2025-08-12T20:26:15.739+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-12T20:26:15.739+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/repo/reproduce.py", line 248, in reproduce
+[2025-08-12T20:26:15.740+0000] {subprocess.py:93} INFO -     return _reproduce(steps, graph=graph, on_error=on_error or "fail", **kwargs)
+[2025-08-12T20:26:15.740+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-12T20:26:15.741+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/repo/reproduce.py", line 191, in _reproduce
+[2025-08-12T20:26:15.742+0000] {subprocess.py:93} INFO -     _raise_error(exc, stage)
+[2025-08-12T20:26:15.743+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/dvc/repo/reproduce.py", line 155, in _raise_error
+[2025-08-12T20:26:15.744+0000] {subprocess.py:93} INFO -     raise ReproductionError(f"failed to reproduce{segment} {names}") from exc
+[2025-08-12T20:26:15.744+0000] {subprocess.py:93} INFO - dvc.exceptions.ReproductionError: failed to reproduce 'preprocess'
+[2025-08-12T20:26:15.745+0000] {subprocess.py:93} INFO - 
+[2025-08-12T20:26:15.746+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:15,707 DEBUG: Analytics is enabled.
+[2025-08-12T20:26:15.828+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:15,827 DEBUG: Trying to spawn ['daemon', 'analytics', '/tmp/tmpamjg2_oa', '-v']
+[2025-08-12T20:26:15.839+0000] {subprocess.py:93} INFO - 2025-08-12 20:26:15,838 DEBUG: Spawned ['daemon', 'analytics', '/tmp/tmpamjg2_oa', '-v'] with pid 423
+[2025-08-12T20:26:16.501+0000] {subprocess.py:97} INFO - Command exited with return code 255
+[2025-08-12T20:26:16.504+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-12T20:26:16.527+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 255.
+[2025-08-12T20:26:16.537+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=ml_pipeline_dvc, task_id=setup_dvc_remote, run_id=manual__2025-08-12T20:13:15.479198+00:00, execution_date=20250812T201315, start_date=20250812T202530, end_date=20250812T202616
+[2025-08-12T20:26:16.567+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 163 for task setup_dvc_remote (Bash command failed. The command returned a non-zero exit code 255.; 65)
+[2025-08-12T20:26:16.581+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-12T20:26:16.624+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-12T20:26:16.631+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

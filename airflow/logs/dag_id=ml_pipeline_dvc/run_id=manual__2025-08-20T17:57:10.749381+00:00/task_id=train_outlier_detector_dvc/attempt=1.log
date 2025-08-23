@@ -1,0 +1,34 @@
+[2025-08-20T17:58:01.135+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-20T17:58:01.171+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_outlier_detector_dvc manual__2025-08-20T17:57:10.749381+00:00 [queued]>
+[2025-08-20T17:58:01.185+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_outlier_detector_dvc manual__2025-08-20T17:57:10.749381+00:00 [queued]>
+[2025-08-20T17:58:01.185+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-20T17:58:01.206+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): train_outlier_detector_dvc> on 2025-08-20 17:57:10.749381+00:00
+[2025-08-20T17:58:01.220+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1646) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-20T17:58:01.225+0000] {standard_task_runner.py:63} INFO - Started process 1672 to run task
+[2025-08-20T17:58:01.222+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'train_outlier_detector_dvc', 'manual__2025-08-20T17:57:10.749381+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dvc_dag.py', '--cfg-path', '/tmp/tmpa60uwhgo']
+[2025-08-20T17:58:01.227+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask train_outlier_detector_dvc
+[2025-08-20T17:58:01.291+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.train_outlier_detector_dvc manual__2025-08-20T17:57:10.749381+00:00 [running]> on host d741d36e6db0
+[2025-08-20T17:58:01.426+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='train_outlier_detector_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-20T17:57:10.749381+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-20T17:57:10.749381+00:00'
+[2025-08-20T17:58:01.428+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-20T17:58:01.464+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-20T17:58:01.466+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            cd /opt/***/ml_pipeline\n            dvc pull --force\n            dvc repro train_outlier\n            dvc push\n        ']
+[2025-08-20T17:58:01.488+0000] {subprocess.py:86} INFO - Output:
+[2025-08-20T17:58:07.131+0000] {subprocess.py:93} INFO - A       data/raw/
+[2025-08-20T17:58:07.136+0000] {subprocess.py:93} INFO - 1 file added
+[2025-08-20T17:58:11.746+0000] {subprocess.py:93} INFO - Running stage 'ingest':
+[2025-08-20T17:58:11.747+0000] {subprocess.py:93} INFO - > python data/ingest/etl_task.py && python data/ingest/download_data.py
+[2025-08-20T17:58:15.018+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-08-20T17:58:15.023+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/data/ingest/etl_task.py", line 10, in <module>
+[2025-08-20T17:58:15.025+0000] {subprocess.py:93} INFO -     logger = get_logger("model_training", tracing=False)
+[2025-08-20T17:58:15.026+0000] {subprocess.py:93} INFO -              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-20T17:58:15.027+0000] {subprocess.py:93} INFO - TypeError: get_logger() got an unexpected keyword argument 'tracing'
+[2025-08-20T17:58:15.339+0000] {subprocess.py:93} INFO - ERROR: failed to reproduce 'ingest': failed to run: python data/ingest/etl_task.py && python data/ingest/download_data.py, exited with 1
+[2025-08-20T17:58:20.141+0000] {subprocess.py:93} INFO - Everything is up to date.
+[2025-08-20T17:58:20.585+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-20T17:58:20.588+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-20T17:58:20.652+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=train_outlier_detector_dvc, run_id=manual__2025-08-20T17:57:10.749381+00:00, execution_date=20250820T175710, start_date=20250820T175801, end_date=20250820T175820
+[2025-08-20T17:58:20.716+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-20T17:58:20.750+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-08-20T17:58:20.752+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

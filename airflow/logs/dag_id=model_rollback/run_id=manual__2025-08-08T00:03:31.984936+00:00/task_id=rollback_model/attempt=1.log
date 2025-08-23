@@ -1,0 +1,63 @@
+[2025-08-08T00:15:32.170+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-08T00:15:32.284+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: model_rollback.rollback_model manual__2025-08-08T00:03:31.984936+00:00 [queued]>
+[2025-08-08T00:15:32.311+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: model_rollback.rollback_model manual__2025-08-08T00:03:31.984936+00:00 [queued]>
+[2025-08-08T00:15:32.312+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-08-08T00:15:32.355+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): rollback_model> on 2025-08-08 00:03:31.984936+00:00
+[2025-08-08T00:15:32.382+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1581) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-08T00:15:32.385+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'model_rollback', 'rollback_model', 'manual__2025-08-08T00:03:31.984936+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/model_rollback_dag.py', '--cfg-path', '/tmp/tmp_i6dr8pj']
+[2025-08-08T00:15:32.386+0000] {standard_task_runner.py:63} INFO - Started process 1593 to run task
+[2025-08-08T00:15:32.387+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask rollback_model
+[2025-08-08T00:15:32.547+0000] {task_command.py:426} INFO - Running <TaskInstance: model_rollback.rollback_model manual__2025-08-08T00:03:31.984936+00:00 [running]> on host b040694cec87
+[2025-08-08T00:15:32.860+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='model_rollback' AIRFLOW_CTX_TASK_ID='rollback_model' AIRFLOW_CTX_EXECUTION_DATE='2025-08-08T00:03:31.984936+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-08T00:03:31.984936+00:00'
+[2025-08-08T00:15:32.870+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-08T00:15:33.006+0000] {warnings.py:110} WARNING - /opt/***/dags/model_rollback_dag.py:17: FutureWarning: ``mlflow.tracking.client.MlflowClient.get_latest_versions`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/latest/model-registry.html#migrating-from-stages
+  versions = client.get_latest_versions("FraudDetectionModel")
+
+[2025-08-08T00:15:33.386+0000] {logging_mixin.py:188} INFO - Rollback failed: Registered Model with name=FraudDetectionModel not found
+[2025-08-08T00:15:33.388+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-08T00:15:33.392+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/model_rollback_dag.py", line 54, in rollback_model
+    raise e
+  File "/opt/airflow/dags/model_rollback_dag.py", line 17, in rollback_model
+    versions = client.get_latest_versions("FraudDetectionModel")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/utils/annotations.py", line 188, in deprecated_func
+    return obj(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/tracking/client.py", line 4026, in get_latest_versions
+    self._raise_if_prompt(name)
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/tracking/client.py", line 5334, in _raise_if_prompt
+    rm = self.get_registered_model(name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/tracking/client.py", line 3945, in get_registered_model
+    rm = self._get_registry_client().get_registered_model(name)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/tracking/_model_registry/client.py", line 171, in get_registered_model
+    return self.store.get_registered_model(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/store/model_registry/file_store.py", line 423, in get_registered_model
+    raise MlflowException(
+mlflow.exceptions.MlflowException: Registered Model with name=FraudDetectionModel not found
+[2025-08-08T00:15:33.466+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=model_rollback, task_id=rollback_model, run_id=manual__2025-08-08T00:03:31.984936+00:00, execution_date=20250808T000331, start_date=20250808T001532, end_date=20250808T001533
+[2025-08-08T00:15:33.520+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 6 for task rollback_model (Registered Model with name=FraudDetectionModel not found; 1593)
+[2025-08-08T00:15:33.580+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-08T00:15:33.729+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-08T00:15:33.740+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

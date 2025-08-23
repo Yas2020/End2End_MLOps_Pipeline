@@ -1,0 +1,47 @@
+[2025-08-12T22:50:02.740+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-12T22:50:02.844+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.preprocess_dvc manual__2025-08-12T22:49:59.889733+00:00 [queued]>
+[2025-08-12T22:50:02.902+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.preprocess_dvc manual__2025-08-12T22:49:59.889733+00:00 [queued]>
+[2025-08-12T22:50:02.904+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-12T22:50:02.957+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): preprocess_dvc> on 2025-08-12 22:49:59.889733+00:00
+[2025-08-12T22:50:02.972+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=971) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-12T22:50:02.978+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'preprocess_dvc', 'manual__2025-08-12T22:49:59.889733+00:00', '--job-id', '208', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline_dag.py', '--cfg-path', '/tmp/tmpwq17kfe_']
+[2025-08-12T22:50:02.988+0000] {standard_task_runner.py:63} INFO - Started process 972 to run task
+[2025-08-12T22:50:02.988+0000] {standard_task_runner.py:91} INFO - Job 208: Subtask preprocess_dvc
+[2025-08-12T22:50:03.106+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.preprocess_dvc manual__2025-08-12T22:49:59.889733+00:00 [running]> on host 276ab97d4dd8
+[2025-08-12T22:50:03.375+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='preprocess_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-12T22:49:59.889733+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-12T22:49:59.889733+00:00'
+[2025-08-12T22:50:03.377+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-12T22:50:03.405+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-12T22:50:03.408+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/ml_pipeline && dvc repro preprocess']
+[2025-08-12T22:50:03.429+0000] {subprocess.py:86} INFO - Output:
+[2025-08-12T22:50:09.070+0000] {subprocess.py:93} INFO - Running stage 'preprocess':
+[2025-08-12T22:50:09.071+0000] {subprocess.py:93} INFO - > python preprocessing/preprocess_task.py
+[2025-08-12T22:50:11.996+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-12 22:50:11,927", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "version_meta.json loaded!"}
+[2025-08-12T22:50:12.027+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-12 22:50:12,026", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "preprocessor trained!"}
+[2025-08-12T22:50:12.045+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-12 22:50:12,045", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "preprocessor saved to s3://mlflow-artifacts/preprocess/v20250812_203000/pipeline.pkl!"}
+[2025-08-12T22:50:12.086+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-12 22:50:12,086", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "\u2705 Saved pipeline at: s3://mlflow-artifacts/s3://mlflow-artifacts/preprocess/v20250812_203000/pipeline.pkl"}
+[2025-08-12T22:50:12.088+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-12 22:50:12,086", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "\ud83d\udcc4 Saved metadata: s3://mlflow-artifacts/s3://mlflow-artifacts/preprocess/v20250812_203000/preprocess_metadata.json"}
+[2025-08-12T22:50:12.089+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-12 22:50:12,086", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "\ud83d\udce6 Updated version_meta.json"}
+[2025-08-12T22:50:12.687+0000] {subprocess.py:93} INFO - ERROR: failed to reproduce 'preprocess': Saving cached external output s3://mlflow-artifacts/preprocess/v20250812_203000/pipeline.pkl is not supported since DVC 3.0. See <https://dvc.org/doc/user-guide/upgrade> for more info.
+[2025-08-12T22:50:13.423+0000] {subprocess.py:97} INFO - Command exited with return code 255
+[2025-08-12T22:50:13.425+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-12T22:50:13.446+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 255.
+[2025-08-12T22:50:13.453+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=ml_pipeline_dvc, task_id=preprocess_dvc, run_id=manual__2025-08-12T22:49:59.889733+00:00, execution_date=20250812T224959, start_date=20250812T225002, end_date=20250812T225013
+[2025-08-12T22:50:13.480+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 208 for task preprocess_dvc (Bash command failed. The command returned a non-zero exit code 255.; 972)
+[2025-08-12T22:50:13.510+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-12T22:50:13.545+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-12T22:50:13.554+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

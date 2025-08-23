@@ -1,0 +1,20 @@
+apiVersion: 1
+providers:
+  - name: 'model-monitoring'
+    orgId: 1
+    folder: 'ML Monitoring'
+    type: file
+    disableDeletion: false
+    editable: true
+    updateIntervalSeconds: 10
+    options:
+      path: /var/lib/grafana/dashboards/ml_monitoring
+
+  - name: 'system-monitoring'
+    orgId: 1
+    folder: 'System Monitoring'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    options:
+      path: /var/lib/grafana/dashboards/sys_monitoring

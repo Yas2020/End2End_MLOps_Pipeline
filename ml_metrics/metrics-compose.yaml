@@ -1,0 +1,34 @@
+services:
+  metrics-server:
+    build: .
+    container_name: metrics-server
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_DB=${REDIS_DB}
+    networks:
+      - airflow_net  # same network as Redis
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../prometheus/prometheus.yaml:/etc/prometheus/prometheus.yml
+    networks:
+      - airflow_net
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../grafana:/etc/grafana/provisioning
+    networks:
+      - airflow_net
+
+networks:
+  airflow_net:
+    external: true   # reuse existing network created by airflow-compose

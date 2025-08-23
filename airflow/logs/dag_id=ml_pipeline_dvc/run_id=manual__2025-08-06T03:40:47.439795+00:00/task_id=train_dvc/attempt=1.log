@@ -1,0 +1,68 @@
+[2025-08-06T03:40:58.561+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-06T03:40:58.606+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_dvc manual__2025-08-06T03:40:47.439795+00:00 [queued]>
+[2025-08-06T03:40:58.619+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_dvc manual__2025-08-06T03:40:47.439795+00:00 [queued]>
+[2025-08-06T03:40:58.623+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-08-06T03:40:58.650+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): train_dvc> on 2025-08-06 03:40:47.439795+00:00
+[2025-08-06T03:40:58.660+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=693) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-06T03:40:58.663+0000] {standard_task_runner.py:63} INFO - Started process 710 to run task
+[2025-08-06T03:40:58.662+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'train_dvc', 'manual__2025-08-06T03:40:47.439795+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag_2.py', '--cfg-path', '/tmp/tmp5suyv8ys']
+[2025-08-06T03:40:58.665+0000] {standard_task_runner.py:91} INFO - Job 13: Subtask train_dvc
+[2025-08-06T03:40:58.746+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.train_dvc manual__2025-08-06T03:40:47.439795+00:00 [running]> on host 1d9cc99197c4
+[2025-08-06T03:40:58.912+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='train_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-06T03:40:47.439795+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-06T03:40:47.439795+00:00'
+[2025-08-06T03:40:58.914+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-06T03:40:58.939+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-06T03:40:58.941+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/ml_pipeline && dvc repro train']
+[2025-08-06T03:40:58.955+0000] {subprocess.py:86} INFO - Output:
+[2025-08-06T03:41:01.093+0000] {subprocess.py:93} INFO - Stage 'preprocess' didn't change, skipping
+[2025-08-06T03:41:01.193+0000] {subprocess.py:93} INFO - Running stage 'train':
+[2025-08-06T03:41:01.194+0000] {subprocess.py:93} INFO - > python train/train_task.py
+[2025-08-06T03:41:06.065+0000] {subprocess.py:93} INFO - INFO:__main__:Outlier detector saved to artifacts/models/outlier_detector_v20250801_144307.pkl
+[2025-08-06T03:41:06.114+0000] {subprocess.py:93} INFO - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:1201: UndefinedMetricWarning: No positive samples in y_true, true positive value should be meaningless
+[2025-08-06T03:41:06.122+0000] {subprocess.py:93} INFO -   warnings.warn(
+[2025-08-06T03:41:06.149+0000] {subprocess.py:93} INFO - INFO:__main__:📄 Training metadata saved to artifacts/train/train_metadata_v20250801_144307.json
+[2025-08-06T03:41:06.150+0000] {subprocess.py:93} INFO - INFO:__main__:📦 Updated version_meta.json
+[2025-08-06T03:41:06.151+0000] {subprocess.py:93} INFO - INFO:__main__:📄 Registering the model FraudDetectionModel
+[2025-08-06T03:41:06.514+0000] {subprocess.py:93} INFO - 2025/08/06 03:41:06 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+[2025-08-06T03:41:06.516+0000] {subprocess.py:93} INFO - The git executable must be specified in one of the following ways:
+[2025-08-06T03:41:06.518+0000] {subprocess.py:93} INFO -     - be included in your $PATH
+[2025-08-06T03:41:06.519+0000] {subprocess.py:93} INFO -     - be set via $GIT_PYTHON_GIT_EXECUTABLE
+[2025-08-06T03:41:06.520+0000] {subprocess.py:93} INFO -     - explicitly set via git.refresh(<full-path-to-git-executable>)
+[2025-08-06T03:41:06.522+0000] {subprocess.py:93} INFO - 
+[2025-08-06T03:41:06.523+0000] {subprocess.py:93} INFO - All git commands will error until this is rectified.
+[2025-08-06T03:41:06.524+0000] {subprocess.py:93} INFO - 
+[2025-08-06T03:41:06.525+0000] {subprocess.py:93} INFO - This initial message can be silenced or aggravated in the future by setting the
+[2025-08-06T03:41:06.526+0000] {subprocess.py:93} INFO - $GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+[2025-08-06T03:41:06.527+0000] {subprocess.py:93} INFO -     - quiet|q|silence|s|silent|none|n|0: for no message or exception
+[2025-08-06T03:41:06.527+0000] {subprocess.py:93} INFO -     - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+[2025-08-06T03:41:06.528+0000] {subprocess.py:93} INFO -     - error|e|exception|raise|r|2: for a raised exception
+[2025-08-06T03:41:06.529+0000] {subprocess.py:93} INFO - 
+[2025-08-06T03:41:06.530+0000] {subprocess.py:93} INFO - Example:
+[2025-08-06T03:41:06.531+0000] {subprocess.py:93} INFO -     export GIT_PYTHON_REFRESH=quiet
+[2025-08-06T03:41:06.531+0000] {subprocess.py:93} INFO - 
+[2025-08-06T03:41:06.558+0000] {subprocess.py:93} INFO - 2025/08/06 03:41:06 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+[2025-08-06T03:41:15.539+0000] {subprocess.py:93} INFO - [31m2025/08/06 03:41:15 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.[0m
+[2025-08-06T03:41:15.810+0000] {subprocess.py:93} INFO - INFO:botocore.credentials:Found credentials in environment variables.
+[2025-08-06T03:41:16.704+0000] {subprocess.py:93} INFO - INFO:__main__:✅ Model trained and saved to artifacts/models/model_v20250801_144307.pkl
+[2025-08-06T03:41:16.706+0000] {subprocess.py:93} INFO - Run ID: 7ff23d09f34646c38efc8fd82eb98c15
+[2025-08-06T03:41:16.708+0000] {subprocess.py:93} INFO - im good
+[2025-08-06T03:41:16.709+0000] {subprocess.py:93} INFO - 🏃 View run treasured-bee-951 at: http://mlflow:5000/#/experiments/1/runs/7ff23d09f34646c38efc8fd82eb98c15
+[2025-08-06T03:41:16.709+0000] {subprocess.py:93} INFO - 🧪 View experiment at: http://mlflow:5000/#/experiments/1
+[2025-08-06T03:41:16.710+0000] {subprocess.py:93} INFO - ✅ Model logging complete
+[2025-08-06T03:41:17.486+0000] {subprocess.py:93} INFO - Updating lock file 'dvc.lock'
+[2025-08-06T03:41:17.507+0000] {subprocess.py:93} INFO - 
+[2025-08-06T03:41:17.508+0000] {subprocess.py:93} INFO - To track the changes with git, run:
+[2025-08-06T03:41:17.509+0000] {subprocess.py:93} INFO - 
+[2025-08-06T03:41:17.510+0000] {subprocess.py:93} INFO - 	git add dvc.lock
+[2025-08-06T03:41:17.511+0000] {subprocess.py:93} INFO - 
+[2025-08-06T03:41:17.512+0000] {subprocess.py:93} INFO - To enable auto staging, run:
+[2025-08-06T03:41:17.514+0000] {subprocess.py:93} INFO - 
+[2025-08-06T03:41:17.515+0000] {subprocess.py:93} INFO - 	dvc config core.autostage true
+[2025-08-06T03:41:17.516+0000] {subprocess.py:93} INFO - Use `dvc push` to send your updates to remote storage.
+[2025-08-06T03:41:17.883+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-06T03:41:17.884+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-06T03:41:17.928+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=train_dvc, run_id=manual__2025-08-06T03:40:47.439795+00:00, execution_date=20250806T034047, start_date=20250806T034058, end_date=20250806T034117
+[2025-08-06T03:41:17.984+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-06T03:41:18.007+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-06T03:41:18.009+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

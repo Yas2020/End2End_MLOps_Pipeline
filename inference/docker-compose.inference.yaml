@@ -1,0 +1,24 @@
+services:
+  inference-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    networks:
+      - airflow_net
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - MLFLOW_S3_ENDPOINT_URL=${MLFLOW_S3_ENDPOINT_URL}
+    volumes:
+      - ../artifacts/models:/app/artifacts/models 
+      - ../version_meta.json:/app/version_meta.json
+      - ../utils:/app/utils
+    env_file:
+      - .env
+    restart: always
+
+networks:
+  airflow_net:
+    external: true   # reuse existing network created by airflow-compose   

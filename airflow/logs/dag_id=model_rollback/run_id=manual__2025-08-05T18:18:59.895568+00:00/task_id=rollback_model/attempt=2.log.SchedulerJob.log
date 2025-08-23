@@ -1,0 +1,1 @@
+[2025-08-05T18:25:12.796+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: model_rollback.rollback_model manual__2025-08-05T18:18:59.895568+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

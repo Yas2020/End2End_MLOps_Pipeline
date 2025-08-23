@@ -1,0 +1,126 @@
+{
+    "uid": "model-monitoring",
+    "title": "ML Monitoring",
+    "timezone": "browser",
+    "panels": [
+        {
+            "type": "timeseries",
+            "title": "Fraud Predictions per Version",
+            "gridPos": {
+                "x": 0,
+                "y": 0,
+                "w": 12,
+                "h": 8
+            },
+            "targets": [
+                {
+                    "expr": "rate(fraud_predictions_total[1m])",
+                    "legendFormat": "{{version}}",
+                    "refId": "A"
+                }
+            ],
+            "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+            }
+        },
+        {
+            "type": "timeseries",
+            "title": "Outliers Detected per Version",
+            "gridPos": {
+                "x": 12,
+                "y": 0,
+                "w": 12,
+                "h": 8
+            },
+            "targets": [
+                {
+                    "expr": "rate(outlier_detected_total[1m])",
+                    "legendFormat": "{{version}}",
+                    "refId": "B"
+                }
+            ],
+            "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+            }
+        },
+        {
+            "type": "timeseries",
+            "title": "Inference Latency (p95)",
+            "gridPos": {
+                "x": 0,
+                "y": 0,
+                "w": 12,
+                "h": 8
+            },
+            "targets": [
+                {
+                    "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[1m])) by (le))",
+                    "legendFormat": "p95 latency",
+                    "refId": "C"
+                }
+            ],
+            "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+            }
+        },
+        {
+        "type": "timeseries",
+        "title": "Inference Latency",
+        "gridPos": {
+                "x": 12,
+                "y": 0,
+                "w": 12,
+                "h": 8
+        },
+        "targets": [
+          {
+            "expr": "rate(inference_latency_seconds_sum[1m]) / rate(inference_latency_seconds_count[1m])",
+            "format": "time_series",
+            "refId": "A"
+          }
+        ],
+        "datasource": {
+                "type": "prometheus",
+                "uid": "Prometheus"
+            },
+        "alert": {
+            "name": "High Inference Latency",
+            "conditions": [
+                {
+                "type": "query",
+                "query": {
+                    "params": ["A", "5m", "now"]
+                },
+                "reducer": {
+                    "type": "avg" 
+                },
+                "evaluator": {
+                    "type": "gt",
+                    "params": [1]
+                },
+                "operator": {
+                    "type": "and"
+                }
+            }],
+            "frequency": "60s",
+            "handler": 1,
+            "noDataState": "no_data",
+            "executionErrorState": "alerting",
+            "for": "1m",
+            "labels": {
+                "severity": "critical"
+            },
+            "annotations": {
+                "summary": "High Inference Latency Detected"
+            }
+        }
+
+      }
+    ],
+    "schemaVersion": 37,
+    "version": 1,
+    "refresh": "30s"
+}

@@ -1,0 +1,45 @@
+[2025-08-11T18:33:45.121+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-11T18:33:45.166+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.etl_task manual__2025-08-11T18:33:37.192923+00:00 [queued]>
+[2025-08-11T18:33:45.179+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.etl_task manual__2025-08-11T18:33:37.192923+00:00 [queued]>
+[2025-08-11T18:33:45.180+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-11T18:33:45.202+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): etl_task> on 2025-08-11 18:33:37.192923+00:00
+[2025-08-11T18:33:45.216+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2318) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-11T18:33:45.219+0000] {standard_task_runner.py:63} INFO - Started process 2321 to run task
+[2025-08-11T18:33:45.218+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl', 'etl_task', 'manual__2025-08-11T18:33:37.192923+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline.py', '--cfg-path', '/tmp/tmpu6cs6opr']
+[2025-08-11T18:33:45.223+0000] {standard_task_runner.py:91} INFO - Job 43: Subtask etl_task
+[2025-08-11T18:33:45.291+0000] {task_command.py:426} INFO - Running <TaskInstance: etl.etl_task manual__2025-08-11T18:33:37.192923+00:00 [running]> on host 631cb2647807
+[2025-08-11T18:33:45.429+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='etl_task' AIRFLOW_CTX_EXECUTION_DATE='2025-08-11T18:33:37.192923+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-11T18:33:37.192923+00:00'
+[2025-08-11T18:33:45.431+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-11T18:33:45.687+0000] {log.py:232} WARNING - {"asctime": "2025-08-11 18:33:45,460", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "params.yaml created with version_tag=v20250811_183345"}
+[2025-08-11T18:33:45.460+0000] {etl_task.py:85} INFO - params.yaml created with version_tag=v20250811_183345
+[2025-08-11T18:33:45.729+0000] {log.py:232} WARNING - {"asctime": "2025-08-11 18:33:45,728", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Simulated data generated."}
+[2025-08-11T18:33:45.728+0000] {etl_task.py:93} INFO - Simulated data generated.
+[2025-08-11T18:33:45.730+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-11T18:33:45.731+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 94, in main
+    save_with_version(data, version)
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 55, in save_with_version
+    load_upload_minio(s3_uri, filetype="pandas", mode="upload", obj=data)
+TypeError: 'module' object is not callable
+[2025-08-11T18:33:45.757+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=etl, task_id=etl_task, run_id=manual__2025-08-11T18:33:37.192923+00:00, execution_date=20250811T183337, start_date=20250811T183345, end_date=20250811T183345
+[2025-08-11T18:33:45.779+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 43 for task etl_task ('module' object is not callable; 2321)
+[2025-08-11T18:33:45.813+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-11T18:33:45.835+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

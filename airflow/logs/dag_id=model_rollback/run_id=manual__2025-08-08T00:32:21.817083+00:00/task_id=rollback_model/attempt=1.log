@@ -1,0 +1,30 @@
+[2025-08-08T00:32:24.619+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-08T00:32:24.654+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: model_rollback.rollback_model manual__2025-08-08T00:32:21.817083+00:00 [queued]>
+[2025-08-08T00:32:24.663+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: model_rollback.rollback_model manual__2025-08-08T00:32:21.817083+00:00 [queued]>
+[2025-08-08T00:32:24.664+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-08-08T00:32:24.680+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): rollback_model> on 2025-08-08 00:32:21.817083+00:00
+[2025-08-08T00:32:24.690+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1826) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-08T00:32:24.692+0000] {standard_task_runner.py:63} INFO - Started process 1829 to run task
+[2025-08-08T00:32:24.692+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'model_rollback', 'rollback_model', 'manual__2025-08-08T00:32:21.817083+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/model_rollback_dag.py', '--cfg-path', '/tmp/tmptmly_ko5']
+[2025-08-08T00:32:24.694+0000] {standard_task_runner.py:91} INFO - Job 15: Subtask rollback_model
+[2025-08-08T00:32:24.755+0000] {task_command.py:426} INFO - Running <TaskInstance: model_rollback.rollback_model manual__2025-08-08T00:32:21.817083+00:00 [running]> on host b040694cec87
+[2025-08-08T00:32:24.864+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='model_rollback' AIRFLOW_CTX_TASK_ID='rollback_model' AIRFLOW_CTX_EXECUTION_DATE='2025-08-08T00:32:21.817083+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-08T00:32:21.817083+00:00'
+[2025-08-08T00:32:24.868+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-08T00:32:24.892+0000] {warnings.py:110} WARNING - /opt/***/dags/model_rollback_dag.py:28: FutureWarning: ``mlflow.tracking.client.MlflowClient.get_latest_versions`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/latest/model-registry.html#migrating-from-stages
+  versions = client.get_latest_versions("FraudDetectionModel")
+
+[2025-08-08T00:32:25.660+0000] {warnings.py:110} WARNING - /opt/***/dags/model_rollback_dag.py:42: FutureWarning: ``mlflow.tracking.client.MlflowClient.transition_model_version_stage`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/latest/model-registry.html#migrating-from-stages
+  client.transition_model_version_stage(
+
+[2025-08-08T00:32:26.258+0000] {warnings.py:110} WARNING - /opt/***/dags/model_rollback_dag.py:50: FutureWarning: ``mlflow.tracking.client.MlflowClient.transition_model_version_stage`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/latest/model-registry.html#migrating-from-stages
+  client.transition_model_version_stage(
+
+[2025-08-08T00:32:26.338+0000] {logging_mixin.py:188} INFO - Rollback response: {"detail":[{"type":"int_parsing","loc":["query","version"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"<ModelVersion: aliases=[], creation_timestamp=1754605814430, current_stage='Archived', deployment_job_state=<ModelVersionDeploymentJobState: current_task_name='', job_id='', job_state='DEPLOYMENT_JOB_CONNECTION_STATE_UNSPECIFIED', run_id='', run_state='DEPLOYMENT_JOB_RUN_STATE_UNSPECIFIED'>, description='', last_updated_timestamp=1754605938061, metrics=None, model_id=None, name='FraudDetectionModel', params=None, run_id='b5d82c73bffe48f8874df2d46b065255', run_link='', source='models:/m-562161448f904904979dc76a91321452', status='READY', status_message=None, tags={}, user_id='', version='1'>"}]}
+[2025-08-08T00:32:26.339+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-08-08T00:32:26.340+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-08T00:32:26.354+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=model_rollback, task_id=rollback_model, run_id=manual__2025-08-08T00:32:21.817083+00:00, execution_date=20250808T003221, start_date=20250808T003224, end_date=20250808T003226
+[2025-08-08T00:32:26.390+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-08T00:32:26.419+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-08-08T00:32:26.421+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

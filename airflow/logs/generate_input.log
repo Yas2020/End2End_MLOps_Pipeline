@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/opt/airflow/ml_pipeline/batch/generate_batch_input.py", line 6, in <module>
+  File "/opt/airflow/ml_pipeline/batch/generate_batch_input.py", line 6, in <module>
+    with open("version_meta.json") as f:
+    with open("version_meta.json") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'version_meta.json'
+FileNotFoundError: [Errno 2] No such file or directory: 'version_meta.json'

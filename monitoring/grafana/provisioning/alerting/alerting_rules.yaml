@@ -1,0 +1,32 @@
+apiVersion: 1
+
+groups:
+  - name: Inference Latency Alerts
+    folder: ML Monitoring  # Must match Grafana folder
+    interval: 60s
+    rules:
+      - uid: high_latency_alert
+        title: High Inference Latency Alert
+        dashboardUid: model-monitoring  # Match your dashboard UID
+        panelId: 1  # Panel ID for Inference Latency panel
+        condition: B
+        data:
+          - refId: A
+            datasourceUid: Prometheus  # MATCH your Prometheus data source UID exactly
+            relativeTimeRange:
+              from: 300
+              to: 0
+            model:
+              expr: |
+                rate(inference_latency_seconds_sum[1m])
+                /
+                rate(inference_latency_seconds_count[1m])
+              format: time_series
+              interval: ""
+              refId: A
+              hide: false
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              type: threshold
+              params: [0.5]

@@ -1,0 +1,62 @@
+[2025-08-07T06:20:32.396+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-07T06:20:32.424+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: register_high_latency_model.rollback_model manual__2025-08-07T06:20:26.810775+00:00 [queued]>
+[2025-08-07T06:20:32.434+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: register_high_latency_model.rollback_model manual__2025-08-07T06:20:26.810775+00:00 [queued]>
+[2025-08-07T06:20:32.435+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-08-07T06:20:32.453+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): rollback_model> on 2025-08-07 06:20:26.810775+00:00
+[2025-08-07T06:20:32.464+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=6176) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-07T06:20:32.467+0000] {standard_task_runner.py:63} INFO - Started process 6186 to run task
+[2025-08-07T06:20:32.467+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'register_high_latency_model', 'rollback_model', 'manual__2025-08-07T06:20:26.810775+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/test_model_rollback.py', '--cfg-path', '/tmp/tmp72b5aa60']
+[2025-08-07T06:20:32.470+0000] {standard_task_runner.py:91} INFO - Job 22: Subtask rollback_model
+[2025-08-07T06:20:32.789+0000] {task_command.py:426} INFO - Running <TaskInstance: register_high_latency_model.rollback_model manual__2025-08-07T06:20:26.810775+00:00 [running]> on host 875a2765ee06
+[2025-08-07T06:20:32.907+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='register_high_latency_model' AIRFLOW_CTX_TASK_ID='rollback_model' AIRFLOW_CTX_EXECUTION_DATE='2025-08-07T06:20:26.810775+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-07T06:20:26.810775+00:00'
+[2025-08-07T06:20:32.909+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-07T06:20:33.352+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2025-08-07T06:20:34.097+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:   0%|          | 0/5 [00:00<?, ?it/s]
+[2025-08-07T06:20:34.101+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  20%|##        | 1/5 [00:00<00:00, 3030.57it/s]
+[2025-08-07T06:20:34.103+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  40%|####      | 2/5 [00:00<00:00, 691.22it/s] 
+[2025-08-07T06:20:34.104+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  60%|######    | 3/5 [00:00<00:00, 724.20it/s]
+[2025-08-07T06:20:34.106+0000] {logging_mixin.py:188} WARNING - Downloading artifacts:  80%|########  | 4/5 [00:00<00:00, 664.34it/s]
+[2025-08-07T06:20:34.107+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 701.04it/s]
+[2025-08-07T06:20:34.108+0000] {logging_mixin.py:188} WARNING - Downloading artifacts: 100%|##########| 5/5 [00:00<00:00, 604.42it/s]
+[2025-08-07T06:20:34.119+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-07T06:20:34.121+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/utils/model_utils.py", line 65, in _get_flavor_configuration
+    return Model.load(model_path).flavors[flavor_name]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'sklearn'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/test_model_rollback.py", line 54, in register_high_latency_model_from_latest_version
+    original_pipeline = mlflow.sklearn.load_model(logged_model_uri)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/sklearn/__init__.py", line 653, in load_model
+    flavor_conf = _get_flavor_configuration(model_path=local_model_path, flavor_name=FLAVOR_NAME)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/mlflow/utils/model_utils.py", line 67, in _get_flavor_configuration
+    raise MlflowException(
+mlflow.exceptions.MlflowException: Model does not have the "sklearn" flavor
+[2025-08-07T06:20:34.150+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=register_high_latency_model, task_id=rollback_model, run_id=manual__2025-08-07T06:20:26.810775+00:00, execution_date=20250807T062026, start_date=20250807T062032, end_date=20250807T062034
+[2025-08-07T06:20:34.187+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 22 for task rollback_model (Model does not have the "sklearn" flavor; 6186)
+[2025-08-07T06:20:34.247+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-07T06:20:34.535+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-07T06:20:34.537+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

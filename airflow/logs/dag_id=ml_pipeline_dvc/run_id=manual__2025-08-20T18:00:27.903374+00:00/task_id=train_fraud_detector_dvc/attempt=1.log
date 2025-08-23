@@ -1,0 +1,58 @@
+[2025-08-20T18:01:50.925+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-20T18:01:50.963+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_fraud_detector_dvc manual__2025-08-20T18:00:27.903374+00:00 [queued]>
+[2025-08-20T18:01:50.976+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_fraud_detector_dvc manual__2025-08-20T18:00:27.903374+00:00 [queued]>
+[2025-08-20T18:01:50.977+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-20T18:01:50.996+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): train_fraud_detector_dvc> on 2025-08-20 18:00:27.903374+00:00
+[2025-08-20T18:01:51.003+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=2168) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-20T18:01:51.006+0000] {standard_task_runner.py:63} INFO - Started process 2169 to run task
+[2025-08-20T18:01:51.006+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'train_fraud_detector_dvc', 'manual__2025-08-20T18:00:27.903374+00:00', '--job-id', '16', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dvc_dag.py', '--cfg-path', '/tmp/tmpm0pvq_hg']
+[2025-08-20T18:01:51.008+0000] {standard_task_runner.py:91} INFO - Job 16: Subtask train_fraud_detector_dvc
+[2025-08-20T18:01:51.070+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.train_fraud_detector_dvc manual__2025-08-20T18:00:27.903374+00:00 [running]> on host d741d36e6db0
+[2025-08-20T18:01:51.206+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='train_fraud_detector_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-20T18:00:27.903374+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-20T18:00:27.903374+00:00'
+[2025-08-20T18:01:51.208+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-20T18:01:51.230+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-20T18:01:51.231+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            git config --global --add safe.directory /opt/***/ml_pipeline\n            cd /opt/***/ml_pipeline\n            dvc pull --force\n            dvc repro train_model\n            dvc push\n        ']
+[2025-08-20T18:01:51.243+0000] {subprocess.py:86} INFO - Output:
+[2025-08-20T18:01:55.101+0000] {subprocess.py:93} INFO - Everything is up to date.
+[2025-08-20T18:01:58.847+0000] {subprocess.py:93} INFO - Stage 'ingest' didn't change, skipping
+[2025-08-20T18:01:58.882+0000] {subprocess.py:93} INFO - Stage 'preprocess' didn't change, skipping
+[2025-08-20T18:01:58.956+0000] {subprocess.py:93} INFO - Running stage 'train_model':
+[2025-08-20T18:01:58.957+0000] {subprocess.py:93} INFO - > python models/train_fraud_detector_task.py
+[2025-08-20T18:02:02.847+0000] {subprocess.py:93} INFO - 2025/08/20 18:02:02 INFO mlflow.tracking.fluent: Experiment with name 'FraudDetectionModel' does not exist. Creating a new experiment.
+[2025-08-20T18:02:03.123+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:02:03,076", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "MLflow run id: d5a4d854f083485ea2c2c575e64415f8"}
+[2025-08-20T18:02:03.210+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:02:03,209", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Loading preprocessor from artifacts/preprocess/fraud_pipeline_v20250820_180044.pkl to process raw data"}
+[2025-08-20T18:02:03.239+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:02:03,239", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Preprocessing/transform applied to raw data."}
+[2025-08-20T18:02:03.275+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:02:03,273", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Evaluation metrics: {'accuracy': 0.998, 'f1_score': 0.9655172413793104, 'precision': 1.0, 'recall': 0.9333333333333333, 'auc': 0.9999312714776633}"}
+[2025-08-20T18:02:03.565+0000] {subprocess.py:93} INFO - /home/***/.local/lib/python3.12/site-packages/mlflow/data/dataset_source_registry.py:149: UserWarning: Failed to determine whether UCVolumeDatasetSource can resolve source information for 's3://mlflow-artifacts/data/raw/fraud_data_v20250820_180044.csv'. Exception:
+[2025-08-20T18:02:03.566+0000] {subprocess.py:93} INFO -   return _dataset_source_registry.resolve(
+[2025-08-20T18:02:03.586+0000] {subprocess.py:93} INFO - /home/***/.local/lib/python3.12/site-packages/mlflow/types/utils.py:452: UserWarning: Hint: Inferred schema contains integer column(s). Integer columns in Python cannot represent missing values. If your input data contains missing values at inference time, it will be encoded as floats and will cause a schema enforcement error. The best way to avoid this problem is to infer the model schema based on a realistic data sample (training dataset) that includes missing values. Alternatively, you can declare integer columns as doubles (float64) whenever these columns may have missing values. See `Handling Integers With Missing Values <https://www.mlflow.org/docs/latest/models.html#handling-integers-with-missing-values>`_ for more details.
+[2025-08-20T18:02:03.587+0000] {subprocess.py:93} INFO -   warnings.warn(
+[2025-08-20T18:02:12.347+0000] {subprocess.py:93} INFO - Successfully registered model 'FraudDetectionModel'.
+[2025-08-20T18:02:12.516+0000] {subprocess.py:93} INFO - 2025/08/20 18:02:12 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: FraudDetectionModel, version 1
+[2025-08-20T18:02:12.518+0000] {subprocess.py:93} INFO - Created version '1' of model 'FraudDetectionModel'.
+[2025-08-20T18:02:12.603+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:02:12,602", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Model pipeline logged to MLflow (artifact_path='model')"}
+[2025-08-20T18:02:12.654+0000] {subprocess.py:93} INFO - /opt/***/ml_pipeline/models/train_fraud_detector_task.py:226: FutureWarning: ``mlflow.tracking.client.MlflowClient.transition_model_version_stage`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/latest/model-registry.html#migrating-from-stages
+[2025-08-20T18:02:12.657+0000] {subprocess.py:93} INFO -   client.transition_model_version_stage(
+[2025-08-20T18:02:12.844+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:02:12,844", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Model registered and transitioned to 'Production' (version 1)"}
+[2025-08-20T18:02:12.846+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:02:12,844", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "\u2705 Training & registration complete."}
+[2025-08-20T18:02:12.908+0000] {subprocess.py:93} INFO - 🏃 View run train_v20250820_180044 at: http://mlflow:5000/#/experiments/2/runs/d5a4d854f083485ea2c2c575e64415f8
+[2025-08-20T18:02:12.909+0000] {subprocess.py:93} INFO - 🧪 View experiment at: http://mlflow:5000/#/experiments/2
+[2025-08-20T18:02:13.777+0000] {subprocess.py:93} INFO - Updating lock file 'dvc.lock'
+[2025-08-20T18:02:13.793+0000] {subprocess.py:93} INFO - 
+[2025-08-20T18:02:13.794+0000] {subprocess.py:93} INFO - To track the changes with git, run:
+[2025-08-20T18:02:13.795+0000] {subprocess.py:93} INFO - 
+[2025-08-20T18:02:13.796+0000] {subprocess.py:93} INFO - 	git add dvc.lock
+[2025-08-20T18:02:13.796+0000] {subprocess.py:93} INFO - 
+[2025-08-20T18:02:13.797+0000] {subprocess.py:93} INFO - To enable auto staging, run:
+[2025-08-20T18:02:13.798+0000] {subprocess.py:93} INFO - 
+[2025-08-20T18:02:13.799+0000] {subprocess.py:93} INFO - 	dvc config core.autostage true
+[2025-08-20T18:02:13.800+0000] {subprocess.py:93} INFO - Use `dvc push` to send your updates to remote storage.
+[2025-08-20T18:02:18.414+0000] {subprocess.py:93} INFO - 2 files pushed
+[2025-08-20T18:02:18.788+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-20T18:02:18.790+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-20T18:02:18.843+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=train_fraud_detector_dvc, run_id=manual__2025-08-20T18:00:27.903374+00:00, execution_date=20250820T180027, start_date=20250820T180150, end_date=20250820T180218
+[2025-08-20T18:02:18.901+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-20T18:02:18.924+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-20T18:02:18.926+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

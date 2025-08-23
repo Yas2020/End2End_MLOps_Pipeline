@@ -1,0 +1,75 @@
+services:
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yaml:/etc/prometheus/prometheus.yml
+      - ./prometheus/alert_rules.yaml:/etc/prometheus/alert_rules.yml
+    networks:
+      - airflow_net
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+    networks:
+      - airflow_net
+
+  alertmanager:
+    image: prom/alertmanager
+    container_name: alertmanager
+    ports:
+      - "9093:9093"
+    volumes:
+      - ./alertmanager/alertmanager.yaml:/etc/alertmanager/alertmanager.yml
+    networks:
+      - airflow_net
+  
+  node_exporter:
+    image: prom/node-exporter:latest
+    container_name: node_exporter
+    ports:
+      - "9100:9100"
+    volumes:
+    - /proc:/host/proc:ro
+    - /sys:/host/sys:ro
+    - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--path.rootfs=/rootfs'
+    restart: unless-stopped
+    networks:
+      - airflow_net
+    pid: "host"   # optional, allows some host metrics (optional, depends on your needs)
+  
+  jaeger:
+    image: jaegertracing/all-in-one:1.44
+    ports:
+      - "16686:16686"
+      - "14250:14250"
+      - "14268:14268"
+    command: ["--collector.otlp.enabled=true"]
+    networks:
+      - airflow_net
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.71.0
+    volumes:
+      - ./open_telemetry/otel-config.yaml:/etc/otel/config.yaml
+    command: ["--config", "/etc/otel/config.yaml"]
+    ports:
+      - "4317:4317"
+    depends_on:
+      - jaeger
+    networks:
+      - airflow_net
+
+
+networks:
+  airflow_net:
+    external: true   # reuse existing network created by airflow-compose

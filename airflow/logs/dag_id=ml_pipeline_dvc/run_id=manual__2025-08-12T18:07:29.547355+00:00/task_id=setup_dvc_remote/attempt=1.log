@@ -1,0 +1,67 @@
+[2025-08-12T18:07:33.038+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-12T18:07:33.132+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.setup_dvc_remote manual__2025-08-12T18:07:29.547355+00:00 [queued]>
+[2025-08-12T18:07:33.158+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.setup_dvc_remote manual__2025-08-12T18:07:29.547355+00:00 [queued]>
+[2025-08-12T18:07:33.159+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-08-12T18:07:33.234+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): setup_dvc_remote> on 2025-08-12 18:07:29.547355+00:00
+[2025-08-12T18:07:33.252+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=3182) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-12T18:07:33.252+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'setup_dvc_remote', 'manual__2025-08-12T18:07:29.547355+00:00', '--job-id', '136', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline_dag.py', '--cfg-path', '/tmp/tmpcm20wvtu']
+[2025-08-12T18:07:33.256+0000] {standard_task_runner.py:63} INFO - Started process 3183 to run task
+[2025-08-12T18:07:33.257+0000] {standard_task_runner.py:91} INFO - Job 136: Subtask setup_dvc_remote
+[2025-08-12T18:07:33.417+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.setup_dvc_remote manual__2025-08-12T18:07:29.547355+00:00 [running]> on host 08abdf02b345
+[2025-08-12T18:07:33.565+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='setup_dvc_remote' AIRFLOW_CTX_EXECUTION_DATE='2025-08-12T18:07:29.547355+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-12T18:07:29.547355+00:00'
+[2025-08-12T18:07:33.568+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-12T18:07:33.605+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-12T18:07:33.613+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/ml_pipeline\n        export AWS_ACCESS_KEY_ID=minioadmin\n        export AWS_SECRET_ACCESS_KEY=minioadmin\n        dvc remote remove minio || true\n        dvc remote add -d minio s3://mlflow-artifacts\n        dvc remote modify minio endpointurl http://minio:9000\n        dvc remote modify minio use_ssl false\n        dvc remote modify --local access_key_id minioadmin\n        dvc remote modify --local secret_access_key minioadmin\n        ls -l .dvc/\n        echo "config file:"\n        cat .dvc/config\n        echo "Local config file:"\n        cat .dvc/config.local || echo "No local config found"\n        dvc push --verbose\n        dvc repro preprocess\n        ']
+[2025-08-12T18:07:33.630+0000] {subprocess.py:86} INFO - Output:
+[2025-08-12T18:07:35.986+0000] {subprocess.py:93} INFO - ERROR: configuration error - config file error: expected 'url' for dictionary value @ data['remote']['minio']
+[2025-08-12T18:07:37.873+0000] {subprocess.py:93} INFO - Setting 'minio' as a default remote.
+[2025-08-12T18:07:43.826+0000] {subprocess.py:93} INFO - ERROR: configuration error - config file error: remote 'access_key_id' doesn't exist.
+[2025-08-12T18:07:45.362+0000] {subprocess.py:93} INFO - ERROR: configuration error - config file error: remote 'secret_access_key' doesn't exist.
+[2025-08-12T18:07:45.765+0000] {subprocess.py:93} INFO - total 8
+[2025-08-12T18:07:45.766+0000] {subprocess.py:93} INFO - drwxr-xr-x 10 default root 320 Aug  5 20:10 cache
+[2025-08-12T18:07:45.767+0000] {subprocess.py:93} INFO - -rw-r--r--  1    1000 1000 133 Aug 12 18:07 config
+[2025-08-12T18:07:45.768+0000] {subprocess.py:93} INFO - -rw-r--r--  1 default root  86 Aug 12 17:15 config.local
+[2025-08-12T18:07:45.768+0000] {subprocess.py:93} INFO - drwxr-xr-x  8 default root 256 Aug 11 22:52 tmp
+[2025-08-12T18:07:45.770+0000] {subprocess.py:93} INFO - config file:
+[2025-08-12T18:07:45.772+0000] {subprocess.py:93} INFO - [core]
+[2025-08-12T18:07:45.772+0000] {subprocess.py:93} INFO -     remote = minio
+[2025-08-12T18:07:45.773+0000] {subprocess.py:93} INFO - ['remote "minio"']
+[2025-08-12T18:07:45.774+0000] {subprocess.py:93} INFO -     url = s3://mlflow-artifacts
+[2025-08-12T18:07:45.775+0000] {subprocess.py:93} INFO -     endpointurl = http://minio:9000
+[2025-08-12T18:07:45.775+0000] {subprocess.py:93} INFO -     use_ssl = false
+[2025-08-12T18:07:45.776+0000] {subprocess.py:93} INFO - Local config file:
+[2025-08-12T18:07:45.777+0000] {subprocess.py:93} INFO - 
+[2025-08-12T18:07:45.778+0000] {subprocess.py:93} INFO - ['remote "minio"']
+[2025-08-12T18:07:45.779+0000] {subprocess.py:93} INFO -     access_key_id = minioadmin
+[2025-08-12T18:07:45.780+0000] {subprocess.py:93} INFO -     secret_access_key = minioadmin
+[2025-08-12T18:07:46.644+0000] {subprocess.py:93} INFO - 2025-08-12 18:07:46,643 DEBUG: v3.61.0 (pip), CPython 3.12.3 on Linux-6.6.31-linuxkit-x86_64-with-glibc2.36
+[2025-08-12T18:07:46.645+0000] {subprocess.py:93} INFO - 2025-08-12 18:07:46,644 DEBUG: command: /home/***/.local/bin/dvc push --verbose
+[2025-08-12T18:07:47.660+0000] {subprocess.py:93} INFO - 2025-08-12 18:07:47,659 DEBUG: Lockfile 'dvc.lock' needs to be updated.
+[2025-08-12T18:07:48.938+0000] {subprocess.py:93} INFO - Everything is up to date.
+[2025-08-12T18:07:48.952+0000] {subprocess.py:93} INFO - 2025-08-12 18:07:48,952 DEBUG: Analytics is enabled.
+[2025-08-12T18:07:49.152+0000] {subprocess.py:93} INFO - 2025-08-12 18:07:49,150 DEBUG: Trying to spawn ['daemon', 'analytics', '/tmp/tmp8bx9as5n', '-v']
+[2025-08-12T18:07:49.173+0000] {subprocess.py:93} INFO - 2025-08-12 18:07:49,168 DEBUG: Spawned ['daemon', 'analytics', '/tmp/tmp8bx9as5n', '-v'] with pid 3320
+[2025-08-12T18:07:57.198+0000] {subprocess.py:93} INFO - ERROR: failed to reproduce 'preprocess': Forbidden: An error occurred (403) when calling the HeadObject operation: Forbidden
+[2025-08-12T18:07:57.864+0000] {subprocess.py:97} INFO - Command exited with return code 255
+[2025-08-12T18:07:57.868+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-12T18:07:57.887+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 255.
+[2025-08-12T18:07:57.899+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=ml_pipeline_dvc, task_id=setup_dvc_remote, run_id=manual__2025-08-12T18:07:29.547355+00:00, execution_date=20250812T180729, start_date=20250812T180733, end_date=20250812T180757
+[2025-08-12T18:07:57.923+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 136 for task setup_dvc_remote (Bash command failed. The command returned a non-zero exit code 255.; 3183)
+[2025-08-12T18:07:57.953+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-12T18:07:57.986+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-12T18:07:57.988+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

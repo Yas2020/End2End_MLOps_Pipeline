@@ -1,0 +1,6 @@
+dvc[s3]
+pandas
+numpy
+joblib
+boto3
+python-json-logger

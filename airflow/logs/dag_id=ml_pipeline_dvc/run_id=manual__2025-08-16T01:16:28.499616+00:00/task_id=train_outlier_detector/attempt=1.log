@@ -1,0 +1,74 @@
+[2025-08-16T01:16:50.548+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-16T01:16:50.653+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_outlier_detector manual__2025-08-16T01:16:28.499616+00:00 [queued]>
+[2025-08-16T01:16:50.701+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_outlier_detector manual__2025-08-16T01:16:28.499616+00:00 [queued]>
+[2025-08-16T01:16:50.703+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-16T01:16:50.777+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): train_outlier_detector> on 2025-08-16 01:16:28.499616+00:00
+[2025-08-16T01:16:50.805+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=6997) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-16T01:16:50.810+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'train_outlier_detector', 'manual__2025-08-16T01:16:28.499616+00:00', '--job-id', '259', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline_dag.py', '--cfg-path', '/tmp/tmp_hy6slj0']
+[2025-08-16T01:16:50.815+0000] {standard_task_runner.py:63} INFO - Started process 6998 to run task
+[2025-08-16T01:16:50.816+0000] {standard_task_runner.py:91} INFO - Job 259: Subtask train_outlier_detector
+[2025-08-16T01:16:51.027+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.train_outlier_detector manual__2025-08-16T01:16:28.499616+00:00 [running]> on host 952e994ef77e
+[2025-08-16T01:16:51.192+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='train_outlier_detector' AIRFLOW_CTX_EXECUTION_DATE='2025-08-16T01:16:28.499616+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-16T01:16:28.499616+00:00'
+[2025-08-16T01:16:51.194+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-16T01:16:51.219+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-16T01:16:51.220+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            cd /opt/***/ml_pipeline\n            dvc pull\n            dvc repro train_outlier\n            dvc push\n        ']
+[2025-08-16T01:16:51.235+0000] {subprocess.py:86} INFO - Output:
+[2025-08-16T01:17:00.788+0000] {subprocess.py:93} INFO - ERROR: failed to pull data from the cloud - Can't remove the following unsaved files without confirmation. Use `--force` to force.
+[2025-08-16T01:17:00.793+0000] {subprocess.py:93} INFO - /opt/***/ml_pipeline/version_meta.json
+[2025-08-16T01:17:09.594+0000] {subprocess.py:93} INFO - 'data/raw.dvc' didn't change, skipping
+[2025-08-16T01:17:09.645+0000] {subprocess.py:93} INFO - Verifying data sources in stage: 'version_meta.json.dvc'
+[2025-08-16T01:17:09.719+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:17:09.752+0000] {subprocess.py:93} INFO - Stage 'preprocess' didn't change, skipping
+[2025-08-16T01:17:09.820+0000] {subprocess.py:93} INFO - Running stage 'train_outlier':
+[2025-08-16T01:17:09.821+0000] {subprocess.py:93} INFO - > python train/train_outlier_detector_task.py
+[2025-08-16T01:17:16.663+0000] {subprocess.py:93} INFO - 2025/08/16 01:17:16 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+[2025-08-16T01:17:16.666+0000] {subprocess.py:93} INFO - The git executable must be specified in one of the following ways:
+[2025-08-16T01:17:16.667+0000] {subprocess.py:93} INFO -     - be included in your $PATH
+[2025-08-16T01:17:16.668+0000] {subprocess.py:93} INFO -     - be set via $GIT_PYTHON_GIT_EXECUTABLE
+[2025-08-16T01:17:16.668+0000] {subprocess.py:93} INFO -     - explicitly set via git.refresh(<full-path-to-git-executable>)
+[2025-08-16T01:17:16.669+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:17:16.670+0000] {subprocess.py:93} INFO - All git commands will error until this is rectified.
+[2025-08-16T01:17:16.670+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:17:16.671+0000] {subprocess.py:93} INFO - This initial message can be silenced or aggravated in the future by setting the
+[2025-08-16T01:17:16.672+0000] {subprocess.py:93} INFO - $GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+[2025-08-16T01:17:16.673+0000] {subprocess.py:93} INFO -     - quiet|q|silence|s|silent|none|n|0: for no message or exception
+[2025-08-16T01:17:16.673+0000] {subprocess.py:93} INFO -     - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+[2025-08-16T01:17:16.674+0000] {subprocess.py:93} INFO -     - error|e|exception|raise|r|2: for a raised exception
+[2025-08-16T01:17:16.675+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:17:16.676+0000] {subprocess.py:93} INFO - Example:
+[2025-08-16T01:17:16.676+0000] {subprocess.py:93} INFO -     export GIT_PYTHON_REFRESH=quiet
+[2025-08-16T01:17:16.677+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:17:16.764+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-16 01:17:16,704", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "MLflow run id: 9f3e83fb63044c73a82c0167485a4c92"}
+[2025-08-16T01:17:16.883+0000] {subprocess.py:93} INFO - 2025/08/16 01:17:16 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+[2025-08-16T01:17:25.352+0000] {subprocess.py:93} INFO - [31m2025/08/16 01:17:25 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.[0m
+[2025-08-16T01:17:28.400+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-16 01:17:28,398", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Outlier_detector logged"}
+[2025-08-16T01:17:28.402+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-16 01:17:28,399", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Registering model from runs:/9f3e83fb63044c73a82c0167485a4c92/outlier as registered model name 'OutlierDetectionModel'"}
+[2025-08-16T01:17:28.875+0000] {subprocess.py:93} INFO - Registered model 'OutlierDetectionModel' already exists. Creating a new version of this model...
+[2025-08-16T01:17:29.282+0000] {subprocess.py:93} INFO - 2025/08/16 01:17:29 WARNING mlflow.tracking._model_registry.fluent: Run with id 9f3e83fb63044c73a82c0167485a4c92 has no artifacts at artifact path 'outlier', registering model based on models:/m-93e2b51dd67842b5908cc8edab656575 instead
+[2025-08-16T01:17:29.567+0000] {subprocess.py:93} INFO - 2025/08/16 01:17:29 INFO mlflow.store.model_registry.abstract_store: Waiting up to 300 seconds for model version to finish creation. Model name: OutlierDetectionModel, version 3
+[2025-08-16T01:17:29.568+0000] {subprocess.py:93} INFO - Created version '3' of model 'OutlierDetectionModel'.
+[2025-08-16T01:17:29.637+0000] {subprocess.py:93} INFO - /opt/***/ml_pipeline/train/train_outlier_detector_task.py:105: FutureWarning: ``mlflow.tracking.client.MlflowClient.transition_model_version_stage`` is deprecated since 2.9.0. Model registry stages will be removed in a future major release. To learn more about the deprecation of model registry stages, see our migration guide here: https://mlflow.org/docs/latest/model-registry.html#migrating-from-stages
+[2025-08-16T01:17:29.638+0000] {subprocess.py:93} INFO -   client.transition_model_version_stage(
+[2025-08-16T01:17:29.732+0000] {subprocess.py:93} INFO - 🏃 View run train_v20250815_164605 at: http://mlflow:5000/#/experiments/1/runs/9f3e83fb63044c73a82c0167485a4c92
+[2025-08-16T01:17:29.733+0000] {subprocess.py:93} INFO - 🧪 View experiment at: http://mlflow:5000/#/experiments/1
+[2025-08-16T01:17:29.734+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-16 01:17:29,732", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Model registered and transitioned to 'Production' (version 3)"}
+[2025-08-16T01:17:29.736+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-16 01:17:29,732", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "\u2705 Training & registration complete."}
+[2025-08-16T01:17:30.758+0000] {subprocess.py:93} INFO - Updating lock file 'dvc.lock'
+[2025-08-16T01:17:30.767+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:17:30.768+0000] {subprocess.py:93} INFO - To track the changes with git, run:
+[2025-08-16T01:17:30.769+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:17:30.770+0000] {subprocess.py:93} INFO - 	git add dvc.lock version_meta.json.dvc
+[2025-08-16T01:17:30.771+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:17:30.772+0000] {subprocess.py:93} INFO - To enable auto staging, run:
+[2025-08-16T01:17:30.772+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:17:30.773+0000] {subprocess.py:93} INFO - 	dvc config core.autostage true
+[2025-08-16T01:17:30.774+0000] {subprocess.py:93} INFO - Use `dvc push` to send your updates to remote storage.
+[2025-08-16T01:17:34.958+0000] {subprocess.py:93} INFO - 3 files pushed
+[2025-08-16T01:17:35.693+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-16T01:17:35.697+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-16T01:17:35.753+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=train_outlier_detector, run_id=manual__2025-08-16T01:16:28.499616+00:00, execution_date=20250816T011628, start_date=20250816T011650, end_date=20250816T011735
+[2025-08-16T01:17:35.811+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-16T01:17:35.838+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-16T01:17:35.840+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

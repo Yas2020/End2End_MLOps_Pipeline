@@ -1,0 +1,36 @@
+[2025-08-15T00:59:39.451+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-15T00:59:39.585+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.preprocess_dvc manual__2025-08-15T00:59:35.954601+00:00 [queued]>
+[2025-08-15T00:59:39.616+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.preprocess_dvc manual__2025-08-15T00:59:35.954601+00:00 [queued]>
+[2025-08-15T00:59:39.618+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-15T00:59:39.714+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): preprocess_dvc> on 2025-08-15 00:59:35.954601+00:00
+[2025-08-15T00:59:39.728+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=794) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-15T00:59:39.734+0000] {standard_task_runner.py:63} INFO - Started process 795 to run task
+[2025-08-15T00:59:39.733+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'preprocess_dvc', 'manual__2025-08-15T00:59:35.954601+00:00', '--job-id', '225', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline_dag.py', '--cfg-path', '/tmp/tmpwxteysi2']
+[2025-08-15T00:59:39.762+0000] {standard_task_runner.py:91} INFO - Job 225: Subtask preprocess_dvc
+[2025-08-15T00:59:39.880+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.preprocess_dvc manual__2025-08-15T00:59:35.954601+00:00 [running]> on host 97971cf4e9e1
+[2025-08-15T00:59:40.085+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='preprocess_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-15T00:59:35.954601+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-15T00:59:35.954601+00:00'
+[2025-08-15T00:59:40.087+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-15T00:59:40.114+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-15T00:59:40.116+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n        cd /opt/***/ml_pipeline\n        dvc pull data/raw.dvc version_meta.json.dvc \n        dvc repro preprocess\n        dvc push\n        ']
+[2025-08-15T00:59:40.129+0000] {subprocess.py:86} INFO - Output:
+[2025-08-15T00:59:44.704+0000] {subprocess.py:93} INFO - Everything is up to date.
+[2025-08-15T00:59:48.736+0000] {subprocess.py:93} INFO - 'data/raw.dvc' didn't change, skipping
+[2025-08-15T00:59:48.762+0000] {subprocess.py:93} INFO - 'version_meta.json.dvc' didn't change, skipping
+[2025-08-15T00:59:48.845+0000] {subprocess.py:93} INFO - Running stage 'preprocess':
+[2025-08-15T00:59:48.846+0000] {subprocess.py:93} INFO - > python preprocessing/preprocess_task.py
+[2025-08-15T00:59:51.341+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-15 00:59:51,238", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "version_meta.json loaded from local path!"}
+[2025-08-15T00:59:51.357+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-15 00:59:51,357", "levelname": "INFO", "name": "preprocessing_pipeline", "trace_id": null, "span_id": null, "message": "preprocessor trained!"}
+[2025-08-15T00:59:51.361+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-08-15T00:59:51.362+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/preprocessing/preprocess_task.py", line 54, in <module>
+[2025-08-15T00:59:51.363+0000] {subprocess.py:93} INFO -     os.mkdir("data/processed", exist_ok=True, parents=True)
+[2025-08-15T00:59:51.364+0000] {subprocess.py:93} INFO - TypeError: 'exist_ok' is an invalid keyword argument for mkdir()
+[2025-08-15T00:59:51.601+0000] {subprocess.py:93} INFO - ERROR: failed to reproduce 'preprocess': failed to run: python preprocessing/preprocess_task.py, exited with 1
+[2025-08-15T00:59:54.336+0000] {subprocess.py:93} INFO - Everything is up to date.
+[2025-08-15T00:59:54.573+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-15T00:59:54.575+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-15T00:59:54.611+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=preprocess_dvc, run_id=manual__2025-08-15T00:59:35.954601+00:00, execution_date=20250815T005935, start_date=20250815T005939, end_date=20250815T005954
+[2025-08-15T00:59:54.638+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-15T00:59:54.661+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-15T00:59:54.663+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

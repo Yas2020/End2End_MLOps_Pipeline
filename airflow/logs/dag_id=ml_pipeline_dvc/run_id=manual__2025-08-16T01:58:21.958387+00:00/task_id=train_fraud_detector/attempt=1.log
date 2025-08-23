@@ -1,0 +1,66 @@
+[2025-08-16T01:58:54.639+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-16T01:58:54.672+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_fraud_detector manual__2025-08-16T01:58:21.958387+00:00 [queued]>
+[2025-08-16T01:58:54.683+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_fraud_detector manual__2025-08-16T01:58:21.958387+00:00 [queued]>
+[2025-08-16T01:58:54.683+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-16T01:58:54.702+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): train_fraud_detector> on 2025-08-16 01:58:21.958387+00:00
+[2025-08-16T01:58:54.709+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=8967) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-16T01:58:54.712+0000] {standard_task_runner.py:63} INFO - Started process 8968 to run task
+[2025-08-16T01:58:54.712+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'train_fraud_detector', 'manual__2025-08-16T01:58:21.958387+00:00', '--job-id', '274', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline_dag.py', '--cfg-path', '/tmp/tmpsbzkomh3']
+[2025-08-16T01:58:54.713+0000] {standard_task_runner.py:91} INFO - Job 274: Subtask train_fraud_detector
+[2025-08-16T01:58:54.775+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.train_fraud_detector manual__2025-08-16T01:58:21.958387+00:00 [running]> on host 952e994ef77e
+[2025-08-16T01:58:54.899+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='train_fraud_detector' AIRFLOW_CTX_EXECUTION_DATE='2025-08-16T01:58:21.958387+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-16T01:58:21.958387+00:00'
+[2025-08-16T01:58:54.900+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-16T01:58:54.921+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-16T01:58:54.922+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            cd /opt/***/ml_pipeline\n            dvc pull\n            dvc repro train_model\n            dvc push\n        ']
+[2025-08-16T01:58:54.934+0000] {subprocess.py:86} INFO - Output:
+[2025-08-16T01:58:58.445+0000] {subprocess.py:93} INFO - ERROR: failed to pull data from the cloud - Can't remove the following unsaved files without confirmation. Use `--force` to force.
+[2025-08-16T01:58:58.447+0000] {subprocess.py:93} INFO - /opt/***/ml_pipeline/version_meta.json
+[2025-08-16T01:58:58.448+0000] {subprocess.py:93} INFO - /opt/***/ml_pipeline/artifacts/models/fraud/fraud_detector_v20250815_164605.pkl
+[2025-08-16T01:59:02.177+0000] {subprocess.py:93} INFO - 'data/raw.dvc' didn't change, skipping
+[2025-08-16T01:59:02.218+0000] {subprocess.py:93} INFO - Stage 'preprocess' didn't change, skipping
+[2025-08-16T01:59:02.291+0000] {subprocess.py:93} INFO - Running stage 'train_model':
+[2025-08-16T01:59:02.291+0000] {subprocess.py:93} INFO - > python train/train_fraud_detector_task.py
+[2025-08-16T01:59:07.569+0000] {subprocess.py:93} INFO - 2025/08/16 01:59:07 WARNING mlflow.utils.git_utils: Failed to import Git (the Git executable is probably not on your PATH), so Git SHA is not available. Error: Failed to initialize: Bad git executable.
+[2025-08-16T01:59:07.572+0000] {subprocess.py:93} INFO - The git executable must be specified in one of the following ways:
+[2025-08-16T01:59:07.572+0000] {subprocess.py:93} INFO -     - be included in your $PATH
+[2025-08-16T01:59:07.573+0000] {subprocess.py:93} INFO -     - be set via $GIT_PYTHON_GIT_EXECUTABLE
+[2025-08-16T01:59:07.573+0000] {subprocess.py:93} INFO -     - explicitly set via git.refresh(<full-path-to-git-executable>)
+[2025-08-16T01:59:07.574+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:59:07.575+0000] {subprocess.py:93} INFO - All git commands will error until this is rectified.
+[2025-08-16T01:59:07.576+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:59:07.577+0000] {subprocess.py:93} INFO - This initial message can be silenced or aggravated in the future by setting the
+[2025-08-16T01:59:07.577+0000] {subprocess.py:93} INFO - $GIT_PYTHON_REFRESH environment variable. Use one of the following values:
+[2025-08-16T01:59:07.578+0000] {subprocess.py:93} INFO -     - quiet|q|silence|s|silent|none|n|0: for no message or exception
+[2025-08-16T01:59:07.579+0000] {subprocess.py:93} INFO -     - warn|w|warning|log|l|1: for a warning message (logging level CRITICAL, displayed by default)
+[2025-08-16T01:59:07.580+0000] {subprocess.py:93} INFO -     - error|e|exception|raise|r|2: for a raised exception
+[2025-08-16T01:59:07.581+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:59:07.582+0000] {subprocess.py:93} INFO - Example:
+[2025-08-16T01:59:07.584+0000] {subprocess.py:93} INFO -     export GIT_PYTHON_REFRESH=quiet
+[2025-08-16T01:59:07.585+0000] {subprocess.py:93} INFO - 
+[2025-08-16T01:59:07.653+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-16 01:59:07,602", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "MLflow run id: 69e3d3dd1385463286f3fe4708098d96"}
+[2025-08-16T01:59:07.718+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-16 01:59:07,717", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Loading preprocessor from artifacts/preprocess/fraud_pipeline_v20250815_164605.pkl to process raw data"}
+[2025-08-16T01:59:07.756+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-16 01:59:07,755", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Preprocessing/transform applied to raw data."}
+[2025-08-16T01:59:07.797+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-16 01:59:07,793", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Evaluation metrics: {'accuracy': 0.998, 'f1_score': 0.9655172413793104, 'precision': 1.0, 'recall': 0.9333333333333333, 'auc': 0.9999312714776633}"}
+[2025-08-16T01:59:08.054+0000] {subprocess.py:93} INFO - 2025/08/16 01:59:08 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+[2025-08-16T01:59:16.989+0000] {subprocess.py:93} INFO - [31m2025/08/16 01:59:16 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.[0m
+[2025-08-16T01:59:17.677+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-16 01:59:17,676", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Model pipeline logged to MLflow (artifact_path='model')"}
+[2025-08-16T01:59:17.731+0000] {subprocess.py:93} INFO - 🏃 View run train_v20250815_164605 at: http://mlflow:5000/#/experiments/2/runs/69e3d3dd1385463286f3fe4708098d96
+[2025-08-16T01:59:17.732+0000] {subprocess.py:93} INFO - 🧪 View experiment at: http://mlflow:5000/#/experiments/2
+[2025-08-16T01:59:17.733+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-08-16T01:59:17.734+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/train/train_fraud_detector_task.py", line 221, in <module>
+[2025-08-16T01:59:17.734+0000] {subprocess.py:93} INFO -     main()
+[2025-08-16T01:59:17.735+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/train/train_fraud_detector_task.py", line 199, in main
+[2025-08-16T01:59:17.736+0000] {subprocess.py:93} INFO -     json.dump(meta, f, indent=2)
+[2025-08-16T01:59:17.737+0000] {subprocess.py:93} INFO -   File "/usr/local/lib/python3.12/json/__init__.py", line 180, in dump
+[2025-08-16T01:59:17.738+0000] {subprocess.py:93} INFO -     fp.write(chunk)
+[2025-08-16T01:59:17.739+0000] {subprocess.py:93} INFO - io.UnsupportedOperation: not writable
+[2025-08-16T01:59:18.369+0000] {subprocess.py:93} INFO - ERROR: failed to reproduce 'train_model': failed to run: python train/train_fraud_detector_task.py, exited with 1
+[2025-08-16T01:59:23.067+0000] {subprocess.py:93} INFO - Everything is up to date.
+[2025-08-16T01:59:23.484+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-16T01:59:23.487+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-16T01:59:23.528+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=train_fraud_detector, run_id=manual__2025-08-16T01:58:21.958387+00:00, execution_date=20250816T015821, start_date=20250816T015854, end_date=20250816T015923
+[2025-08-16T01:59:23.557+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-16T01:59:23.584+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-16T01:59:23.586+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

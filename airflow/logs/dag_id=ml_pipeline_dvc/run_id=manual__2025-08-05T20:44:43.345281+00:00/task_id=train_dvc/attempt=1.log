@@ -1,0 +1,57 @@
+[2025-08-05T20:46:02.092+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-05T20:46:02.465+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_dvc manual__2025-08-05T20:44:43.345281+00:00 [queued]>
+[2025-08-05T20:46:02.529+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_dvc manual__2025-08-05T20:44:43.345281+00:00 [queued]>
+[2025-08-05T20:46:02.534+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-08-05T20:46:03.165+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): train_dvc> on 2025-08-05 20:44:43.345281+00:00
+[2025-08-05T20:46:03.330+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=3319) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-05T20:46:03.422+0000] {standard_task_runner.py:63} INFO - Started process 3320 to run task
+[2025-08-05T20:46:03.403+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'train_dvc', 'manual__2025-08-05T20:44:43.345281+00:00', '--job-id', '48', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag_2.py', '--cfg-path', '/tmp/tmpia81i32e']
+[2025-08-05T20:46:03.470+0000] {standard_task_runner.py:91} INFO - Job 48: Subtask train_dvc
+[2025-08-05T20:46:05.728+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.train_dvc manual__2025-08-05T20:44:43.345281+00:00 [running]> on host cb274dbeb17b
+[2025-08-05T20:46:07.719+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='train_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-05T20:44:43.345281+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-05T20:44:43.345281+00:00'
+[2025-08-05T20:46:07.733+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-05T20:46:07.985+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-05T20:46:08.005+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/ml_pipeline && dvc repro train']
+[2025-08-05T20:46:08.162+0000] {subprocess.py:86} INFO - Output:
+[2025-08-05T20:46:26.046+0000] {subprocess.py:93} INFO - Stage 'preprocess' didn't change, skipping
+[2025-08-05T20:46:27.348+0000] {subprocess.py:93} INFO - Running stage 'train':
+[2025-08-05T20:46:27.350+0000] {subprocess.py:93} INFO - > python train/train_task.py
+[2025-08-05T20:47:09.503+0000] {subprocess.py:93} INFO - INFO:__main__:Outlier detector saved to artifacts/models/outlier_detector_v20250801_144307.pkl
+[2025-08-05T20:47:10.072+0000] {subprocess.py:93} INFO - /home/***/.local/lib/python3.12/site-packages/sklearn/metrics/_ranking.py:1201: UndefinedMetricWarning: No positive samples in y_true, true positive value should be meaningless
+[2025-08-05T20:47:10.078+0000] {subprocess.py:93} INFO -   warnings.warn(
+[2025-08-05T20:47:10.284+0000] {subprocess.py:93} INFO - INFO:__main__:📄 Training metadata saved to artifacts/train/train_metadata_v20250801_144307.json
+[2025-08-05T20:47:10.288+0000] {subprocess.py:93} INFO - INFO:__main__:📦 Updated version_meta.json
+[2025-08-05T20:47:11.577+0000] {subprocess.py:93} INFO - INFO:__main__:📄 Registering the model FraudDetectionModel
+[2025-08-05T20:47:11.588+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-08-05T20:47:11.601+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/train/train_task.py", line 219, in <module>
+[2025-08-05T20:47:11.608+0000] {subprocess.py:93} INFO - 
+[2025-08-05T20:47:11.619+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/train/train_task.py", line 213, in main
+[2025-08-05T20:47:11.651+0000] {subprocess.py:93} INFO -     save_training_metadata(meta, model_file, metrics, outlier_file, version_tag)
+[2025-08-05T20:47:11.656+0000] {subprocess.py:93} INFO -     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-05T20:47:11.661+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/train/train_task.py", line 126, in register_model_with_mlflow
+[2025-08-05T20:47:11.666+0000] {subprocess.py:93} INFO - 
+[2025-08-05T20:47:11.670+0000] {subprocess.py:93} INFO - NameError: name 'np' is not defined
+[2025-08-05T20:47:14.029+0000] {subprocess.py:93} INFO - ERROR: failed to reproduce 'train': failed to run: python train/train_task.py, exited with 1
+[2025-08-05T20:47:17.383+0000] {subprocess.py:97} INFO - Command exited with return code 255
+[2025-08-05T20:47:17.405+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-05T20:47:17.599+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 255.
+[2025-08-05T20:47:17.675+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=ml_pipeline_dvc, task_id=train_dvc, run_id=manual__2025-08-05T20:44:43.345281+00:00, execution_date=20250805T204443, start_date=20250805T204602, end_date=20250805T204717
+[2025-08-05T20:47:18.079+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 48 for task train_dvc (Bash command failed. The command returned a non-zero exit code 255.; 3320)
+[2025-08-05T20:47:18.320+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-08-05T20:47:18.481+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-05T20:47:18.548+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,670 @@
+[2025-08-10T23:40:05.011+0000] {processor.py:161} INFO - Started process (PID=364) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:05.013+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:40:05.016+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:40:05.016+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:05.030+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:40:05.023+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 7, in <module>
+    default_args=default_args,
+                ^^^^^^^^^^^^
+NameError: name 'default_args' is not defined
+[2025-08-10T23:40:05.035+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:05.065+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.064 seconds
+[2025-08-10T23:40:35.556+0000] {processor.py:161} INFO - Started process (PID=397) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:35.558+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:40:35.561+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:40:35.560+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:35.578+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:40:35.572+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 7, in <module>
+    default_args=default_args,
+                ^^^^^^^^^^^^
+NameError: name 'default_args' is not defined
+[2025-08-10T23:40:35.584+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:35.610+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.062 seconds
+[2025-08-10T23:40:46.527+0000] {processor.py:161} INFO - Started process (PID=408) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:46.528+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:40:46.531+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:40:46.530+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:46.544+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:40:46.538+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 8, in <module>
+    default_args=default_args,
+                ^^^^^^^^^^^^
+NameError: name 'default_args' is not defined
+[2025-08-10T23:40:46.552+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:46.600+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.083 seconds
+[2025-08-10T23:40:49.640+0000] {processor.py:161} INFO - Started process (PID=411) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:49.643+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:40:49.651+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:40:49.649+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:49.669+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:40:49.666+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3
+    from prepr
+              ^
+SyntaxError: invalid syntax
+[2025-08-10T23:40:49.672+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:49.755+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.133 seconds
+[2025-08-10T23:40:58.132+0000] {processor.py:161} INFO - Started process (PID=428) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:58.135+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:40:58.139+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:40:58.139+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:59.422+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:40:59.419+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing import etl_task
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:40:59.424+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:40:59.577+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 1.460 seconds
+[2025-08-10T23:41:08.197+0000] {processor.py:161} INFO - Started process (PID=434) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:08.199+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:41:08.202+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:41:08.201+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:09.033+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:41:09.030+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing import etl_task
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:41:09.034+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:09.054+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.866 seconds
+[2025-08-10T23:41:10.101+0000] {processor.py:161} INFO - Started process (PID=436) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:10.103+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:41:10.106+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:41:10.105+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:10.774+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:41:10.772+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing import etl_task
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:41:10.776+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:10.794+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.702 seconds
+[2025-08-10T23:41:24.569+0000] {processor.py:161} INFO - Started process (PID=466) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:24.571+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:41:24.574+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:41:24.573+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:25.318+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:41:25.315+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing import etl_task
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:41:25.319+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:25.342+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.783 seconds
+[2025-08-10T23:41:35.366+0000] {processor.py:161} INFO - Started process (PID=468) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:35.368+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:41:35.371+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:41:35.370+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:36.095+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:41:36.092+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing import etl_task
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:41:36.097+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:36.117+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.760 seconds
+[2025-08-10T23:41:39.179+0000] {processor.py:161} INFO - Started process (PID=473) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:39.181+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:41:39.184+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:41:39.183+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:40.157+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:41:40.153+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing import etl_task
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:41:40.158+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:41:40.186+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 1.016 seconds
+[2025-08-10T23:42:10.329+0000] {processor.py:161} INFO - Started process (PID=505) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:42:10.331+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:42:10.334+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:42:10.334+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:42:11.069+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:42:11.066+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing import etl_task
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:42:11.071+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:42:11.093+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.772 seconds
+[2025-08-10T23:42:41.192+0000] {processor.py:161} INFO - Started process (PID=539) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:42:41.194+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:42:41.197+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:42:41.196+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:42:41.886+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:42:41.883+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing import etl_task
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:42:41.887+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:42:41.920+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.736 seconds
+[2025-08-10T23:42:47.195+0000] {processor.py:161} INFO - Started process (PID=546) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:42:47.197+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:42:47.200+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:42:47.199+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:42:47.218+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:42:47.213+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 12, in <module>
+    python_callable=etl_task
+                    ^^^^^^^^
+NameError: name 'etl_task' is not defined
+[2025-08-10T23:42:47.222+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:42:47.252+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.065 seconds
+[2025-08-10T23:42:55.105+0000] {processor.py:161} INFO - Started process (PID=562) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:42:55.107+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:42:55.110+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:42:55.110+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:42:55.132+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:42:55.123+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 12, in <module>
+    python_callable=preprocessing.etl_task
+                    ^^^^^^^^^^^^^
+NameError: name 'preprocessing' is not defined
+[2025-08-10T23:42:55.141+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:42:55.184+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.087 seconds
+[2025-08-10T23:43:04.853+0000] {processor.py:161} INFO - Started process (PID=575) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:04.855+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:43:04.859+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:04.858+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:04.884+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:04.875+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 12, in <module>
+    python_callable=etl_task
+                    ^^^^^^^^
+NameError: name 'etl_task' is not defined
+[2025-08-10T23:43:04.890+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:04.919+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.075 seconds
+[2025-08-10T23:43:16.063+0000] {processor.py:161} INFO - Started process (PID=581) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:16.065+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:43:16.070+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:16.069+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:16.855+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:16.852+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing import etl_task
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:43:16.856+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:16.876+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.826 seconds
+[2025-08-10T23:43:18.441+0000] {processor.py:161} INFO - Started process (PID=583) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:18.444+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:43:18.449+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:18.449+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:18.481+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:18.471+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 12, in <module>
+    python_callable=preprocessingetl_task
+                    ^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'preprocessingetl_task' is not defined
+[2025-08-10T23:43:18.489+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:18.515+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.085 seconds
+[2025-08-10T23:43:20.462+0000] {processor.py:161} INFO - Started process (PID=584) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:20.464+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:43:20.467+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:20.467+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:20.512+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:20.499+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 12, in <module>
+    python_callable=preprocessing.etl_task
+                    ^^^^^^^^^^^^^
+NameError: name 'preprocessing' is not defined
+[2025-08-10T23:43:20.520+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:20.556+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.106 seconds
+[2025-08-10T23:43:50.986+0000] {processor.py:161} INFO - Started process (PID=617) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:50.989+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:43:50.993+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:50.993+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:51.018+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:51.011+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 12, in <module>
+    python_callable=preprocessing.etl_task
+                    ^^^^^^^^^^^^^
+NameError: name 'preprocessing' is not defined
+[2025-08-10T23:43:51.024+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:51.054+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.080 seconds
+[2025-08-10T23:43:57.122+0000] {processor.py:161} INFO - Started process (PID=625) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:57.123+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:43:57.127+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:57.126+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:57.138+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:57.135+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from .preprocessing import *
+ImportError: attempted relative import with no known parent package
+[2025-08-10T23:43:57.139+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:57.175+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.062 seconds
+[2025-08-10T23:43:58.138+0000] {processor.py:161} INFO - Started process (PID=626) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:58.139+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:43:58.142+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:58.142+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:58.150+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:43:58.149+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3
+    from ../preprocessing import *
+           ^
+SyntaxError: invalid syntax
+[2025-08-10T23:43:58.152+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:43:58.183+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.057 seconds
+[2025-08-10T23:44:19.364+0000] {processor.py:161} INFO - Started process (PID=651) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:44:19.366+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:44:19.369+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:44:19.368+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:44:19.386+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:44:19.379+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 12, in <module>
+    python_callable=preprocessing.etl_task
+                    ^^^^^^^^^^^^^
+NameError: name 'preprocessing' is not defined
+[2025-08-10T23:44:19.393+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:44:19.421+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.065 seconds
+[2025-08-10T23:44:29.515+0000] {processor.py:161} INFO - Started process (PID=660) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:44:29.517+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:44:29.521+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:44:29.521+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:44:29.539+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:44:29.535+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 12, in <module>
+    python_callable=etl_task
+                    ^^^^^^^^
+NameError: name 'etl_task' is not defined
+[2025-08-10T23:44:29.544+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:44:29.574+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.069 seconds
+[2025-08-10T23:44:59.799+0000] {processor.py:161} INFO - Started process (PID=693) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:44:59.800+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:44:59.805+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:44:59.804+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:44:59.829+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:44:59.825+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 12, in <module>
+    python_callable=etl_task
+                    ^^^^^^^^
+NameError: name 'etl_task' is not defined
+[2025-08-10T23:44:59.833+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:44:59.863+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.078 seconds
+[2025-08-10T23:45:30.222+0000] {processor.py:161} INFO - Started process (PID=726) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:45:30.223+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:45:30.227+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:45:30.226+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:45:30.240+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:45:30.236+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 12, in <module>
+    python_callable=etl_task
+                    ^^^^^^^^
+NameError: name 'etl_task' is not defined
+[2025-08-10T23:45:30.243+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:45:30.267+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.055 seconds
+[2025-08-10T23:46:00.508+0000] {processor.py:161} INFO - Started process (PID=760) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:46:00.510+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:46:00.513+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:46:00.512+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:46:00.530+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:46:00.523+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 12, in <module>
+    python_callable=etl_task
+                    ^^^^^^^^
+NameError: name 'etl_task' is not defined
+[2025-08-10T23:46:00.533+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:46:00.561+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.062 seconds
+[2025-08-10T23:46:03.535+0000] {processor.py:161} INFO - Started process (PID=761) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:46:03.537+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:46:03.541+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:46:03.540+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:46:04.409+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:46:04.407+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:46:04.411+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:46:04.431+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.905 seconds
+[2025-08-10T23:46:09.654+0000] {processor.py:161} INFO - Started process (PID=772) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:46:09.655+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:46:09.658+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:46:09.658+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:46:10.313+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:46:10.311+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:46:10.315+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:46:10.337+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.691 seconds
+[2025-08-10T23:46:40.617+0000] {processor.py:161} INFO - Started process (PID=807) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:46:40.619+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:46:40.623+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:46:40.622+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:46:41.326+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:46:41.323+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:46:41.327+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:46:41.347+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.740 seconds
+[2025-08-10T23:47:11.458+0000] {processor.py:161} INFO - Started process (PID=832) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:47:11.460+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:47:11.463+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:47:11.462+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:47:12.154+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:47:12.151+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 4, in <module>
+    import BytesIO
+ModuleNotFoundError: No module named 'BytesIO'
+[2025-08-10T23:47:12.155+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:47:12.174+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.725 seconds
+[2025-08-10T23:53:09.811+0000] {processor.py:161} INFO - Started process (PID=61) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:53:09.814+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:53:09.827+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:53:09.826+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:53:13.073+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:53:13.058+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 20, in <module>
+    endpoint_url=MLFLOW_S3_ENDPOINT_URL,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MLFLOW_S3_ENDPOINT_URL' is not defined
+[2025-08-10T23:53:13.083+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:53:13.142+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 3.346 seconds
+[2025-08-10T23:53:43.214+0000] {processor.py:161} INFO - Started process (PID=103) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:53:43.216+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:53:43.219+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:53:43.218+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:53:43.925+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:53:43.917+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 20, in <module>
+    endpoint_url=MLFLOW_S3_ENDPOINT_URL,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MLFLOW_S3_ENDPOINT_URL' is not defined
+[2025-08-10T23:53:43.929+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:53:43.951+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.745 seconds
+[2025-08-10T23:54:14.377+0000] {processor.py:161} INFO - Started process (PID=137) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:54:14.378+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:54:14.381+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:54:14.380+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:54:15.209+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:54:15.197+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 20, in <module>
+    endpoint_url=MLFLOW_S3_ENDPOINT_URL,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MLFLOW_S3_ENDPOINT_URL' is not defined
+[2025-08-10T23:54:15.213+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:54:15.234+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.866 seconds
+[2025-08-10T23:54:45.907+0000] {processor.py:161} INFO - Started process (PID=171) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:54:45.909+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:54:45.914+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:54:45.913+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:54:46.724+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:54:46.719+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 20, in <module>
+    endpoint_url=MLFLOW_S3_ENDPOINT_URL,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MLFLOW_S3_ENDPOINT_URL' is not defined
+[2025-08-10T23:54:46.728+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:54:46.748+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.855 seconds
+[2025-08-10T23:55:16.967+0000] {processor.py:161} INFO - Started process (PID=205) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:55:16.969+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:55:16.972+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:55:16.971+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:55:17.653+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:55:17.647+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 20, in <module>
+    endpoint_url=MLFLOW_S3_ENDPOINT_URL,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MLFLOW_S3_ENDPOINT_URL' is not defined
+[2025-08-10T23:55:17.657+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:55:17.678+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.720 seconds
+[2025-08-10T23:55:48.590+0000] {processor.py:161} INFO - Started process (PID=240) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:55:48.592+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:55:48.596+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:55:48.596+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:55:49.264+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:55:49.259+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 20, in <module>
+    endpoint_url=MLFLOW_S3_ENDPOINT_URL,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MLFLOW_S3_ENDPOINT_URL' is not defined
+[2025-08-10T23:55:49.268+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:55:49.288+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.707 seconds
+[2025-08-10T23:56:20.074+0000] {processor.py:161} INFO - Started process (PID=274) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:56:20.076+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:56:20.079+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:56:20.078+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:56:20.960+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:56:20.955+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 20, in <module>
+    endpoint_url=MLFLOW_S3_ENDPOINT_URL,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MLFLOW_S3_ENDPOINT_URL' is not defined
+[2025-08-10T23:56:20.964+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:56:20.985+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.921 seconds
+[2025-08-10T23:56:51.811+0000] {processor.py:161} INFO - Started process (PID=308) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:56:51.813+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:56:51.817+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:56:51.816+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:56:52.489+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:56:52.484+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 20, in <module>
+    endpoint_url=MLFLOW_S3_ENDPOINT_URL,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MLFLOW_S3_ENDPOINT_URL' is not defined
+[2025-08-10T23:56:52.493+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:56:52.513+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.711 seconds
+[2025-08-10T23:57:23.058+0000] {processor.py:161} INFO - Started process (PID=341) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:57:23.060+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:57:23.063+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:57:23.062+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:57:23.685+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:57:23.680+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 20, in <module>
+    endpoint_url=MLFLOW_S3_ENDPOINT_URL,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MLFLOW_S3_ENDPOINT_URL' is not defined
+[2025-08-10T23:57:23.688+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:57:23.707+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.657 seconds
+[2025-08-10T23:57:53.893+0000] {processor.py:161} INFO - Started process (PID=376) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:57:53.894+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:57:53.897+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:57:53.897+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:57:54.573+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:57:54.568+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 20, in <module>
+    endpoint_url=MLFLOW_S3_ENDPOINT_URL,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MLFLOW_S3_ENDPOINT_URL' is not defined
+[2025-08-10T23:57:54.577+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:57:54.596+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 0.712 seconds
+[2025-08-10T23:58:25.291+0000] {processor.py:161} INFO - Started process (PID=409) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:58:25.294+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:58:25.300+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:58:25.299+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:58:28.250+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:58:28.227+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 20, in <module>
+    endpoint_url=MLFLOW_S3_ENDPOINT_URL,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MLFLOW_S3_ENDPOINT_URL' is not defined
+[2025-08-10T23:58:28.254+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:58:28.416+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 3.141 seconds
+[2025-08-10T23:59:41.541+0000] {processor.py:161} INFO - Started process (PID=442) to work on /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:59:41.548+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/etl_pipeline.py for tasks to queue
+[2025-08-10T23:59:41.556+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:59:41.554+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:59:46.044+0000] {logging_mixin.py:188} INFO - [2025-08-10T23:59:45.943+0000] {dagbag.py:355} ERROR - Failed to import: /opt/airflow/dags/etl_pipeline.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/etl_pipeline.py", line 3, in <module>
+    from preprocessing.etl_task import *
+  File "/opt/airflow/ml_pipeline/preprocessing/etl_task.py", line 20, in <module>
+    endpoint_url=MLFLOW_S3_ENDPOINT_URL,
+                 ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MLFLOW_S3_ENDPOINT_URL' is not defined
+[2025-08-10T23:59:46.065+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline.py
+[2025-08-10T23:59:46.105+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/etl_pipeline.py took 5.222 seconds

@@ -1,0 +1,31 @@
+[2025-08-16T01:55:38.758+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-16T01:55:38.791+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_outlier_detector manual__2025-08-16T01:55:14.167567+00:00 [queued]>
+[2025-08-16T01:55:38.802+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_outlier_detector manual__2025-08-16T01:55:14.167567+00:00 [queued]>
+[2025-08-16T01:55:38.803+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-16T01:55:38.823+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): train_outlier_detector> on 2025-08-16 01:55:14.167567+00:00
+[2025-08-16T01:55:38.830+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=8593) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-16T01:55:38.833+0000] {standard_task_runner.py:63} INFO - Started process 8594 to run task
+[2025-08-16T01:55:38.832+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'train_outlier_detector', 'manual__2025-08-16T01:55:14.167567+00:00', '--job-id', '270', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline_dag.py', '--cfg-path', '/tmp/tmpdah_f80j']
+[2025-08-16T01:55:38.834+0000] {standard_task_runner.py:91} INFO - Job 270: Subtask train_outlier_detector
+[2025-08-16T01:55:38.894+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.train_outlier_detector manual__2025-08-16T01:55:14.167567+00:00 [running]> on host 952e994ef77e
+[2025-08-16T01:55:39.031+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='train_outlier_detector' AIRFLOW_CTX_EXECUTION_DATE='2025-08-16T01:55:14.167567+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-16T01:55:14.167567+00:00'
+[2025-08-16T01:55:39.033+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-16T01:55:39.055+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-16T01:55:39.056+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            cd /opt/***/ml_pipeline\n            dvc pull\n            dvc repro train_outlier\n            dvc push\n        ']
+[2025-08-16T01:55:39.069+0000] {subprocess.py:86} INFO - Output:
+[2025-08-16T01:55:43.469+0000] {subprocess.py:93} INFO - ERROR: failed to pull data from the cloud - Can't remove the following unsaved files without confirmation. Use `--force` to force.
+[2025-08-16T01:55:43.470+0000] {subprocess.py:93} INFO - /opt/***/ml_pipeline/version_meta.json
+[2025-08-16T01:55:43.471+0000] {subprocess.py:93} INFO - /opt/***/ml_pipeline/artifacts/models/fraud/fraud_detector_v20250815_164605.pkl
+[2025-08-16T01:55:50.000+0000] {subprocess.py:93} INFO - 'data/raw.dvc' didn't change, skipping
+[2025-08-16T01:55:50.068+0000] {subprocess.py:93} INFO - Stage 'preprocess' didn't change, skipping
+[2025-08-16T01:55:50.201+0000] {subprocess.py:93} INFO - Stage 'train_outlier' didn't change, skipping
+[2025-08-16T01:55:50.210+0000] {subprocess.py:93} INFO - Data and pipelines are up to date.
+[2025-08-16T01:55:55.834+0000] {subprocess.py:93} INFO - Everything is up to date.
+[2025-08-16T01:55:56.363+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-16T01:55:56.366+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-16T01:55:56.402+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=train_outlier_detector, run_id=manual__2025-08-16T01:55:14.167567+00:00, execution_date=20250816T015514, start_date=20250816T015538, end_date=20250816T015556
+[2025-08-16T01:55:56.443+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-16T01:55:56.479+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-08-16T01:55:56.485+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

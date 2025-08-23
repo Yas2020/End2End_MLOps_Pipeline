@@ -1,0 +1,42 @@
+[2025-08-20T18:00:33.497+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-20T18:00:33.657+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.ingest_dvc manual__2025-08-20T18:00:27.903374+00:00 [queued]>
+[2025-08-20T18:00:33.739+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.ingest_dvc manual__2025-08-20T18:00:27.903374+00:00 [queued]>
+[2025-08-20T18:00:33.767+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-20T18:00:33.862+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): ingest_dvc> on 2025-08-20 18:00:27.903374+00:00
+[2025-08-20T18:00:33.876+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=1878) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-20T18:00:33.883+0000] {standard_task_runner.py:63} INFO - Started process 1879 to run task
+[2025-08-20T18:00:33.882+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'ingest_dvc', 'manual__2025-08-20T18:00:27.903374+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dvc_dag.py', '--cfg-path', '/tmp/tmp894i1k1p']
+[2025-08-20T18:00:33.888+0000] {standard_task_runner.py:91} INFO - Job 13: Subtask ingest_dvc
+[2025-08-20T18:00:34.101+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.ingest_dvc manual__2025-08-20T18:00:27.903374+00:00 [running]> on host d741d36e6db0
+[2025-08-20T18:00:34.594+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='ingest_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-20T18:00:27.903374+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-20T18:00:27.903374+00:00'
+[2025-08-20T18:00:34.603+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-20T18:00:34.698+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-20T18:00:34.704+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            cd /opt/***/ml_pipeline \n            dvc repro ingest --force\n            dvc push\n        ']
+[2025-08-20T18:00:34.817+0000] {subprocess.py:86} INFO - Output:
+[2025-08-20T18:00:41.658+0000] {subprocess.py:93} INFO - Running stage 'ingest':
+[2025-08-20T18:00:41.659+0000] {subprocess.py:93} INFO - > python data/ingest/etl_task.py && python data/ingest/download_data.py
+[2025-08-20T18:00:44.294+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:00:44,232", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "AWS ENDPOINT is: http://minio:9000"}
+[2025-08-20T18:00:44.308+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:00:44,308", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Simulated data generated."}
+[2025-08-20T18:00:44.435+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:00:44,435", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Simulated data saved at s3://mlflow-artifacts/data/raw/fraud_data_v20250820_180044.csv."}
+[2025-08-20T18:00:44.438+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:00:44,437", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "\u2705 Saved version_meta.json locally."}
+[2025-08-20T18:00:44.456+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:00:44,456", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Meta Version saved to: s3://mlflow-artifacts/data/raw/metadata_v20250820_180044.json"}
+[2025-08-20T18:00:46.687+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-20 18:00:46,593", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "\u2705 Data saved locally in data/raw"}
+[2025-08-20T18:00:47.025+0000] {subprocess.py:93} INFO - Updating lock file 'dvc.lock'
+[2025-08-20T18:00:47.045+0000] {subprocess.py:93} INFO - 
+[2025-08-20T18:00:47.046+0000] {subprocess.py:93} INFO - To track the changes with git, run:
+[2025-08-20T18:00:47.047+0000] {subprocess.py:93} INFO - 
+[2025-08-20T18:00:47.048+0000] {subprocess.py:93} INFO - 	git add dvc.lock
+[2025-08-20T18:00:47.049+0000] {subprocess.py:93} INFO - 
+[2025-08-20T18:00:47.050+0000] {subprocess.py:93} INFO - To enable auto staging, run:
+[2025-08-20T18:00:47.050+0000] {subprocess.py:93} INFO - 
+[2025-08-20T18:00:47.051+0000] {subprocess.py:93} INFO - 	dvc config core.autostage true
+[2025-08-20T18:00:47.070+0000] {subprocess.py:93} INFO - Use `dvc push` to send your updates to remote storage.
+[2025-08-20T18:00:51.861+0000] {subprocess.py:93} INFO - 1 file pushed
+[2025-08-20T18:00:52.232+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-20T18:00:52.236+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-20T18:00:52.277+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=ingest_dvc, run_id=manual__2025-08-20T18:00:27.903374+00:00, execution_date=20250820T180027, start_date=20250820T180033, end_date=20250820T180052
+[2025-08-20T18:00:52.342+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-20T18:00:52.391+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-08-20T18:00:52.393+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

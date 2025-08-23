@@ -1,0 +1,62 @@
+[2025-08-17T18:47:09.641+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-17T18:47:09.689+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_fraud_detector_dvc manual__2025-08-17T18:45:48.354429+00:00 [queued]>
+[2025-08-17T18:47:09.707+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_fraud_detector_dvc manual__2025-08-17T18:45:48.354429+00:00 [queued]>
+[2025-08-17T18:47:09.708+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-17T18:47:09.738+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): train_fraud_detector_dvc> on 2025-08-17 18:45:48.354429+00:00
+[2025-08-17T18:47:09.749+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=3342) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-17T18:47:09.753+0000] {standard_task_runner.py:63} INFO - Started process 3343 to run task
+[2025-08-17T18:47:09.752+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'train_fraud_detector_dvc', 'manual__2025-08-17T18:45:48.354429+00:00', '--job-id', '323', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline_dag.py', '--cfg-path', '/tmp/tmpx4fnq4j_']
+[2025-08-17T18:47:09.756+0000] {standard_task_runner.py:91} INFO - Job 323: Subtask train_fraud_detector_dvc
+[2025-08-17T18:47:09.853+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.train_fraud_detector_dvc manual__2025-08-17T18:45:48.354429+00:00 [running]> on host bea494a05fb4
+[2025-08-17T18:47:10.091+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='train_fraud_detector_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-17T18:45:48.354429+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-17T18:45:48.354429+00:00'
+[2025-08-17T18:47:10.094+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-17T18:47:10.129+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-17T18:47:10.132+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            cd /opt/***/ml_pipeline\n            dvc pull\n            dvc repro train_model\n            dvc push\n        ']
+[2025-08-17T18:47:10.153+0000] {subprocess.py:86} INFO - Output:
+[2025-08-17T18:47:22.257+0000] {subprocess.py:93} INFO - ERROR: failed to pull data from the cloud - Can't remove the following unsaved files without confirmation. Use `--force` to force.
+[2025-08-17T18:47:22.259+0000] {subprocess.py:93} INFO - /opt/***/ml_pipeline/artifacts/models/fraud/metadata_model_v20250817_175136.json
+[2025-08-17T18:47:29.337+0000] {subprocess.py:93} INFO - Stage 'ingest' didn't change, skipping
+[2025-08-17T18:47:29.390+0000] {subprocess.py:93} INFO - Stage 'preprocess' didn't change, skipping
+[2025-08-17T18:47:29.474+0000] {subprocess.py:93} INFO - Running stage 'train_model':
+[2025-08-17T18:47:29.476+0000] {subprocess.py:93} INFO - > python models/train_fraud_detector_task.py
+[2025-08-17T18:47:35.744+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-17 18:47:35,673", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "MLflow run id: 18349b24095945d89d502970c71c454a"}
+[2025-08-17T18:47:35.855+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-17 18:47:35,855", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Loading preprocessor from artifacts/preprocess/fraud_pipeline_v20250817_175136.pkl to process raw data"}
+[2025-08-17T18:47:35.896+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-17 18:47:35,895", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Preprocessing/transform applied to raw data."}
+[2025-08-17T18:47:36.008+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-17 18:47:36,005", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Evaluation metrics: {'accuracy': 0.998, 'f1_score': 0.9655172413793104, 'precision': 1.0, 'recall': 0.9333333333333333, 'auc': 0.9999312714776633}"}
+[2025-08-17T18:47:53.122+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-17 18:47:53,121", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Model pipeline logged to MLflow (artifact_path='model')"}
+[2025-08-17T18:47:53.560+0000] {subprocess.py:93} INFO - 🏃 View run train_v20250817_175136 at: http://mlflow:5000/#/experiments/2/runs/18349b24095945d89d502970c71c454a
+[2025-08-17T18:47:53.561+0000] {subprocess.py:93} INFO - 🧪 View experiment at: http://mlflow:5000/#/experiments/2
+[2025-08-17T18:47:53.562+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-08-17T18:47:53.563+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/models/train_fraud_detector_task.py", line 227, in <module>
+[2025-08-17T18:47:53.564+0000] {subprocess.py:93} INFO -     main()
+[2025-08-17T18:47:53.566+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/models/train_fraud_detector_task.py", line 214, in main
+[2025-08-17T18:47:53.567+0000] {subprocess.py:93} INFO -     model_version = client.search_model_versions(f"name={MODEL_NAME} and run_id={run_id}")[0]
+[2025-08-17T18:47:53.568+0000] {subprocess.py:93} INFO -                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-17T18:47:53.569+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/tracking/client.py", line 4817, in search_model_versions
+[2025-08-17T18:47:53.571+0000] {subprocess.py:93} INFO -     return self._get_registry_client().search_model_versions(
+[2025-08-17T18:47:53.572+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-17T18:47:53.573+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/tracking/_model_registry/client.py", line 393, in search_model_versions
+[2025-08-17T18:47:53.574+0000] {subprocess.py:93} INFO -     return self.store.search_model_versions(filter_string, max_results, order_by, page_token)
+[2025-08-17T18:47:53.574+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-17T18:47:53.575+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/store/model_registry/rest_store.py", line 401, in search_model_versions
+[2025-08-17T18:47:53.576+0000] {subprocess.py:93} INFO -     response_proto = self._call_endpoint(SearchModelVersions, req_body)
+[2025-08-17T18:47:53.577+0000] {subprocess.py:93} INFO -                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-17T18:47:53.578+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/store/model_registry/base_rest_store.py", line 42, in _call_endpoint
+[2025-08-17T18:47:53.580+0000] {subprocess.py:93} INFO -     return call_endpoint(
+[2025-08-17T18:47:53.581+0000] {subprocess.py:93} INFO -            ^^^^^^^^^^^^^^
+[2025-08-17T18:47:53.582+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 553, in call_endpoint
+[2025-08-17T18:47:53.583+0000] {subprocess.py:93} INFO -     response = verify_rest_response(response, endpoint)
+[2025-08-17T18:47:53.585+0000] {subprocess.py:93} INFO -                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-08-17T18:47:53.586+0000] {subprocess.py:93} INFO -   File "/home/***/.local/lib/python3.12/site-packages/mlflow/utils/rest_utils.py", line 308, in verify_rest_response
+[2025-08-17T18:47:53.589+0000] {subprocess.py:93} INFO -     raise RestException(json.loads(response.text))
+[2025-08-17T18:47:53.590+0000] {subprocess.py:93} INFO - mlflow.exceptions.RestException: INVALID_PARAMETER_VALUE: Invalid clause(s) in filter string: run_id=18349b24095945d89d502970c71c454a
+[2025-08-17T18:47:54.367+0000] {subprocess.py:93} INFO - ERROR: failed to reproduce 'train_model': failed to run: python models/train_fraud_detector_task.py, exited with 1
+[2025-08-17T18:48:02.330+0000] {subprocess.py:93} INFO - Everything is up to date.
+[2025-08-17T18:48:02.891+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-17T18:48:02.893+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-17T18:48:02.948+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=train_fraud_detector_dvc, run_id=manual__2025-08-17T18:45:48.354429+00:00, execution_date=20250817T184548, start_date=20250817T184709, end_date=20250817T184802
+[2025-08-17T18:48:02.997+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-17T18:48:03.032+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-17T18:48:03.035+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

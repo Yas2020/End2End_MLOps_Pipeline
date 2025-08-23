@@ -1,0 +1,30 @@
+[2025-08-12T20:30:00.085+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-12T20:30:00.121+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl.etl_task manual__2025-08-12T20:29:50.711317+00:00 [queued]>
+[2025-08-12T20:30:00.130+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl.etl_task manual__2025-08-12T20:29:50.711317+00:00 [queued]>
+[2025-08-12T20:30:00.131+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-12T20:30:00.147+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): etl_task> on 2025-08-12 20:29:50.711317+00:00
+[2025-08-12T20:30:00.156+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=86) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-12T20:30:00.159+0000] {standard_task_runner.py:63} INFO - Started process 88 to run task
+[2025-08-12T20:30:00.159+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'etl', 'etl_task', 'manual__2025-08-12T20:29:50.711317+00:00', '--job-id', '167', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline.py', '--cfg-path', '/tmp/tmpgloue421']
+[2025-08-12T20:30:00.162+0000] {standard_task_runner.py:91} INFO - Job 167: Subtask etl_task
+[2025-08-12T20:30:00.226+0000] {task_command.py:426} INFO - Running <TaskInstance: etl.etl_task manual__2025-08-12T20:29:50.711317+00:00 [running]> on host 134dd3b4dfb6
+[2025-08-12T20:30:00.370+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl' AIRFLOW_CTX_TASK_ID='etl_task' AIRFLOW_CTX_EXECUTION_DATE='2025-08-12T20:29:50.711317+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-12T20:29:50.711317+00:00'
+[2025-08-12T20:30:00.372+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-12T20:30:00.498+0000] {log.py:232} WARNING - {"asctime": "2025-08-12 20:30:00,423", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "params.yaml created with version_tag=v20250812_203000"}
+[2025-08-12T20:30:00.423+0000] {etl_task.py:83} INFO - params.yaml created with version_tag=v20250812_203000
+[2025-08-12T20:30:00.525+0000] {log.py:232} WARNING - {"asctime": "2025-08-12 20:30:00,525", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Simulated data generated."}
+[2025-08-12T20:30:00.525+0000] {etl_task.py:91} INFO - Simulated data generated.
+[2025-08-12T20:30:00.596+0000] {log.py:232} WARNING - {"asctime": "2025-08-12 20:30:00,596", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Simulated data saved at s3://mlflow-artifacts/data/raw/fraud_data_v20250812_203000.csv."}
+[2025-08-12T20:30:00.596+0000] {etl_task.py:54} INFO - Simulated data saved at s3://mlflow-artifacts/data/raw/fraud_data_v20250812_203000.csv.
+[2025-08-12T20:30:00.613+0000] {log.py:232} WARNING - {"asctime": "2025-08-12 20:30:00,613", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "\u2705 Uploaded version_meta.json to s3://mlflow-artifacts/metadata/version_meta.json"}
+[2025-08-12T20:30:00.613+0000] {etl_task.py:64} INFO - ✅ Uploaded version_meta.json to s3://mlflow-artifacts/metadata/version_meta.json
+[2025-08-12T20:30:00.640+0000] {log.py:232} WARNING - {"asctime": "2025-08-12 20:30:00,640", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Meta Version saved to: s3://mlflow-artifacts/data/raw/metadata_v20250812_203000.json"}
+[2025-08-12T20:30:00.640+0000] {etl_task.py:75} INFO - Meta Version saved to: s3://mlflow-artifacts/data/raw/metadata_v20250812_203000.json
+[2025-08-12T20:30:00.643+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-08-12T20:30:00.645+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-12T20:30:00.662+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=etl, task_id=etl_task, run_id=manual__2025-08-12T20:29:50.711317+00:00, execution_date=20250812T202950, start_date=20250812T203000, end_date=20250812T203000
+[2025-08-12T20:30:00.711+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-12T20:30:00.745+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-12T20:30:00.748+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

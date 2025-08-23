@@ -1,0 +1,27 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 1m
+  repeat_interval: 1h
+  receiver: 'fastapi-webhook'  # Default receiver for all alerts
+
+  # Optional: route specific alert names differently
+  routes:
+    - match:
+        alertname: HighInferenceLatency
+      receiver: 'fastapi-webhook'
+
+    - match:
+        alertname: OutlierSpike
+      receiver: 'fastapi-webhook'
+
+receivers:
+  - name: 'fastapi-webhook'
+    webhook_configs:
+      - url: 'http://inference-api:8000/alert'
+        send_resolved: true  # Optional: send resolved alerts too
+
+inhibit_rules: []

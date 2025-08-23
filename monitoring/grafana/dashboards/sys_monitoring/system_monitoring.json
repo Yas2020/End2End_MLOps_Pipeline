@@ -1,0 +1,84 @@
+{
+  "uid": "system-monitoring",
+  "title": "System Monitoring",
+  "tags": ["system", "node_exporter"],
+  "timezone": "browser",
+  "schemaVersion": 30,
+  "version": 1,
+  "refresh": "10s",
+  "panels": [
+    {
+      "type": "graph",
+      "title": "CPU Usage",
+      "datasource": {"type": "prometheus", "uid": "Prometheus"},
+      "targets": [
+        {
+          "expr": "100 - (avg by(instance) (irate(node_cpu_seconds_total{mode='idle'}[5m])) * 100)",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "yaxes": [
+        { "format": "percentunit", "min": 0, "max": 1, "show": true },
+        { "format": "short" }
+      ],
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 0 },
+      "fieldConfig": {
+        "defaults": {
+            "unit": "percentunit",
+            "decimals": 0
+        }
+      }
+    },
+    {
+      "type": "graph",
+      "title": "Memory Usage",
+      "datasource": {"type": "prometheus", "uid": "Prometheus"},
+      "targets": [
+        {
+          "expr": "node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "yaxes": [
+        { "format": "percentunit", "min": 0, "max": 1, "show": true },
+        { "format": "short" }
+      ],
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 8 },
+      "fieldConfig": {
+        "defaults": {
+            "unit": "percentunit",
+            "decimals": 0
+        }
+      }
+    },
+    {
+      "type": "graph",
+      "title": "Disk Usage (Root Partition)",
+      "datasource": {"type": "prometheus", "uid": "Prometheus"},
+      "targets": [
+        {
+          "expr": "1 - (node_filesystem_avail_bytes{mountpoint='/vscode',fstype!='tmpfs'} / node_filesystem_size_bytes{mountpoint='/vscode',fstype!='tmpfs'})",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        } 
+      ],
+      "yaxes": [
+        { "format": "percentunit", "min": 0, "max": 1, "show": true },
+        { "format": "short" }
+      ],
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 16 },
+      "fieldConfig": {
+        "defaults": {
+            "unit": "percentunit",
+            "decimals": 0
+        }
+      }
+    }
+  ],
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  }
+}

@@ -1,0 +1,31 @@
+[2025-07-30T22:26:50.489+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-30T22:26:50.524+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dag.detect_drift_task manual__2025-07-30T22:26:39.442887+00:00 [queued]>
+[2025-07-30T22:26:50.534+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dag.detect_drift_task manual__2025-07-30T22:26:39.442887+00:00 [queued]>
+[2025-07-30T22:26:50.535+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-07-30T22:26:50.551+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): detect_drift_task> on 2025-07-30 22:26:39.442887+00:00
+[2025-07-30T22:26:50.562+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=95) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-07-30T22:26:50.564+0000] {standard_task_runner.py:63} INFO - Started process 104 to run task
+[2025-07-30T22:26:50.564+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dag', 'detect_drift_task', 'manual__2025-07-30T22:26:39.442887+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/ml_pipeline_dag.py', '--cfg-path', '/tmp/tmp55_j9a03']
+[2025-07-30T22:26:50.567+0000] {standard_task_runner.py:91} INFO - Job 35: Subtask detect_drift_task
+[2025-07-30T22:26:50.626+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dag.detect_drift_task manual__2025-07-30T22:26:39.442887+00:00 [running]> on host edd92f9295b0
+[2025-07-30T22:26:50.761+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='ml_pipeline_dag' AIRFLOW_CTX_TASK_ID='detect_drift_task' AIRFLOW_CTX_EXECUTION_DATE='2025-07-30T22:26:39.442887+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-07-30T22:26:39.442887+00:00'
+[2025-07-30T22:26:50.765+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-30T22:26:50.794+0000] {logging_mixin.py:188} INFO - Batch 1 - Drift score: 0.21
+[2025-07-30T22:26:50.795+0000] {logging_mixin.py:188} INFO - Batch 2 - Drift score: 0.13
+[2025-07-30T22:26:50.797+0000] {logging_mixin.py:188} INFO - Batch 3 - Drift score: 0.10
+[2025-07-30T22:26:50.798+0000] {logging_mixin.py:188} INFO - Batch 4 - Drift score: 0.14
+[2025-07-30T22:26:50.799+0000] {logging_mixin.py:188} INFO - Batch 5 - Drift score: 0.04
+[2025-07-30T22:26:50.799+0000] {logging_mixin.py:188} INFO - Batch 6 - Drift score: 0.04
+[2025-07-30T22:26:50.800+0000] {logging_mixin.py:188} INFO - Batch 7 - Drift score: 1.97
+[2025-07-30T22:26:50.801+0000] {logging_mixin.py:188} INFO - Batch 8 - Drift score: 1.98
+[2025-07-30T22:26:50.802+0000] {logging_mixin.py:188} INFO - Batch 9 - Drift score: 1.92
+[2025-07-30T22:26:50.803+0000] {logging_mixin.py:188} INFO - Batch 10 - Drift score: 2.06
+[2025-07-30T22:26:50.804+0000] {logging_mixin.py:188} INFO - ⚠️ Drift detected in batch 10
+[2025-07-30T22:26:50.805+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-30T22:26:50.806+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-30T22:26:50.818+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dag, task_id=detect_drift_task, run_id=manual__2025-07-30T22:26:39.442887+00:00, execution_date=20250730T222639, start_date=20250730T222650, end_date=20250730T222650
+[2025-07-30T22:26:50.869+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-30T22:26:50.897+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-30T22:26:50.899+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,45 @@
+[2025-08-17T18:55:18.954+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-08-17T18:55:19.037+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_fraud_detector_dvc manual__2025-08-17T18:53:43.153396+00:00 [queued]>
+[2025-08-17T18:55:19.065+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ml_pipeline_dvc.train_fraud_detector_dvc manual__2025-08-17T18:53:43.153396+00:00 [queued]>
+[2025-08-17T18:55:19.066+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-08-17T18:55:19.117+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): train_fraud_detector_dvc> on 2025-08-17 18:53:43.153396+00:00
+[2025-08-17T18:55:19.136+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=3888) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-08-17T18:55:19.142+0000] {standard_task_runner.py:63} INFO - Started process 3889 to run task
+[2025-08-17T18:55:19.141+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ml_pipeline_dvc', 'train_fraud_detector_dvc', 'manual__2025-08-17T18:53:43.153396+00:00', '--job-id', '330', '--raw', '--subdir', 'DAGS_FOLDER/train_pipeline_dag.py', '--cfg-path', '/tmp/tmpq8an6ael']
+[2025-08-17T18:55:19.146+0000] {standard_task_runner.py:91} INFO - Job 330: Subtask train_fraud_detector_dvc
+[2025-08-17T18:55:19.287+0000] {task_command.py:426} INFO - Running <TaskInstance: ml_pipeline_dvc.train_fraud_detector_dvc manual__2025-08-17T18:53:43.153396+00:00 [running]> on host bea494a05fb4
+[2025-08-17T18:55:19.614+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='yas' AIRFLOW_CTX_DAG_ID='ml_pipeline_dvc' AIRFLOW_CTX_TASK_ID='train_fraud_detector_dvc' AIRFLOW_CTX_EXECUTION_DATE='2025-08-17T18:53:43.153396+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-08-17T18:53:43.153396+00:00'
+[2025-08-17T18:55:19.622+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-08-17T18:55:19.720+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-08-17T18:55:19.724+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            cd /opt/***/ml_pipeline\n            dvc pull\n            dvc repro train_model\n            dvc push\n        ']
+[2025-08-17T18:55:19.758+0000] {subprocess.py:86} INFO - Output:
+[2025-08-17T18:55:26.651+0000] {subprocess.py:93} INFO - ERROR: failed to pull data from the cloud - Can't remove the following unsaved files without confirmation. Use `--force` to force.
+[2025-08-17T18:55:26.653+0000] {subprocess.py:93} INFO - /opt/***/ml_pipeline/artifacts/models/fraud/metadata_model_v20250817_175136.json
+[2025-08-17T18:55:32.997+0000] {subprocess.py:93} INFO - Stage 'ingest' didn't change, skipping
+[2025-08-17T18:55:33.045+0000] {subprocess.py:93} INFO - Stage 'preprocess' didn't change, skipping
+[2025-08-17T18:55:33.113+0000] {subprocess.py:93} INFO - Running stage 'train_model':
+[2025-08-17T18:55:33.114+0000] {subprocess.py:93} INFO - > python models/train_fraud_detector_task.py
+[2025-08-17T18:55:42.162+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-17 18:55:41,675", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "MLflow run id: c2c417e5652a41a1968c2cefe35b25a2"}
+[2025-08-17T18:55:42.330+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-17 18:55:42,329", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Loading preprocessor from artifacts/preprocess/fraud_pipeline_v20250817_175136.pkl to process raw data"}
+[2025-08-17T18:55:42.403+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-17 18:55:42,403", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Preprocessing/transform applied to raw data."}
+[2025-08-17T18:55:42.623+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-17 18:55:42,621", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Evaluation metrics: {'accuracy': 0.998, 'f1_score': 0.9655172413793104, 'precision': 1.0, 'recall': 0.9333333333333333, 'auc': 0.9999312714776633}"}
+[2025-08-17T18:56:09.714+0000] {subprocess.py:93} INFO - {"asctime": "2025-08-17 18:56:09,713", "levelname": "INFO", "name": "model_training", "trace_id": null, "span_id": null, "message": "Model pipeline logged to MLflow (artifact_path='model')"}
+[2025-08-17T18:56:10.333+0000] {subprocess.py:93} INFO - 🏃 View run train_v20250817_175136 at: http://mlflow:5000/#/experiments/2/runs/c2c417e5652a41a1968c2cefe35b25a2
+[2025-08-17T18:56:10.335+0000] {subprocess.py:93} INFO - 🧪 View experiment at: http://mlflow:5000/#/experiments/2
+[2025-08-17T18:56:10.337+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-08-17T18:56:10.339+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/models/train_fraud_detector_task.py", line 227, in <module>
+[2025-08-17T18:56:10.341+0000] {subprocess.py:93} INFO -     main()
+[2025-08-17T18:56:10.343+0000] {subprocess.py:93} INFO -   File "/opt/***/ml_pipeline/models/train_fraud_detector_task.py", line 214, in main
+[2025-08-17T18:56:10.345+0000] {subprocess.py:93} INFO -     model_version = client.search_model_versions(f"name= '{MODEL_NAME}' and run_id= '{run_id}'")[0]
+[2025-08-17T18:56:10.346+0000] {subprocess.py:93} INFO -                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+[2025-08-17T18:56:10.349+0000] {subprocess.py:93} INFO - IndexError: list index out of range
+[2025-08-17T18:56:14.754+0000] {subprocess.py:93} INFO - ERROR: failed to reproduce 'train_model': Unable to acquire lock. Most likely another DVC process is running or was terminated abruptly. Check the page <https://dvc.org/doc/user-guide/troubleshooting#lock-issue> for other possible reasons and to learn how to resolve this.
+[2025-08-17T18:56:26.357+0000] {subprocess.py:93} INFO - Everything is up to date.
+[2025-08-17T18:56:26.962+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-08-17T18:56:26.966+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-08-17T18:56:27.041+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ml_pipeline_dvc, task_id=train_fraud_detector_dvc, run_id=manual__2025-08-17T18:53:43.153396+00:00, execution_date=20250817T185343, start_date=20250817T185519, end_date=20250817T185627
+[2025-08-17T18:56:27.109+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-08-17T18:56:27.156+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-08-17T18:56:27.160+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
