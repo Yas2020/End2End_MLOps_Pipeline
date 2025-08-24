@@ -21,7 +21,7 @@ with DAG(
         task_id='ingest_dvc',
         bash_command='''
             cd /opt/airflow/ml_pipeline 
-            dvc repro ingest  
+            dvc repro ingest
             dvc push
         '''
     )

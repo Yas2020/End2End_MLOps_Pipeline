@@ -8,11 +8,11 @@ This project implements a full MLOps system for fraud detection with:
   - Outlier detection (Isolation Forest or Z-score/IQR)
   - Input validation and schema enforcement (using Pydantic)
 - Observability & monitoring: Prometheus + Grafana dashboards, alerts rules as code
-- Logging and tracing for latency and pipeline analysis (OpenTelemetry + Jaeger)
+- Logging and tracing for latency and pipeline analysis using OpenTelemetry + Jaeger
 - Automated model rollback via MLflow model registry + Airflow DAGs +  Alerts
 
 ### ML Pipeline
-ML pipeline is reproduced by DVC and run as an Airflow DAG for maximum flexibility. This DAG has the following stages:
+ML pipeline is tracked and reproduced by DVC and runs as an Airflow DAG for maximum flexibility. This DAG has the following stages:
 1. **Ingest**
    - Pulls raw dataset from remote and version it
 2. **Preprocessing**
@@ -24,7 +24,7 @@ ML pipeline is reproduced by DVC and run as an Airflow DAG for maximum flexibili
     - Train, version model (preprocess pipeline+fraud detection model) with metadata (metrics, tags, input data)
     - Log & register model in MLflow (`mlflow.sklearn.log_model`) with signature
 
-DVC ensures you can reproduce any experiment with the exact same dataset, pipeline and middle artifacts or configurations. It also chain the ML stages such that every stage runs only if the outputs of the previous stage has changed otherwise skipped. At every stage, latest version is pulled and after changed made by the stage, it will be pushed to remote DVC repo so it can be easily reproduced by other teammates without having to download the original data. They can start from any commit hash, pull the version and reproduce the pipeline for that experiment. DVC keeps data and pipelines tracked and synced together.
+DVC ensures you can reproduce any experiment with the exact same dataset, pipeline and middle artifacts or configurations. It also chain the ML stages such that every stage runs only if the outputs of the previous stage has changed otherwise skipped. At every stage, latest version is pulled and after changed made by the stage, it will be pushed to remote DVC repo so it can be easily reproduced by other teammates without having to download the original data. They can start from any commit hash, pull the version from remote repo and reproduce the pipeline for that experiment. DVC keeps data and pipelines tracked and synced together without the need to keep data locally.
 
 ```sh
 git checkout <commit-or-tag>  # pick the corresponding commit with the version
@@ -110,34 +110,13 @@ It fires to call FastAPI `/alert`
 
 
 ## Running Locally
+- In a terminal, run `make up` to start all services.
+- Go to MinIo UI at `localhost:9001/login` with `uasername:minioadmin`, `password:minioadmin`. Create a bucket named `mlflow-artifacts` that holds artifacts of the project, dvc hashes/caches, mlflow model versions and artifacts.
+- Go to Grafana UI `localhost:3000` with `username:admin`, `password:admin`, then `dashboards` to see two dashboards:
+   - ML Moniotring with panels: Fraud Predictions per Version, Outliers Detected per Version, Inference Latency (p95), Inference Latency 
+   - System Moniotring with panels: CPU Usage, Memory Usage, Disk Usage (Root Partition)
+- Go to Airflow UI `localhost:8080` with `username: airflow`, `password: airflow` to find the DAGs:
+   - `ml_pipeline_dvc` is the ML Pipeline explained above. Trigger this DAG manually to start the pipeline. Make sure to have `--force` flag in `dvc repro ingest --force` to download ingest new data to the pipeline for the first time but remove it when pipeline finished while experimenting with this data. At every iteration, if the training stages run, the pipeline promotes the new models into production. To see the effect, manually restart the inference server: `docker compose -f ./inference/docker*.yaml restart`. Generate traffic to inference endpoint `/predict` to see online predictions.
+   - Trigger `register_high_latency_model` to see push a slow version of the model into production. Restart the inference server and notice tha the response latency has increased significantly. If you let traffic in for 2 mintues, this will automatically trigger the model rollback DAG to replace the slow model with previous version. As a result, you should see an automatic drop in inference latency as traffic going through the inference endpoint.
 
-- Run all the services: airflow, mlflow, inference and monitoring
-- Go to `http://localhost:9001` to create a bucket named "mlflow-artifacts".
-pip install -r inference/requirements.txt
-
-
-
-<!-- # Start Prometheus + Grafana + Alertmanager via Docker Compose
-docker-compose -f monitoring/docker-compose-monitoring.yaml up
-Docker & Deployment
-Dockerfile for inference service, includes /utils in PYTHONPATH
-docker-compose orchestrates:
-FastAPI inference service
-Prometheus + Alertmanager
-Grafana + provisioned dashboards
-Node-exporter for system metrics
-Batch inference triggered via Airflow DAGs
- -->
-
-
-<!-- Example API Requests
-Single inference
-POST http://localhost:8000/predict
-Content-Type: application/json
-
-{
-  "transaction_amount": 123.45,
-  "user_id": 98765,
-  ...
-}
- -->
+Run `make clean` to remove all the services and images from the Dev Container.

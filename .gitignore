@@ -1,2 +1,3 @@
 *.env
 infer_server/*.env
+.DS_Store

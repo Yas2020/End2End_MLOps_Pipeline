@@ -1,11 +1,13 @@
 {
-  "version_tag": "v20250822_204259",
-  "raw_data_remote": "s3://mlflow-artifacts/data/raw/fraud_data_v20250822_204259.csv",
-  "etl_timestamp": "2025-08-22T20:42:59.601068",
-  "raw_data_local": "data/raw/fraud_data_v20250822_204259.csv",
-  "preprocessor_local": "artifacts/preprocess/fraud_pipeline_v20250822_204259.pkl",
-  "preprocess_metadata_local": "artifacts/preprocess/preprocess_metadata_v20250822_204259.json",
-  "preprocess_timestamp": "2025-08-22T20:43:03.684699",
+  "version_tag": "v20250824_195053",
+  "raw_data_remote": "s3://mlflow-artifacts/data/raw/fraud_data_v20250824_195053.csv",
+  "etl_timestamp": "2025-08-24T19:50:53.888275",
+  "raw_data_local": "data/raw/fraud_data_v20250824_195053.csv",
+  "preprocessor_local": "artifacts/preprocess/fraud_pipeline_v20250824_195053.pkl",
+  "preprocess_metadata_local": "artifacts/preprocess/preprocess_metadata_v20250824_195053.json",
+  "preprocess_timestamp": "2025-08-24T19:51:09.148680",
+  "outlier_detector_local": "artifacts/models/outlier/outlier_detector_v20250824_195053.pkl",
+  "outlier_uri": "runs:/427128e88a29457c99e06e9df6ce0690/model",
   "raw_features": [
     "amount",
     "transaction_time",
@@ -19,8 +21,8 @@
     "recall": 0.9333333333333333,
     "auc": 0.9999312714776633
   },
-  "train_timestamp": "2025-08-22T20:43:15.922104",
+  "train_timestamp": "2025-08-24T19:54:30.505608",
   "train_metadata_file": "train/train_metadata.json",
-  "mlflow_run_id": "31b62308b00b4763b92c4c87d63c1c99",
-  "mlflow_model_uri": "runs:/31b62308b00b4763b92c4c87d63c1c99/model"
+  "mlflow_run_id": "53220a4a31084f7b8368ba8c5d40264b",
+  "mlflow_model_uri": "runs:/53220a4a31084f7b8368ba8c5d40264b/model"
 }

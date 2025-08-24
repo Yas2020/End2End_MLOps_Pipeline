@@ -9,32 +9,19 @@ INFERENCE = -f ./inference/docker-compose.inference.yaml
 all: up
 
 up:
-	docker compose $(AIRFLOW) $(MLFLOW) $(MONITOR) $(INFERENCE) up -d
-
-down:
-	docker compose $(AIRFLOW) $(MLFLOW) $(MONITOR) $(INFERENCE) down
-
-rebuild:
-	docker-compose $(MLFLOW) $(MONITOR) $(API) down
-	docker-compose $(MLFLOW) $(MONITOR) $(API) build --no-cache
-	docker-compose $(MLFLOW) $(MONITOR) $(API) up -d
-
-.PHONY: airflow
-airflow:
-	docker compose $(AIRFLOW) up -d --build
-
-.PHONY: mlflow
-mlflow:
+	docker compose $(AIRFLOW) up -d
 	docker compose $(MLFLOW) up -d
-
-monitor:
 	docker compose $(MONITOR) up -d
-
-.PHONY: inference
-inference:
 	docker compose $(INFERENCE) up -d
 
+down:
+	docker compose $(AIRFLOW) down
+	docker compose $(MLFLOW) down
+	docker compose $(MONITOR) down
+	docker compose $(INFERENCE) down
+
 clean:
-	docker compose $(AIRFLOW) $(MLFLOW) $(MONITOR) $(INFERENCE) down -v --remove-orphans
+	make down
 	docker network prune -f
 	docker volume prune -f
+	docker system prune -f

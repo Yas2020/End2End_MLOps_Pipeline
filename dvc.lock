@@ -5,17 +5,17 @@ stages:
     deps:
     - path: data/preprocessing/preprocess_task.py
       hash: md5
-      md5: 4fa66d38a3045d446b162e9deae57b0c
-      size: 3855
+      md5: 70945dfedd682c4a0ceb3ee772b72710
+      size: 2580
     - path: data/raw
       hash: md5
-      md5: eb98dfb34b218e68ba8dd9c1ec5fc20d.dir
+      md5: 2f069314612269713867f577f177eae5.dir
       size: 60246
       nfiles: 2
     outs:
     - path: artifacts/preprocess
       hash: md5
-      md5: 47f5e0903152e8e02fe26465c3cf8e93.dir
+      md5: 5d86b199839e6032f08a0771b8bde7d8.dir
       size: 3367
       nfiles: 2
   train_outlier:
@@ -23,17 +23,17 @@ stages:
     deps:
     - path: artifacts/preprocess
       hash: md5
-      md5: 80e3662eb142ab7858f8cc46c7def466.dir
+      md5: 5d86b199839e6032f08a0771b8bde7d8.dir
       size: 3367
       nfiles: 2
     - path: models/train_outlier_detector_task.py
       hash: md5
-      md5: a0f255e434d8a536dc9ac41895fc91ad
-      size: 5875
+      md5: 4d0f006776e2456a53ae00a09786dc4a
+      size: 5067
     outs:
     - path: artifacts/models/outlier
       hash: md5
-      md5: e64d3a2cf55a976ed5b2ea3ce10ce46d.dir
+      md5: 4c91c555fe0725c70461ee13a45350f3.dir
       size: 1941152
       nfiles: 2
   train_model:
@@ -41,30 +41,30 @@ stages:
     deps:
     - path: artifacts/preprocess
       hash: md5
-      md5: 47f5e0903152e8e02fe26465c3cf8e93.dir
+      md5: 5d86b199839e6032f08a0771b8bde7d8.dir
       size: 3367
       nfiles: 2
     - path: models/train_fraud_detector_task.py
       hash: md5
-      md5: 701e682127623450f3873819eae6dcf4
-      size: 9883
+      md5: c2980b68d45d4e499e7f32f3763241e0
+      size: 8057
     outs:
     - path: artifacts/models/fraud
       hash: md5
-      md5: 2218e5e4765485b19208fd64d61128e5.dir
-      size: 4454
+      md5: 5ac1781122e50b55ce3e716a797c405c.dir
+      size: 4613
       nfiles: 2
   ingest:
     cmd: python data/ingest/etl_task.py && python data/ingest/download_data.py
     deps:
     - path: data/ingest
       hash: md5
-      md5: 29c50643c88125e27462ecdcdf1fd376.dir
-      size: 9893
+      md5: 3098e752c76109c2289fd075c930ead5.dir
+      size: 9504
       nfiles: 3
     outs:
     - path: data/raw
       hash: md5
-      md5: eb98dfb34b218e68ba8dd9c1ec5fc20d.dir
+      md5: 2f069314612269713867f577f177eae5.dir
       size: 60246
       nfiles: 2

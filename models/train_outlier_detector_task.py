@@ -92,7 +92,9 @@ def train_register_outlier_detector():
             "input_format": "pandas.DataFrame",
             "training_script": "train/train_outlier_detector.py",
         }
-        mlflow.log_param(params)
+        
+        for k, v in params.items():
+            mlflow.log_param(k,v)
        
         mlflow.log_dict({"anomaly_threshold": anomaly_threshold}, "config.json")
         
