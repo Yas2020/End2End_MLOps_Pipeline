@@ -1,8 +1,8 @@
 # Full MLOps Pipeline in Production 
-This project demonstrates a full life cycle of a machine learning operations pipeline from data, model development up to deployment and monitoring using open source tools with some best practices.
+This project demonstrates a full life cycle of a MLOps pipeline from data, preprocsessing pipeline and model development up to deployment and monitoring of model and inference using open source tools with some best practices.
 
 ### Project Overview
-This project implements a full MLOps system for fraud detection with:
+This project implements a full MLOps system for a fraud detection task with:
 - Data preprocessing & robust ML pipeline versioned by DVC, orchestrated by Airflow 3.x
 - FastAPI-based inference server for online and batch predictions with 
   - Outlier detection (Isolation Forest or Z-score/IQR)
@@ -17,7 +17,7 @@ ML pipeline is tracked and reproduced by DVC and runs as an Airflow DAG for maxi
    - Pulls raw dataset from remote and version it
 2. **Preprocessing**
    - Trains a preprocessing pipeline (Standardization, encoding, missing value imputation)
-   - Saves and versions `preprocessor.pkl` artifact for inference
+   - Saves and versions `preprocessor.pkl` artifact for consistency at inference
 3. **Outlier Detection**
     - Uses Isolation Forest (contamination=0.01) or Z-score/IQR to flag extreme inputs to prevent unreliable predictions at inference time
 4. **Model Training**
@@ -41,7 +41,7 @@ FastAPI Microservice
    - Single inference: POST `/predict`
    - Batch inference: POST `/predict/batch`
    - Outlier detection integrated: inputs flagged before prediction
-   - Input validation via Pydantic schemas
+   - Input validation via `pydantic` schemas
    - Confidence threshold checks to prevent low-confidence predictions
    - logged and traced every request life cycle
 
@@ -120,3 +120,18 @@ It fires to call FastAPI `/alert`
    - Trigger `register_high_latency_model` to see push a slow version of the model into production. Restart the inference server and notice tha the response latency has increased significantly. If you let traffic in for 2 mintues, this will automatically trigger the model rollback DAG to replace the slow model with previous version. As a result, you should see an automatic drop in inference latency as traffic going through the inference endpoint.
 
 Run `make clean` to remove all the services and images from the Dev Container.
+
+### Possible Expansions:
+1. Load Testing
+   - Simulate concurrent inference requests (Locust, k6, etc.)
+   - Track latency, error rate, system stress under load
+2. A/B Testing
+3. Drift Monitoring `monitoring/drift_job.py` : use `Evidently AI` and custom script to detecting data drift
+4. Generate HTML/Markdown reports for stakeholders
+5. Robustness & Production Readiness
+    - Add retries and error handling in Airflow tasks and FastAPI endpoints
+    - Use Kubernetes + Helm for deployment and autoscaling inference services
+    - Secure APIs with OAuth2 or API keys
+6. CI/CD and Testing
+    - Add unit/integration tests for inference and batch scripts
+    - Add GitHub Actions or Jenkins pipelines for CI/CD
