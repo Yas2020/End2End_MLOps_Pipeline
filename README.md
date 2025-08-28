@@ -1,5 +1,5 @@
 # Full MLOps Pipeline in Production 
-This project demonstrates a full life cycle of a MLOps pipeline from data, preprocsessing pipeline and model development up to deployment and monitoring of model and inference using open source tools with some best practices.
+This project demonstrates a full life cycle of a MLOps pipeline from data, preprocsessing pipeline and model development up to the deployment and monitoring of the model and the inference server using open source tools.
 
 ### Project Overview
 This project implements a full MLOps system for a fraud detection task with:
@@ -9,15 +9,15 @@ This project implements a full MLOps system for a fraud detection task with:
   - Input validation and schema enforcement (using Pydantic)
 - Observability & monitoring: Prometheus + Grafana dashboards, alerts rules as code
 - Logging and tracing for latency and pipeline analysis using OpenTelemetry + Jaeger
-- Automated model rollback via MLflow model registry + Airflow DAGs +  Alerts
+- Automated model rollback via MLflow model registry + Airflow DAGs +  Prometheus Alerts
 
 ### ML Pipeline
-ML pipeline is tracked and reproduced by DVC and runs as an Airflow DAG for maximum flexibility. This DAG has the following stages:
+ML pipeline is tracked and reproduced by DVC and runs as an Airflow DAG for maximum flexibility. This DAG which is outlined in a DVC pipeline `dvc.yaml` has the following stages:
 1. **Ingest**
-   - Pulls raw dataset from remote and version it
+   - Pulls raw dataset from remote and version it - ready to be fed into the ML development pipeline
 2. **Preprocessing**
-   - Trains a preprocessing pipeline (Standardization, encoding, missing value imputation)
-   - Saves and versions `preprocessor.pkl` artifact for consistency at inference
+   - Trains a preprocessing pipeline (Standardization, encoding, missing value imputation, etc.)
+   - Saves and versions `preprocessor.pkl` artifact for consistency at inference and training
 3. **Outlier Detection**
     - Uses Isolation Forest (contamination=0.01) or Z-score/IQR to flag extreme inputs to prevent unreliable predictions at inference time
 4. **Model Training**
@@ -32,6 +32,7 @@ dvc pull  # downloads the exact deps/outs from remote
 dvc repro preprocess. # returns the stage if the code has changed
 ```
 To ingest new raw data (whether starting for the first time or want to try new raw data for new experiment), run
+
 ```sh
 dvc repro ingest
 ``` 
@@ -43,7 +44,7 @@ FastAPI Microservice
    - Outlier detection integrated: inputs flagged before prediction
    - Input validation via `pydantic` schemas
    - Confidence threshold checks to prevent low-confidence predictions
-   - logged and traced every request life cycle
+   - Logged and traced every request life cycle
 
 
 Return JSON:
@@ -67,8 +68,8 @@ Request #11: {"amount": 900, "transaction_time": 2.0, "transaction_type": "onlin
 - Prometheus alerts using alertmanager, Grafana alerts for dashboards with code
 
 Example metrics panels:
-Model: fraud prediction rate, outlier count, accuracy, latency
-System: CPU, memory, disk usage, network
+- Model: fraud prediction rate, outlier count, accuracy, latency
+- System: CPU, memory, disk usage, network
 
 Alerts defined in YAML:
 - High latency > 0.5s
@@ -90,34 +91,35 @@ Trigger Criteria
 #### Rollback Flow
 - Prometheus/Grafana alert fires → POST to FastAPI `/alert`
 - FastAPI triggers Airflow DAG (`/api/v1/dags/model_rollback/dagRuns`)
-- Airflow DAG finds last stable MLflow model
-- Depromotes current model from Production → Staging
+- Airflow DAG finds last stable MLFow model
+- De-promotes current model from Production → Staging
 - Reloads previous model via FastAPI `/model_rollback endpoint`
 
 #### Testing Example
-- DelayedLogisticRegression subclass simulates slow prediction. Saved in same module path as logging for MLflow unpickling
-- Trigger DAG `register_high_latency_model` to deploy the slow model into production (version increases by 1).
-- Run `test_infer_ep.sh` to send traffic to inference endpoint `/predict` to see inference latency increases (to 5s), 
+`DelayedLogisticRegression` subclass simulates a slow model. Registered and versioned in MLFlow, promoted to production
+
+- Trigger DAG `register_high_latency_model` to deploy the slow model into production.
+- Run `test_infer_ep.sh` to send traffic to inference endpoint `/predict` to see inference latency increased to 5s per request: 
 ![](./images/latency_increase.png)
 
-which triggers Prometheus alert. 
+which triggers Prometheus alert: 
 ![](./images/alert-fires.png)
 It fires to call FastAPI `/alert`
 
 ![](./images/alert_received.png)
 - The FastAPI alert triggers an Airflow DAG to roll the model back to the previous version in production.  
-- FastAPI calls Airflow API ro run model_rollback DAG: `http://airflow-apiserver:8080/api/v2/dags/model_rollback/dagRuns"`. This DAG de-promotes the slow model to stage and puts back the previous model into production in MLflow. Also calls FastAPI endpoint `/rollback_model` to load the previous model.
+- FastAPI calls Airflow API ro run `model_rollback` DAG: `http://airflow-apiserver:8080/api/v2/dags/model_rollback/dagRuns"`. This DAG de-promotes the slow model to stage and puts back the previous model into production in MLflow. Also calls FastAPI endpoint `/rollback_model` to load the previous model.
 
 
 ## Running Locally
 - In a terminal, run `make up` to start all services.
-- Go to MinIo UI at `localhost:9001/login` with `uasername:minioadmin`, `password:minioadmin`. Create a bucket named `mlflow-artifacts` that holds artifacts of the project, dvc hashes/caches, mlflow model versions and artifacts.
+- Go to MinIO UI at `localhost:9001/login` with `uasername:minioadmin`, `password:minioadmin`. Create a bucket named `mlflow-artifacts` that holds artifacts of the project, DVC hashes/caches, MLFlow model versions and artifacts.
 - Go to Grafana UI `localhost:3000` with `username:admin`, `password:admin`, then `dashboards` to see two dashboards:
    - ML Moniotring with panels: Fraud Predictions per Version, Outliers Detected per Version, Inference Latency (p95), Inference Latency 
    - System Moniotring with panels: CPU Usage, Memory Usage, Disk Usage (Root Partition)
 - Go to Airflow UI `localhost:8080` with `username: airflow`, `password: airflow` to find the DAGs:
    - `ml_pipeline_dvc` is the ML Pipeline explained above. Trigger this DAG manually to start the pipeline. Make sure to have `--force` flag in `dvc repro ingest --force` to download ingest new data to the pipeline for the first time but remove it when pipeline finished while experimenting with this data. At every iteration, if the training stages run, the pipeline promotes the new models into production. To see the effect, manually restart the inference server: `docker compose -f ./inference/docker*.yaml restart`. Generate traffic to inference endpoint `/predict` to see online predictions.
-   - Trigger `register_high_latency_model` to see push a slow version of the model into production. Restart the inference server and notice tha the response latency has increased significantly. If you let traffic in for 2 mintues, this will automatically trigger the model rollback DAG to replace the slow model with previous version. As a result, you should see an automatic drop in inference latency as traffic going through the inference endpoint.
+   - Trigger `register_high_latency_model` to see push a slow version of the model into production. Restart the inference server and notice tha the response latency has increased significantly. If you let traffic in for 2 minutes, this will automatically trigger the model rollback DAG to replace the slow model with previous version. As a result, you should see an automatic drop in inference latency as traffic going through the inference endpoint.
 
 Run `make clean` to remove all the services and images from the Dev Container.
 
